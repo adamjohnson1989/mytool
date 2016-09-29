@@ -55,6 +55,14 @@ class AppController extends Controller
             'loginAction' => [
                 'controller' => 'Users',
                 'action' => 'login'
+            ],
+            'loginRedirect' => [ // ログイン後に遷移するアクションを指定
+                'controller' => 'Dashboards',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [ // ログアウト後に遷移するアクションを指定
+                'controller' => 'Users',
+                'action' => 'login',
             ]
         ]);
     }

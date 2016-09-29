@@ -20,7 +20,7 @@ Author: Son Nguyen
     <!-- BEGIN GLOBAL STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
     <?=
-        $this->Html->css(['font-awesome.min.css','simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
+        $this->Html->css(['font-awesome/font-awesome.min.css','simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
             'uniform/uniform.default.css','bootstrap-switch/bootstrap-switch.min.css','bootstrap-daterangepicker/daterangepicker-bs3.css',
             'fullcalendar/fullcalendar.min.css','jqvmap/jqvmap/jqvmap.css','pages/tasks.css','components.css',
             'plugins.css','layout.css','themes/darkblue.css','custom.css'
@@ -54,7 +54,7 @@ Author: Son Nguyen
     <div class="page-sidebar-wrapper">
         <?php
             $this->start('sidebar');
-            echo $this->element('sidebar/menu');
+            echo $this->element('Sidebar/menu');
             $this->end();
         ?>
         <?php if($this->fetch('sidebar')):?>
@@ -85,8 +85,7 @@ Author: Son Nguyen
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
     <?=
-            $this->Html->script('respond.min.js','excanvas.min.js');
-            $this->Html->script('/admin/js/respond.min.js');
+            $this->Html->script(['respond.min.js','excanvas.min.js']);
     ?>
 <![endif]-->
 <?=
@@ -99,7 +98,7 @@ Author: Son Nguyen
         'flot/jquery.flot.min.js','flot/jquery.flot.resize.min.js','flot/jquery.flot.categories.min.js',
         'jquery.pulsate.min.js','bootstrap-daterangepicker/moment.min.js','bootstrap-daterangepicker/daterangepicker.js',
         'fullcalendar/fullcalendar.min.js','jquery-easypiechart/jquery.easypiechart.min.js',
-        'jquery.sparkline.min.js','metronic.js','layout.js','quick-sidebar.js'
+        'jquery.sparkline.min.js','metronic.js','layout.js','quick-sidebar.js','demo.js','pages/index.js','pages/tasks.js'
     ]);
 ?>
 <?= $this->fetch('script') ?>
