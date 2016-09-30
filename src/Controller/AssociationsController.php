@@ -22,9 +22,8 @@ class AssociationsController extends AppController
      */
     public function index()
     {
-        $this->paginate = ['limit' => 1];
+        $this->paginate = ['limit' => 10];
         $associations = $this->paginate($this->Associations);
-
         $this->set(compact('associations'));
         $this->set('_serialize', ['associations']);
     }

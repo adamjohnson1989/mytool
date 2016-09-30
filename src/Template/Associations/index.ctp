@@ -1,4 +1,21 @@
 <div class="row" id="association">
+    <!-- BEGIN PAGE HEADER-->
+    <h3 class="page-title">
+        Dashboard <small>reports & statistics</small>
+    </h3>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="index.html">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+        </ul>
+    </div>
+    <!-- END PAGE HEADER-->
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet box green">
@@ -76,7 +93,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="paginator">
+            <div class="paginator" id="pg_custom">
                 <ul class="btn-toolbar">
                     <?= $this->Paginator->prev('< ' . __('Prev')) ?>
                     <?= $this->Paginator->numbers() ?>

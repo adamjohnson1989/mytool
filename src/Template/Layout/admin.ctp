@@ -65,6 +65,7 @@ Author: Son Nguyen
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
         <div class="page-content">
+
             <?= $this->fetch('content') ?>
         </div>
     </div>

@@ -5,18 +5,18 @@
     color: white;
 }
 
-#association .paginator{
+#pg_custom.paginator{
     background-color: #fff;
 }
 
-#association .paginator {
+#pg_custom.paginator {
     margin:10px auto;
     display:table;
     padding:2px;
     white-space:nowrap;
 }
 
-#association .paginator ul{
+#pg_custom.paginator ul{
     list-style:none;
     margin:0;
     padding:0;
@@ -24,6 +24,6 @@
     white-space:nowrap;
 }
 
-#association .paginator ul{
+#pg_custom.paginator ul{
     display:table-cell;
 }

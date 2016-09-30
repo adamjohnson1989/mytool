@@ -39,147 +39,8 @@
                 <span class="selected"></span>
                 <span class="arrow open"></span>
             </a>
-            <ul class="sub-menu">
-                <li class="active">
-                    <a href="index.html">
-                        <i class="icon-bar-chart"></i>
-                        Default Dashboard</a>
-                </li>
-                <li>
-                    <a href="index_2.html">
-                        <i class="icon-bulb"></i>
-                        New Dashboard #1</a>
-                </li>
-                <li>
-                    <a href="index_3.html">
-                        <i class="icon-graph"></i>
-                        New Dashboard #2</a>
-                </li>
-            </ul>
         </li>
-        <li>
-            <a href="javascript:;">
-                <i class="icon-basket"></i>
-                <span class="title">eCommerce</span>
-                <span class="arrow "></span>
-            </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="ecommerce_index.html">
-                        <i class="icon-home"></i>
-                        Dashboard</a>
-                </li>
-                <li>
-                    <a href="ecommerce_orders.html">
-                        <i class="icon-basket"></i>
-                        Orders</a>
-                </li>
-                <li>
-                    <a href="ecommerce_orders_view.html">
-                        <i class="icon-tag"></i>
-                        Order View</a>
-                </li>
-                <li>
-                    <a href="ecommerce_products.html">
-                        <i class="icon-handbag"></i>
-                        Products</a>
-                </li>
-                <li>
-                    <a href="ecommerce_products_edit.html">
-                        <i class="icon-pencil"></i>
-                        Product Edit</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;">
-                <i class="icon-rocket"></i>
-                <span class="title">Page Layouts</span>
-                <span class="arrow "></span>
-            </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="layout_horizontal_sidebar_menu.html">
-                        Horizontal & Sidebar Menu</a>
-                </li>
-                <li>
-                    <a href="index_horizontal_menu.html">
-                        Dashboard & Mega Menu</a>
-                </li>
-                <li>
-                    <a href="layout_horizontal_menu1.html">
-                        Horizontal Mega Menu 1</a>
-                </li>
-                <li>
-                    <a href="layout_horizontal_menu2.html">
-                        Horizontal Mega Menu 2</a>
-                </li>
-                <li>
-                    <a href="layout_fontawesome_icons.html">
-                        <span class="badge badge-roundless badge-danger">new</span>Layout with Fontawesome Icons</a>
-                </li>
-                <li>
-                    <a href="layout_glyphicons.html">
-                        Layout with Glyphicon</a>
-                </li>
-                <li>
-                    <a href="layout_full_height_portlet.html">
-                        <span class="badge badge-roundless badge-success">new</span>Full Height Portlet</a>
-                </li>
-                <li>
-                    <a href="layout_full_height_content.html">
-                        <span class="badge badge-roundless badge-warning">new</span>Full Height Content</a>
-                </li>
-                <li>
-                    <a href="layout_search_on_header1.html">
-                        Search Box On Header 1</a>
-                </li>
-                <li>
-                    <a href="layout_search_on_header2.html">
-                        Search Box On Header 2</a>
-                </li>
-                <li>
-                    <a href="layout_sidebar_search_option1.html">
-                        Sidebar Search Option 1</a>
-                </li>
-                <li>
-                    <a href="layout_sidebar_search_option2.html">
-                        Sidebar Search Option 2</a>
-                </li>
-                <li>
-                    <a href="layout_sidebar_reversed.html">
-                        <span class="badge badge-roundless badge-warning">new</span>Right Sidebar Page</a>
-                </li>
-                <li>
-                    <a href="layout_sidebar_fixed.html">
-                        Sidebar Fixed Page</a>
-                </li>
-                <li>
-                    <a href="layout_sidebar_closed.html">
-                        Sidebar Closed Page</a>
-                </li>
-                <li>
-                    <a href="layout_ajax.html">
-                        Content Loading via Ajax</a>
-                </li>
-                <li>
-                    <a href="layout_disabled_menu.html">
-                        Disabled Menu Links</a>
-                </li>
-                <li>
-                    <a href="layout_blank_page.html">
-                        Blank Page</a>
-                </li>
-                <li>
-                    <a href="layout_boxed_page.html">
-                        Boxed Page</a>
-                </li>
-                <li>
-                    <a href="layout_language_bar.html">
-                        Language Switch Bar</a>
-                </li>
-            </ul>
-        </li>
+
         <li>
             <a href="javascript:void(0)">
                 <i class="icon-rocket"></i>
@@ -192,7 +53,7 @@
                         Nghiệp Đoàn</a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="<?php echo $this->Url->build(['controller' => 'Companys']) ?>">
                         Công Ty Tiếp Nhận</a>
                 </li>
             </ul>
