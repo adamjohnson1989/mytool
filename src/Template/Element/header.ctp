@@ -351,7 +351,7 @@
                             <i class="icon-lock"></i> Lock Screen </a>
                     </li>
                     <li>
-                        <a href="login.html">
+                        <a href="<?php echo $this->Url->build(['controller' => 'Users','action' => 'logout']) ?>">
                             <i class="icon-key"></i> Log Out </a>
                     </li>
                 </ul>
