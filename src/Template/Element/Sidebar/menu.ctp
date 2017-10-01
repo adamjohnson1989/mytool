@@ -58,6 +58,13 @@
                 </li>
             </ul>
         </li>
+        <li>
+            <a href="<?php echo $this->Url->build(['controller' => 'Members']) ?>">
+                <i class="icon-rocket"></i>
+                <span class="title">Thông tin thực tập sinh</span>
+                <span class="arrow "></span>
+            </a>
+        </li>
 
     </ul>
     <!-- END SIDEBAR MENU -->
