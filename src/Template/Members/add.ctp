@@ -39,7 +39,7 @@
 												<span class="number">
 												1 </span>
                                         <span class="desc">
-												<i class="fa fa-check"></i> Account Setup </span>
+												<i class="fa fa-check"></i> Thông tin cá nhân </span>
                                     </a>
                                 </li>
                                 <li>
@@ -47,7 +47,7 @@
 												<span class="number">
 												2 </span>
                                         <span class="desc">
-												<i class="fa fa-check"></i> Profile Setup </span>
+												<i class="fa fa-check"></i> Quá Trình Học Tập </span>
                                     </a>
                                 </li>
                                 <li>
@@ -55,7 +55,7 @@
 												<span class="number">
 												3 </span>
                                         <span class="desc">
-												<i class="fa fa-check"></i> Billing Setup </span>
+												<i class="fa fa-check"></i> Kinh Nghiệm </span>
                                     </a>
                                 </li>
                                 <li>
@@ -63,7 +63,7 @@
 												<span class="number">
 												4 </span>
                                         <span class="desc">
-												<i class="fa fa-check"></i> Confirm </span>
+												<i class="fa fa-check"></i> Thông Tin Gia Đình </span>
                                     </a>
                                 </li>
                             </ul>
@@ -82,12 +82,12 @@
                                 </div>
                                 <div class="tab-pane active" id="tab1">
                                     <div class="form-body">
-                                        <h3 class="form-section">Thông tin cá nhân</h3>
+                                        <h3 class="form-section">Thông Tin Cá Nhân</h3>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group " style="text-align: center">
                                                         <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 200px;">
+                                                            <div class="fileinput-preview  thumbnail" data-trigger="fileinput" style="width: 200px; height: 200px;">
                                                             </div>
                                                             <div>
 													<span class="btn default btn-file">
@@ -109,7 +109,7 @@
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Họ Tên</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control" placeholder="Chee Kin">
+                                                        <input type="text" class="form-control" placeholder="Nguyễn Văn A">
                                                         <span class="help-block">
 																This is inline help </span>
                                                     </div>
@@ -153,136 +153,95 @@
                                         <!--/row-->
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Category</label>
-                                                    <div class="col-md-9">
-                                                        <select class="select2_category form-control" data-placeholder="Choose a Category" tabindex="1">
-                                                            <option value="Category 1">Category 1</option>
-                                                            <option value="Category 2">Category 2</option>
-                                                            <option value="Category 3">Category 5</option>
-                                                            <option value="Category 4">Category 4</option>
-                                                        </select>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-6">Chiều Cao</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" name="shincho" class="form-control" />cm
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-6">Cân nặng</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" name="taiju" class="form-control" />kg
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label col-md-3">Membership</label>
+                                                    <label class="control-label col-md-3">Tay Thuận</label>
                                                     <div class="col-md-9">
                                                         <div class="radio-list">
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="optionsRadios2" value="option1"/>
-                                                                Free </label>
+                                                                <input type="radio" name="optionsRadios2" value="0"/>
+                                                                Tay Trái </label>
                                                             <label class="radio-inline">
-                                                                <input type="radio" name="optionsRadios2" value="option2" checked/>
-                                                                Professional </label>
+                                                                <input type="radio" name="optionsRadios2" value="1" checked/>
+                                                                Tay Phải </label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--/span-->
                                         </div>
-                                        <h3 class="form-section">Address</h3>
-                                        <!--/row-->
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Address 1</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-6">Mắt Trái</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" name="shincho" class="form-control" />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Address 2</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">City</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-6">Mắt Phải</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" name="taiju" class="form-control" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label col-md-3">State</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-6">Nhóm Máu</label>
+                                                            <div class="col-md-6">
+                                                                <div class="radio-list">
+                                                                    <select class="form-control">
+                                                                        <option value="0">A</option>
+                                                                        <option value="1">B</option>
+                                                                        <option value="2">AB</option>
+                                                                        <option value="3">O</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-6">IQ</label>
+                                                            <div class="col-md-6">
+                                                                <input type="text" name="iq" class="form-control" />
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--/span-->
-                                        </div>
-                                        <!--/row-->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Post Code</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Country</label>
-                                                    <div class="col-md-9">
-                                                        <select class="form-control">
-                                                            <option>Country 1</option>
-                                                            <option>Country 2</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                        </div>
-                                        <!--/row-->
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Password <span class="required">
-													* </span>
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="password" class="form-control" name="password" id="submit_form_password"/>
-                                            <span class="help-block">
-														Provide your password. </span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Confirm Password <span class="required">
-													* </span>
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="password" class="form-control" name="rpassword"/>
-                                            <span class="help-block">
-														Confirm your password </span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Email <span class="required">
-													* </span>
-                                        </label>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" name="email"/>
-                                            <span class="help-block">
-														Provide your email address </span>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="tab-pane" id="tab2">
-                                    <h3 class="block">Provide your profile details</h3>
+                                    <h3 class="block">Quá Trình Học Tập</h3>
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Fullname <span class="required">
 													* </span>
