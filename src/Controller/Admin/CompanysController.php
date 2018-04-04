@@ -1,14 +1,14 @@
 <?php
 namespace App\Controller\Admin;
 
-use App\Controller\AppController;
+use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
 /**
  * Company Controller
  *
  * @property \App\Model\Table\CompanyTable $Companys
  */
-class CompanysController extends AppController
+class CompanysController extends AdminController
 {
     public function beforeRender(Event $event)
     {

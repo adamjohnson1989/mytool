@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller\Admin;
 
-use App\Controller\AppController;
+use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
 require_once (ROOT . DS . 'vendor' . DS . 'mpdf' . DS .  'mpdf.php');
 use mPDF;
@@ -13,7 +13,7 @@ use mPDF;
  *
  * @method \App\Model\Entity\Member[] paginate($object = null, array $settings = [])
  */
-class MembersController extends AppController
+class MembersController extends AdminController
 {
     public function beforeRender(Event $event)
     {

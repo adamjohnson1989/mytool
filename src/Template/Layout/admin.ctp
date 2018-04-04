@@ -28,6 +28,28 @@ Author: Son Nguyen
     ?>
     <!-- END GLOBAL STYLES -->
     <?= $this->fetch('css') ?>
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+    <?=
+            $this->Html->script(['respond.min.js','excanvas.min.js']);
+    ?>
+    <![endif]-->
+    <?=
+    $this->Html->script(['jquery.min.js','jquery-migrate.min.js','jquery-ui/jquery-ui.min.js','bootstrap/bootstrap.min.js',
+    'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
+    'jquery.blockui.min.js','jquery.cokie.min.js','uniform/jquery.uniform.min.js','bootstrap-switch/bootstrap-switch.min.js',
+    'jqvmap/jqvmap/jquery.vmap.js','jqvmap/jqvmap/maps/jquery.vmap.russia.js','jqvmap/jqvmap/maps/jquery.vmap.world.js',
+    'jqvmap/jqvmap/maps/jquery.vmap.europe.js','jqvmap/jqvmap/maps/jquery.vmap.germany.js',
+    'jqvmap/jqvmap/maps/jquery.vmap.usa.js','jqvmap/jqvmap/data/jquery.vmap.sampledata.js',
+    'flot/jquery.flot.min.js','flot/jquery.flot.resize.min.js','flot/jquery.flot.categories.min.js',
+    'jquery.pulsate.min.js','bootstrap-daterangepicker/moment.min.js','bootstrap-daterangepicker/daterangepicker.js',
+    'fullcalendar/fullcalendar.min.js','jquery-easypiechart/jquery.easypiechart.min.js',
+    'jquery.sparkline.min.js','metronic.js','layout.js','quick-sidebar.js','demo.js','pages/index.js','pages/tasks.js',
+    'bootstrap-switch/bootstrap-switch.min.js','pages/form-wizard.js','bootstrap-wizard/jquery.bootstrap.wizard.min.js',
+    'select2/select2.min','tinymce/tinymce.min.js'
+    ]);
+    ?>
+    <?= $this->fetch('script') ?>
     <?= $this->Html->meta('icon') ?>
 </head>
 <!-- BEGIN BODY -->
@@ -37,7 +59,7 @@ Author: Son Nguyen
 <!-- BEGIN HEADER INNER -->
     <?php
         $this->start('header');
-        echo $this->element('header');
+        echo $this->element('Admin/header');
         $this->end();
     ?>
     <?php if($this->fetch('header')):?>
@@ -54,7 +76,7 @@ Author: Son Nguyen
     <div class="page-sidebar-wrapper">
         <?php
             $this->start('sidebar');
-            echo $this->element('Sidebar/menu');
+            echo $this->element('Admin/Sidebar/menu');
             $this->end();
         ?>
         <?php if($this->fetch('sidebar')):?>
@@ -83,28 +105,7 @@ Author: Son Nguyen
     </div>
 </div>
 <!-- END FOOTER -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-    <?=
-            $this->Html->script(['respond.min.js','excanvas.min.js']);
-    ?>
-<![endif]-->
-<?=
-    $this->Html->script(['jquery.min.js','jquery-migrate.min.js','jquery-ui/jquery-ui.min.js','bootstrap/bootstrap.min.js',
-        'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
-        'jquery.blockui.min.js','jquery.cokie.min.js','uniform/jquery.uniform.min.js','bootstrap-switch/bootstrap-switch.min.js',
-        'jqvmap/jqvmap/jquery.vmap.js','jqvmap/jqvmap/maps/jquery.vmap.russia.js','jqvmap/jqvmap/maps/jquery.vmap.world.js',
-        'jqvmap/jqvmap/maps/jquery.vmap.europe.js','jqvmap/jqvmap/maps/jquery.vmap.germany.js',
-        'jqvmap/jqvmap/maps/jquery.vmap.usa.js','jqvmap/jqvmap/data/jquery.vmap.sampledata.js',
-        'flot/jquery.flot.min.js','flot/jquery.flot.resize.min.js','flot/jquery.flot.categories.min.js',
-        'jquery.pulsate.min.js','bootstrap-daterangepicker/moment.min.js','bootstrap-daterangepicker/daterangepicker.js',
-        'fullcalendar/fullcalendar.min.js','jquery-easypiechart/jquery.easypiechart.min.js',
-        'jquery.sparkline.min.js','metronic.js','layout.js','quick-sidebar.js','demo.js','pages/index.js','pages/tasks.js',
-        'bootstrap-switch/bootstrap-switch.min.js','pages/form-wizard.js','bootstrap-wizard/jquery.bootstrap.wizard.min.js',
-        'select2/select2.min'
-    ]);
-?>
-<?= $this->fetch('script') ?>
+
 <script>
     jQuery(document).ready(function() {
         Metronic.init(); // init metronic core componets

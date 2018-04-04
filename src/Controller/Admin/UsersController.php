@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller\Admin;
 
-use App\Controller\AppController;
+use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
 
 /**
@@ -9,7 +9,7 @@ use Cake\Event\Event;
  *
  * @property \App\Model\Table\UsersTable $Users
  */
-class UsersController extends AppController
+class UsersController extends AdminController
 {
 
     public function beforeFilter(Event $event)

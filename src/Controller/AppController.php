@@ -43,28 +43,6 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-        $this->loadComponent('Auth',[
-           'authenticate' => [
-               'Form' => [
-                   'fields' => [
-                       'username' => 'email',
-                       'password' => 'password'
-                   ]
-               ]
-           ],
-            'loginAction' => [
-                'controller' => 'Users',
-                'action' => 'login'
-            ],
-            'loginRedirect' => [ // ログイン後に遷移するアクションを指定
-                'controller' => 'Dashboards',
-                'action' => 'index'
-            ],
-            'logoutRedirect' => [ // ログアウト後に遷移するアクションを指定
-                'controller' => 'Users',
-                'action' => 'login',
-            ]
-        ]);
     }
 
     /**

@@ -1,13 +1,13 @@
 <?php
 namespace App\Controller\Admin;
 
-use App\Controller\AppController;
+use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
 /**
  * Dashboards Controller
  *
  */
-class DashboardsController extends AppController
+class DashboardsController extends AdminController
 {
 
     public function beforeRender(Event $event)
