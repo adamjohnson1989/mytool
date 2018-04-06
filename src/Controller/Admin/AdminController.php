@@ -16,7 +16,8 @@ namespace App\Controller\Admin;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-
+// Use Upload Helper Class
+use App\View\Helper\UploadHelper;
 /**
  * Application Controller
  *
@@ -80,6 +81,11 @@ class AdminController extends Controller
         ) {
             $this->set('_serialize', true);
         }
-        $this->viewBuilder()->layout('admin');
     }
+
+    public function upload($_fileInfo){
+        $obj = new UploadHelper($_fileInfo);
+        return $obj->upload();
+    }
+
 }

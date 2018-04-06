@@ -4,6 +4,7 @@
  * @var \App\Model\Entity\Recruitment[]|\Cake\Collection\CollectionInterface $recruitments
  */
 ?>
+
 <div class="row" id="association">
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
