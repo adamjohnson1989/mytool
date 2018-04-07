@@ -3,6 +3,7 @@ namespace App\Controller\Admin;
 
 use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
+use Cake\Network\Session\DatabaseSession;
 
 /**
  * Recruitments Controller
@@ -30,7 +31,7 @@ class RecruitmentsController extends AdminController
         ];
         $recruitments = $this->paginate($this->Recruitments);
         $this->set(compact('recruitments'));
-        $this->set('_serialize', ['recruitments']);
+            $this->set('_serialize', ['recruitments']);
     }
 
     /**
@@ -64,13 +65,14 @@ class RecruitmentsController extends AdminController
             foreach ($dataArr as $k => $data){
                 $dataSave[$k] = htmlspecialchars($data);
             }
+            $dataSave['created_at'] = date('m/d/Y', time());
+            $dataSave['users_id'] = $this->Auth->user('id');
             $recruitment = $this->Recruitments->patchEntity($recruitment, $dataSave);
             if ($this->Recruitments->save($recruitment)) {
-                $this->Flash->success(__('The recruitment has been saved.'));
-
+                $this->Flash->success(sprintf("<div class='alert alert-success'>%s</div>",  h("Đơn Hàng Mới Đã Được Tạo!")), ['escape' => false]);
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The recruitment could not be saved. Please, try again.'));
+            $this->Flash->error(sprintf("<div class='alert alert-danger'>%s</div>",  h('Lỗi Tạo Đơn Hàng, Kiểm Tra Lại Thông Tin')), ['escape' => false]);
         }
         $users = $this->Recruitments->Users->find('list', ['limit' => 200]);
         $this->set(compact('recruitment', 'users'));
@@ -95,13 +97,15 @@ class RecruitmentsController extends AdminController
             foreach ($dataArr as $k => $data){
                 $dataSave[$k] = htmlspecialchars($data);
             }
+            $dataSave['update_at'] = date('m/d/Y', time());
+            $dataSave['users_id'] = $this->Auth->user('id');
             $recruitment = $this->Recruitments->patchEntity($recruitment, $dataSave);
             if ($this->Recruitments->save($recruitment)) {
-                $this->Flash->success(__('The recruitment has been saved.'));
+                $this->Flash->success(sprintf("<div class='alert alert-success'>%s</div>",  h("Nội Dung Đơn Hàng (ID = " . $id . ") Đã Được Cập Nhật!")), ['escape' => false]);
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The recruitment could not be saved. Please, try again.'));
+            $this->Flash->error(sprintf("<div class='alert alert-danger'>%s</div>",  h('Lỗi Cập Nhật, Hãy Kiểm Tra Lại')), ['escape' => false]);
         }
         $users = $this->Recruitments->Users->find('list', ['limit' => 200]);
         $this->set(compact('recruitment', 'users'));
@@ -144,14 +148,14 @@ class RecruitmentsController extends AdminController
                 header("HTTP/1.1 400 Invalid extension,Bad request");
                 return;
             }
+            $fileExt = pathinfo($temp['name'], PATHINFO_EXTENSION);
+            $fileName = 'uploads' . DS . 'tinymce' . DS . time() . "." . $fileExt;
             $uploadPath = WWW_ROOT . "uploads" . DS . 'tinymce' . DS;
-
-            if (!file_exists($uploadPath)) {
-                mkdir($uploadPath, 0777, true);
+            if (!file_exists(WWW_ROOT . "uploads" . DS . 'tinymce' . DS)) {
+                mkdir(WWW_ROOT . "uploads" . DS . 'tinymce' . DS, 0777, true);
             }
-            $fileName = $uploadPath . $temp['name'];
-            move_uploaded_file($temp['tmp_name'], $fileName);
-            echo json_encode(array('file_path' => $temp['name']));
+            move_uploaded_file($temp['tmp_name'], WWW_ROOT . $fileName);
+            echo json_encode(array('file_path' => DS . $fileName));
         }
         die;
     }

@@ -74,7 +74,7 @@
             <!-- Nội Dung Công Việc-->
             <?php
                 $this->Form->templates([
-            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
             ]);
             ?>
             <div class="form-group">
@@ -108,11 +108,40 @@
     tinymce.init({
         selector: "textarea",
         theme: "modern",
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor textcolor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste code help wordcount'
+        ],
+        toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image',
+        content_css: [
+        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+        '//www.tinymce.com/css/codepen.min.css'],
         paste_data_images: true,
-        height:600,
+        height:500,
         // without images_upload_url set, Upload tab won't show up
-        images_upload_url: 'upload.php',
-        plugins: 'uploadimage',
-        toolbar: 'uploadimage'
+        automatic_uploads : false,
+        images_upload_handler: function (blobInfo, success, failure) {
+            var xhr, formData;
+            xhr = new XMLHttpRequest();
+            xhr.withCredentials = false;
+            xhr.open('POST', '/admin/recruitments/imgupload');
+            xhr.onload = function() {
+                var json;
+                if (xhr.status != 200) {
+                    failure('HTTP Error: ' + xhr.status);
+                    return;
+                }
+                json = jQuery.parseJSON(xhr.responseText);
+                if (!json || typeof json.file_path != 'string') {
+                    failure('Invalid JSON: ' + xhr.responseText);
+                    return;
+                }
+                success(json.file_path);
+            };
+            formData = new FormData();
+            formData.append('file', blobInfo.blob(), blobInfo.filename());
+            xhr.send(formData);
+        }
     });
 </script>

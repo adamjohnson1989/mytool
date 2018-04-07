@@ -74,7 +74,7 @@
             <!-- Nội Dung Công Việc-->
             <?php
                 $this->Form->templates([
-            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
             ]);
             ?>
             <div class="form-group">
@@ -107,8 +107,15 @@
     tinymce.init({
         selector: "textarea",
         theme: "modern",
-        plugins : 'image',
-        toolbar : 'image',
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor textcolor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste code help wordcount'
+        ],
+        toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image',
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tinymce.com/css/codepen.min.css'],
         paste_data_images: true,
         height:600,
         // without images_upload_url set, Upload tab won't show up

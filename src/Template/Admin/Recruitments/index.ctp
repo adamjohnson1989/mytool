@@ -9,6 +9,7 @@
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         Danh Sách Đơn Hàng Tuyển Dụng</small>
+
     </h3>
     <!-- END PAGE HEADER-->
     <div class="col-md-12">
@@ -20,6 +21,11 @@
                 </div>
             </div>
             <div class="portlet-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo $this->Flash->render() ?>
+                    </div>
+                </div>
                 <div class="table-toolbar">
                     <div class="row">
                         <div class="col-md-6">
@@ -45,6 +51,7 @@
                         <th scope="col"><?= __('Địa Chỉ') ?></th>
                         <th scope="col"><?= __('Số Năm') ?></th>
                         <th scope="col"><?= __('Tools') ?></th>
+                        <th scope="col"><?= __('Người Tạo') ?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -54,9 +61,6 @@
                         <td><?= h($recruitment->name) ?></td>
                         <td><?= h($recruitment->basho) ?></td>
                         <td><?= $this->Number->format($recruitment->nensu) ?></td>
-                        <td>
-
-                        </td>
                         <td class="actions">
                             <?= $this->Html->link(
                             $this->Html->tag('i','',['class' => 'fa fa-file-o']),
@@ -80,6 +84,7 @@
                             )
                             ?>
                         </td>
+                        <td><?= $recruitment->user ? $recruitment->user->email : Null ?></td>
                     </tr>
                     <?php endforeach; ?>
                     </tbody>
