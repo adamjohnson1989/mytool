@@ -12,8 +12,8 @@
 #pg_custom.paginator {
     margin:10px auto;
     display:table;
-    padding:2px;
-    white-space:nowrap;
+    background: #35aa47 !important;
+    padding: 0;
 }
 
 #pg_custom.paginator ul{

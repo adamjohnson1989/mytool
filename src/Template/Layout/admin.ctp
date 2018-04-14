@@ -23,7 +23,9 @@ Author: Son Nguyen
         $this->Html->css(['font-awesome/font-awesome.min.css','simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
             'uniform/uniform.default.css','bootstrap-switch/bootstrap-switch.min.css','bootstrap-daterangepicker/daterangepicker-bs3.css',
             'fullcalendar/fullcalendar.min.css','jqvmap/jqvmap/jqvmap.css','pages/tasks.css','components.css',
-            'plugins.css','layout.css','themes/darkblue.css','custom.css','bootstrap-switch/bootstrap-switch.min.css'
+            'plugins.css','layout.css','themes/darkblue.css','custom.css','bootstrap-switch/bootstrap-switch.min.css',
+            'bootstrap-fileinput/bootstrap-fileinput.css'
+
         ]);
     ?>
     <!-- END GLOBAL STYLES -->
@@ -46,7 +48,7 @@ Author: Son Nguyen
     'fullcalendar/fullcalendar.min.js','jquery-easypiechart/jquery.easypiechart.min.js',
     'jquery.sparkline.min.js','metronic.js','layout.js','quick-sidebar.js','demo.js','pages/index.js','pages/tasks.js',
     'bootstrap-switch/bootstrap-switch.min.js','pages/form-wizard.js','bootstrap-wizard/jquery.bootstrap.wizard.min.js',
-    'select2/select2.min','tinymce/tinymce.min.js'
+    'select2/select2.min','tinymce/tinymce.min.js','bootstrap-fileinput/bootstrap-fileinput.js'
     ]);
     ?>
     <?= $this->fetch('script') ?>

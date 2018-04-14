@@ -32,7 +32,8 @@
             </form>
             <!-- END RESPONSIVE QUICK SEARCH FORM -->
         </li>
-        <li class="start active open">
+        <?php $controller = $this->request->params['controller']; ?>
+        <li class="start open <?= $controller == 'Dashboards'? 'active' : ''?>">
             <a href="javascript:;">
                 <i class="icon-home"></i>
                 <span class="title">Dashboard</span>
@@ -41,20 +42,29 @@
             </a>
         </li>
         <!-- begin manager tag for web-->
-        <li class="">
+        <li class="<?= $controller == 'Recruitments'? 'active' : ''?>">
             <a href="<?php echo $this->Url->build(['controller' => 'Recruitments']) ?>">
                 <i class="icon-rocket"></i>
                 <span class="title">Thông tin tuyển dụng</span>
                 <span class="arrow "></span>
             </a>
         </li>
-        <li class="">
-            <a href="<?php echo $this->Url->build(['controller' => 'Recruitments']) ?>">
+        <li>
+            <a href="javascript:void(0)">
                 <i class="icon-rocket"></i>
                 <span class="title">Tin Tức</span>
                 <span class="arrow "></span>
             </a>
-
+            <ul class="sub-menu">
+                <li class="<?= $controller == 'Categories'? 'active' : ''?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'Categories']) ?>">
+                        Categories</a>
+                </li>
+                <li class="<?= $controller == 'News'? 'active' : ''?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'News']) ?>">
+                        Tin Tức</a>
+                </li>
+            </ul>
         </li>
         <!-- end manager tag for web-->
         <li>
@@ -64,17 +74,17 @@
                 <span class="arrow "></span>
             </a>
             <ul class="sub-menu">
-                <li>
+                <li class="<?= $controller == 'Associations'? 'active' : ''?>">
                     <a href="<?php echo $this->Url->build(['controller' => 'Associations']) ?>">
                         Nghiệp Đoàn</a>
                 </li>
-                <li>
+                <li class="<?= $controller == 'Associations'? 'active' : ''?>">
                     <a href="<?php echo $this->Url->build(['controller' => 'Companys']) ?>">
                         Công Ty Tiếp Nhận</a>
                 </li>
             </ul>
         </li>
-        <li>
+        <li class="<?= $controller == 'Members'? 'active' : ''?>">
             <a href="<?php echo $this->Url->build(['controller' => 'Members']) ?>">
                 <i class="icon-rocket"></i>
                 <span class="title">Thông tin thực tập sinh</span>

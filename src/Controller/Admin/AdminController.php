@@ -83,8 +83,8 @@ class AdminController extends Controller
         }
     }
 
-    public function upload($_fileInfo){
-        $obj = new UploadHelper($_fileInfo);
+    public function upload($_fileInfo,$resize_with=Null,$resize_height=Null,$folderUpload=Null){
+        $obj = new UploadHelper($_fileInfo,$resize_with,$resize_height,$folderUpload);
         return $obj->upload();
     }
 
