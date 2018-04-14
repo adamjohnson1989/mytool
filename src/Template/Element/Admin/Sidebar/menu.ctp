@@ -43,7 +43,7 @@
         </li>
         <!-- begin manager tag for web-->
         <li class="<?= $controller == 'Recruitments'? 'active' : ''?>">
-            <a href="<?php echo $this->Url->build(['controller' => 'Recruitments']) ?>">
+            <a href="<?php echo $this->Url->build(['controller' => 'Recruitments','action' => 'index']) ?>">
                 <i class="icon-rocket"></i>
                 <span class="title">Thông tin tuyển dụng</span>
                 <span class="arrow "></span>
@@ -57,11 +57,11 @@
             </a>
             <ul class="sub-menu">
                 <li class="<?= $controller == 'Categories'? 'active' : ''?>">
-                    <a href="<?php echo $this->Url->build(['controller' => 'Categories']) ?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'Categories','action' => 'index']) ?>">
                         Categories</a>
                 </li>
                 <li class="<?= $controller == 'News'? 'active' : ''?>">
-                    <a href="<?php echo $this->Url->build(['controller' => 'News']) ?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'News','action' => 'index']) ?>">
                         Tin Tức</a>
                 </li>
             </ul>
@@ -75,17 +75,17 @@
             </a>
             <ul class="sub-menu">
                 <li class="<?= $controller == 'Associations'? 'active' : ''?>">
-                    <a href="<?php echo $this->Url->build(['controller' => 'Associations']) ?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'Associations','action' => 'index']) ?>">
                         Nghiệp Đoàn</a>
                 </li>
                 <li class="<?= $controller == 'Associations'? 'active' : ''?>">
-                    <a href="<?php echo $this->Url->build(['controller' => 'Companys']) ?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'Companys','action' => 'index']) ?>">
                         Công Ty Tiếp Nhận</a>
                 </li>
             </ul>
         </li>
         <li class="<?= $controller == 'Members'? 'active' : ''?>">
-            <a href="<?php echo $this->Url->build(['controller' => 'Members']) ?>">
+            <a href="<?php echo $this->Url->build(['controller' => 'Members','action' => 'index']) ?>">
                 <i class="icon-rocket"></i>
                 <span class="title">Thông tin thực tập sinh</span>
                 <span class="arrow "></span>
