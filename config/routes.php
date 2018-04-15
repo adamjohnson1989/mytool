@@ -50,7 +50,16 @@ Router::scope('/', function (RouteBuilder $routes) {
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
     $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-
+    $routes->connect('/gioi-thieu/gioi-thieu-cong-ty', ['controller' => 'Pages', 'action' => 'display', 'gioi-thieu-cong-ty']);
+    $routes->connect('/gioi-thieu/phuong-cham-kinh-doanh', ['controller' => 'Pages', 'action' => 'display', 'phuong-cham-kinh-doanh']);
+    $routes->connect('/gioi-thieu/co-cau-to-chuc', ['controller' => 'Pages', 'action' => 'display', 'co-cau-to-chuc']);
+    $routes->connect('/tin-tuc', ['controller' => 'News', 'action' => 'display']);
+    $routes->connect('/tuyen-dung/thuc-tap-sinh', ['controller' => 'Recruitments', 'action' => 'display']);
+    $routes->connect('/tin-tuc', ['controller' => 'News', 'action' => 'display']);
+    $routes->connect(
+        '/tuyen-dung/slug',
+        ['controller' => 'Recruitments', 'action' => 'view']
+    )->setPass(['slug']);
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */

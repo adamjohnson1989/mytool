@@ -1,106 +1,130 @@
-<!DOCTYPE html>
-<!--
-Version: 1.0
-Author: Son Nguyen
--->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en" class="no-js">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
-<head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title><?= $this->fetch('title') ?></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="" name="description"/>
-    <meta content="" name="author"/>
 
-    <!-- BEGIN GLOBAL STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
-    <?=
-        $this->Html->css(['font-awesome/font-awesome.min.css','simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
-    'fancybox/fancybox.css','carousel/carousel.css','pages/components.css','pages/slider.css',
-    'corporate/style.css','corporate/style-responsive.css','corporate/themes/red.css','corporate/custom.css'
-    ]);
-    ?>
-    <!-- END GLOBAL STYLES -->
-    <?= $this->fetch('css') ?>
-    <?= $this->Html->meta('icon') ?>
-</head>
-<!-- BEGIN BODY -->
-<body class="page-header-fixed page-quick-sidebar-over-content page-style-square">
-<!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-fixed-top">
-    <!-- BEGIN HEADER INNER -->
-    <?php
-        $this->start('header');
-    echo $this->element('header');
-    $this->end();
-    ?>
-    <?php if($this->fetch('header')):?>
-    <?= $this->fetch('header') ?>
-    <?php endif;?>
-    <!-- END HEADER INNER -->
-</div>
-<!-- END HEADER -->
-<div class="clearfix"></div>
-
-<!-- BEGIN CONTAINER -->
-<div class="page-container">
-    <!-- BEGIN SIDEBAR -->
-    <div class="page-sidebar-wrapper">
-        <?php
-            $this->start('sidebar');
-        echo $this->element('Sidebar/menu');
-        $this->end();
-        ?>
-        <?php if($this->fetch('sidebar')):?>
-        <?= $this->fetch('sidebar') ?>
-        <?php endif;?>
-    </div>
-    <!-- END SIDEBAR -->
-    <!-- BEGIN CONTENT -->
-    <div class="page-content-wrapper">
-        <div class="page-content">
-
-            <?= $this->fetch('content') ?>
+<?php
+    $this->assign('title', 'Xuất Khẩu Lao Động Hoàng Hà JSC - Trang Chủ');
+?>
+<div class="tab-style-1">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab-1" data-toggle="tab">Thực Tập Sinh</a></li>
+        <li><a href="#tab-2" data-toggle="tab">Kỹ Thuật Viên</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane row fade in active" id="tab-1">
+            <div class="portlet-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Tên Công Việc</th>
+                            <th>Địa Điểm Làm Việc</th>
+                            <th>Ngày Tuyển</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                Table cell
+                            </td>
+                            <td>
+                                Table cell
+                            </td>
+                            <td>
+                                Table cell
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane row fade" id="tab-2">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tên Công Việc</th>
+                            <th>Địa Điểm Làm Việc</th>
+                            <th>Ngày Tuyển</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Table cell
+                            </td>
+                            <td>
+                                Table cell
+                            </td>
+                            <td>
+                                Table cell
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    <!-- END CONTENT -->
 </div>
-<!-- END CONTAINER -->
-
-<!-- BEGIN FOOTER -->
-<div class="page-footer">
-    <div class="page-footer-inner">
-        2014 &copy; Metronic by keenthemes.
-    </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
+<div id="news">
+    <h3 class="title">Tin Tức - Sự Kiện</h3>
+    <div class="tab-pane row fade in active">
+        <div class="col-md-6 col-sm-6">
+            <a href="/img/img1.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
+                <img class="img-responsive" src="/img/img1.jpg" alt="">
+            </a>
+            <div>
+                Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+            <p><a class="more" href="javascript:;">Read more <i class="icon-angle-right"></i></a></p>
+        </div>
     </div>
 </div>
-<!-- END FOOTER -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<?=
-            $this->Html->script(['respond.min.js','excanvas.min.js']);
-?>
-<![endif]-->
-<?=
-    $this->Html->script(['jquery.min.js','jquery-migrate.min.js','jquery-ui/jquery-ui.min.js','bootstrap/bootstrap.min.js',
-'fancybox/jquery.fancybox.pack.js','carousel/owl.carousel.min.js','corporate/layout.js','pages/bs-carousel.js'
-]);
-?>
-<?= $this->fetch('script') ?>
-<script>
-    jQuery(document).ready(function() {
-        Layout.init();
-        Layout.initOWL();
-    });
-</script>
-<!-- END JAVASCRIPTS -->
-</body>
-<!-- END BODY -->
-</html>
+<div class="tab-style-1">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab-3" data-toggle="tab">Văn Hóa Nhật Bản</a></li>
+        <li><a href="#tab-4" data-toggle="tab">Tiếng Nhật</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane row fade in active" id="tab-3">
+            <div class="col-md-6 col-sm-6">
+                <a href="/img/img1.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
+                    <img class="img-responsive" src="/img/img1.jpg" alt="">
+                </a>
+                <h3 class="title">Những Nguyên Tắc Nên Biết Khi Phỏng Vấn Với Nhà Tuyển Dụng Nhật Bản</h3>
+                <div>
+                    Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p><a class="more" href="javascript:;">Read more <i class="icon-angle-right"></i></a></p>
+            </div>
+        </div>
+        <div class="tab-pane row fade" id="tab-4">
+            <div class="col-md-9 col-sm-9">
+                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia..</p>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <a href="assets/temp/photos/img10.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
+                    <img class="img-responsive" src="assets/pages/img/photos/img10.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

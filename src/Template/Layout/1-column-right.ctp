@@ -21,7 +21,7 @@ Author: Son Nguyen
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
     <?=
         $this->Html->css(['font-awesome/font-awesome.min.css','animate.css','bootstrap/bootstrap.min.css',
-                            'fancybox/fancybox.css','carousel/carousel.css','components.css','slider.css',
+                            'fancybox/fancybox.css','carousel/carousel.css','components.css','pages/slider.css',
                             'corporate/style.css','corporate/style-responsive.css','corporate/themes/red.css','corporate/custom.css'
                         ]);
     ?>
@@ -59,41 +59,18 @@ Author: Son Nguyen
         <?php endif;?>
     </div>
 <!-- END SLIDER -->
-
 <div class="main">
-    <div class="container">
-        <div class="row margin-bottom-40">
-            <div class="col-md-9 col-sm-9">
-                <?= $this->fetch('content') ?>
-            </div>
-            <!-- Side bar-->
-            <div class="sidebar col-md-3 col-sm-3">
-                <?php
-                $this->start('sidebar');
-                echo $this->element('sidebar');
-                $this->end();
-                ?>
-                <?php if($this->fetch('sidebar')):?>
-                <?= $this->fetch('sidebar') ?>
-                <?php endif;?>
-            </div>
-            <!--Side Bar-->
-        </div>
-    </div>
+
 </div>
 
 
 <!-- BEGIN FOOTER -->
-<div class="footer">
-    <div class="container">
-        <?php
-        $this->start('footer');
-        echo $this->element('footer');
-        $this->end();
-        ?>
-        <?php if($this->fetch('footer')):?>
-        <?= $this->fetch('footer') ?>
-        <?php endif;?>
+<div class="page-footer">
+    <div class="page-footer-inner">
+        2014 &copy; Metronic by keenthemes.
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
     </div>
 </div>
 <!-- END FOOTER -->
