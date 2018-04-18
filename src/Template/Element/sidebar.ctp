@@ -32,7 +32,7 @@
                     Sự quan tâm của phía công ty sẽ là động lực để chúng em hoàn thành tốt công việc và mục tiêu mà chúng em đã đề ra.
                 </p></blockquote>
                 <div class="carousel-info">
-                    <img class="pull-left" src="assets/pages/img/people/img5-small.jpg" alt="">
+                    <img class="pull-left" src="/img/hv/tdn.jpg" alt="">
                     <div class="pull-left">
                         <span class="testimonials-name">Trương Đình Nguyên</span>
                     </div>
@@ -45,10 +45,9 @@
                     Ngoài ra, hãy chăm chỉ và nghe lời các anh chị, thầy cô ở công ty Hoàng Hà nhé.
                 </p></blockquote>
                 <div class="carousel-info">
-                    <img class="pull-left" src="assets/pages/img/people/img2-small.jpg" alt="">
+                    <img class="pull-left" src="/img/hv/vvp.jpg" alt="">
                     <div class="pull-left">
                         <span class="testimonials-name">Võ Việt Phước </span>
-                        <span class="testimonials-post">Commercial Director</span>
                     </div>
                 </div>
             </div>
@@ -60,10 +59,9 @@
                     Vì thế, mình đang cố gắng cải thiện hằng ngày bằng cách viết nhật ký bằng tiếng Nhật.
                 </p></blockquote>
                 <div class="carousel-info">
-                    <img class="pull-left" src="assets/pages/img/people/img2-small.jpg" alt="">
+                    <img class="pull-left" src="/img/hv/ntnm.jpg" alt="">
                     <div class="pull-left">
                         <span class="testimonials-name">Nguyễn Thị Ngọc Mai  </span>
-                        <span class="testimonials-post">Commercial Director</span>
                     </div>
                 </div>
             </div>
@@ -74,10 +72,9 @@
                     Bất cứ vấn đề, khó khăn nào đều có thể giải quyết cả. Hãy tập trung học tiếng Nhật, tìm hiểu văn hóa Nhật và nắm được các công việc chuyên môn sắp tới.
                 </p></blockquote>
                 <div class="carousel-info">
-                    <img class="pull-left" src="assets/pages/img/people/img2-small.jpg" alt="">
+                    <img class="pull-left" src="/img/hv/ctd.jpg" alt="">
                     <div class="pull-left">
                         <span class="testimonials-name">Cao Thùy Phương  </span>
-                        <span class="testimonials-post">Commercial Director</span>
                     </div>
                 </div>
             </div>

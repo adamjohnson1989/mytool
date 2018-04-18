@@ -124,7 +124,8 @@ a:hover {
   background-color: #E6400C;
 }
 .testimonials-v1 span.testimonials-name {
-	color: #E6400C;
+	color: #000;
+	font-weight: 500;
 }
 .search-result-item h4 a {
 	color: #E6400C;
@@ -142,6 +143,8 @@ a:hover {
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     background: #e02222;
     color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 .list-view-sorting a {
 	background: #fff;

@@ -500,6 +500,8 @@ body.page-header-fixed {
 	color: #333;
 	display: block;	
 	padding: 29px 12px 30px;
+	font-weight: 500;
+	font-size: 15px;
 }
 .header-navigation ul > li.active > a,
 .header-navigation ul > li > a:hover,
@@ -1198,6 +1200,7 @@ steps block and steps block elements
 }
 .corporate .content-page {
 	padding: 0 0 20px;
+	text-align: justify;
 }
 .content-page a, 
 .sidebar2 a {
@@ -1698,7 +1701,7 @@ Pre-Footer and pre-footer elements
 
 /* footer */
 .footer {
-	font-size: 13px;
+	font-size: 15px;
 	padding: 15px 0;
 }
 .footer-light {

@@ -16,3 +16,22 @@ h3.title{
     font-size: 19px;
     color: #e02222;
 }
+.recruitment.nav li a{
+    font-weight: bold;
+}
+
+.new-main .new-title{
+    font-size: 19px !important;
+    font-weight: 600;
+}
+.nav-tabs li>a{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.content-page .pg-new-title{
+    font-weight: 500;
+    font-size: 25px;
+    border-bottom: 2px solid red;
+    padding-bottom: 10px;
+}

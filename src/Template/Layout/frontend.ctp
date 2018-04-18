@@ -67,7 +67,9 @@ Author: Son Nguyen
     <div class="container">
         <div class="row margin-bottom-40">
             <div class="col-md-8 col-sm-8">
-                <?= $this->fetch('content') ?>
+                <div class="content-page">
+                    <?= $this->fetch('content') ?>
+                </div>
             </div>
             <!-- Side bar-->
             <div class="sidebar col-md-4 col-sm-4">

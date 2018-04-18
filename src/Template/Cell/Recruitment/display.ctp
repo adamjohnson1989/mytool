@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs recruitment">
     <li class="active"><a href="#tab-1" data-toggle="tab">Thực Tập Sinh</a></li>
     <li><a href="#tab-2" data-toggle="tab">Kỹ Thuật Viên</a></li>
 </ul>
@@ -31,7 +31,7 @@
                     </tbody>
                 </table>
                 <div class="pull-right">
-                    <a href="/tuyen-dung/thuc-tap-sinh">Xem Thêm</a>
+                    <a href="/tuyen-dung/thuc-tap-sinh">Xem Thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                 </tbody>
             </table>
             <div class="pull-right">
-                <a href="/tuyen-dung/ky-thuat-vien">Xem Thêm</a>
+                <a href="/tuyen-dung/ky-thuat-vien">Xem Thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
