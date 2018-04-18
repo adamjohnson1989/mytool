@@ -39,6 +39,9 @@ class Recruitment extends Entity
         'created_at' => true,
         'update_at' => true,
         'users_id' => true,
-        'user' => true
+        'user' => true,
+        'deadline' => true,
+        'type'  => true,
+        'url'   => true
     ];
 }

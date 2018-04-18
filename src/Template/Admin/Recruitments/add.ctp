@@ -28,6 +28,19 @@
                 ]) ?>
             </div>
             <?php
+                    $this->Form->templates([
+            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+            ]);
+            ?>
+            <div class="form-group">
+                <?php echo $this->Form->label('url','URL Hiển Thị', ['class' => 'col-md-3 control-label']); ?>
+                <?php echo $this->Form->input('url',[
+                'label' => false,
+                'placeholder'=>'URL Hiển Thị',
+                'class' => 'form-control input-circle'
+                ]) ?>
+            </div>
+            <?php
                 $this->Form->templates([
             'inputContainer' => '<div class="col-md-6">{{content}}<span class="help-block">Ex:
 														Osaka, Kyoto</span></div>',
@@ -68,6 +81,38 @@
                 <?php echo $this->Form->input('nensu',[
                 'label' => false,
                 'placeholder'=>'Số Năm Làm Việc',
+                'class' => 'form-control input-circle'
+                ]) ?>
+            </div>
+
+            <?php
+                $this->Form->templates([
+            'inputContainer' => '<div class="col-md-6">{{content}}<span class="help-block"></span></div>',
+            ]);
+            ?>
+            <div class="form-group">
+                <?php echo $this->Form->label('type','Loại Hình', ['class' => 'col-md-3 control-label']); ?>
+                <div class="col-md-6">
+                    <?php
+                    echo $this->Form->select(
+                    'type',
+                    ['0' => 'Thực Tập Sinh', '1' => 'Kỹ Thuật Viên'],
+                    ['default' => '0','class' => 'form-control input-circle']
+                    );
+                    ?>
+                </div>
+            </div>
+
+            <?php
+                $this->Form->templates([
+                    'inputContainer' => '<div class="col-md-6">{{content}}<span class="help-block"></span></div>',
+            ]);
+            ?>
+            <div class="form-group">
+                <?php echo $this->Form->label('deadline','Thời Gian Thi Tuyển', ['class' => 'col-md-3 control-label']); ?>
+                <?php echo $this->Form->input('deadline',[
+                'label' => false,
+                'placeholder'=>'Thời Gian Thi Tuyển',
                 'class' => 'form-control input-circle'
                 ]) ?>
             </div>

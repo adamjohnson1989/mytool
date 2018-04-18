@@ -57,6 +57,15 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/tuyen-dung/thuc-tap-sinh', ['controller' => 'Recruitments', 'action' => 'display']);
     $routes->connect('/tin-tuc', ['controller' => 'News', 'action' => 'display']);
     $routes->connect(
+        '/tuyen-dung/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
+        ['controller' => 'Recruitments', 'action' => 'view']
+    )
+        ->setPass(['id', 'slug'])
+        // Define a pattern that `id` must match.
+        ->setPatterns([
+            'id' => '[0-9]+',
+        ]);
+    $routes->connect(
         '/tuyen-dung/slug',
         ['controller' => 'Recruitments', 'action' => 'view']
     )->setPass(['slug']);

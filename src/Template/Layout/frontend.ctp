@@ -18,14 +18,17 @@ Author: Son Nguyen
     <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
     <?=
-        $this->Html->css(['font-awesome/font-awesome.min.css','animate.css','bootstrap/bootstrap.min.css',
+        $this->Html->css(['animate.css','bootstrap/bootstrap.min.css',
                             'fancybox/fancybox.css','carousel/carousel.css','components.css','slider.css',
                             'corporate/style.css','corporate/style-responsive.css','corporate/themes/red.css','corporate/custom.css'
                         ]);
     ?>
     <!-- END GLOBAL STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
+
     <?= $this->fetch('css') ?>
     <?= $this->Html->meta('icon') ?>
 </head>
@@ -63,11 +66,11 @@ Author: Son Nguyen
 <div class="main">
     <div class="container">
         <div class="row margin-bottom-40">
-            <div class="col-md-9 col-sm-9">
+            <div class="col-md-8 col-sm-8">
                 <?= $this->fetch('content') ?>
             </div>
             <!-- Side bar-->
-            <div class="sidebar col-md-3 col-sm-3">
+            <div class="sidebar col-md-4 col-sm-4">
                 <?php
                 $this->start('sidebar');
                 echo $this->element('sidebar');
@@ -108,11 +111,13 @@ Author: Son Nguyen
                          'fancybox/jquery.fancybox.pack.js','carousel/owl.carousel.min.js','corporate/layout.js','pages/bs-carousel.js'
                         ]);
 ?>
+
 <?= $this->fetch('script') ?>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         Layout.init();
         Layout.initOWL();
+        Layout.initFacebook();
     });
 </script>
 <!-- END JAVASCRIPTS -->

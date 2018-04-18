@@ -1,4 +1,4 @@
-<a class="site-logo" href="index.html"><img src="assets/corporate/img/logos/logo-corp-red.png" alt="Metronic FrontEnd"></a>
+<a class="site-logo" href="index.html"><img src="/img/logo/logo2.png" alt="Xuất Khẩu Lao Động Hoàng Hà"></a>
 
 <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 

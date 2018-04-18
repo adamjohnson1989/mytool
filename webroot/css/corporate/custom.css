@@ -5,5 +5,14 @@ h3.title{
     font-size: 17px;
 }
 .comment .item p{
-    font-family: 'Roboto', sans-serif;
+    font-family: "Lora", serif;
+    font-style: italic;
+    color: #000000;
+}
+
+.support .support-item{
+    padding-left: 25px;
+    background: #ffffff url("/img/support.png") no-repeat left top;
+    font-size: 19px;
+    color: #e02222;
 }

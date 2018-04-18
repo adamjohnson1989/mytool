@@ -3,73 +3,14 @@
     $this->assign('title', 'Xuất Khẩu Lao Động Hoàng Hà JSC - Trang Chủ');
 ?>
 <div class="tab-style-1">
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab-1" data-toggle="tab">Thực Tập Sinh</a></li>
-        <li><a href="#tab-2" data-toggle="tab">Kỹ Thuật Viên</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane row fade in active" id="tab-1">
-            <div class="portlet-body">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Tên Công Việc</th>
-                            <th>Địa Điểm Làm Việc</th>
-                            <th>Ngày Tuyển</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                Table cell
-                            </td>
-                            <td>
-                                Table cell
-                            </td>
-                            <td>
-                                Table cell
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane row fade" id="tab-2">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Tên Công Việc</th>
-                            <th>Địa Điểm Làm Việc</th>
-                            <th>Ngày Tuyển</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Table cell
-                            </td>
-                            <td>
-                                Table cell
-                            </td>
-                            <td>
-                                Table cell
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <?php echo  $this->cell('Recruitment') ?>
 </div>
 <div id="news">
     <h3 class="title">Tin Tức - Sự Kiện</h3>
     <div class="tab-pane row fade in active">
         <div class="col-md-6 col-sm-6">
             <a href="/img/img1.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                <img class="img-responsive" src="/img/img1.jpg" alt="">
+                <img class="img-responsive" src="/img/img1.jpg" alt="" width="550" height="365">
             </a>
             <div>
                 Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.
@@ -97,7 +38,7 @@
         <div class="tab-pane row fade in active" id="tab-3">
             <div class="col-md-6 col-sm-6">
                 <a href="/img/img1.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
-                    <img class="img-responsive" src="/img/img1.jpg" alt="">
+                    <img class="img-responsive" src="/img/img1.jpg" alt="" width="550" height="365">
                 </a>
                 <h3 class="title">Những Nguyên Tắc Nên Biết Khi Phỏng Vấn Với Nhà Tuyển Dụng Nhật Bản</h3>
                 <div>
@@ -105,7 +46,9 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
-                <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
+                <p class="margin-bottom-10">
+                    <a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a>
+                </p>
                 <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
                 <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>
                 <p class="margin-bottom-10"><a href="">Những Điều Có Thể Bạn Chưa Biết Về Chế Độ Thực Tập Sinh Tại Nhật</a></p>

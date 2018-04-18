@@ -4,7 +4,7 @@ Template Name: Metronic - Responsive Website Template build with Twitter Bootstr
 
 /* General body settings */
 body { 
-	color: #3e4d5c; 
+	color: #303030;
 	direction: ltr;
 	font: 400 14px 'Open Sans', Arial, sans-serif;
 	background: #fff;
@@ -36,7 +36,6 @@ a, a:focus, a:hover, a:active {
 }
 a:hover {
 	color: #E02222;
-	text-decoration: underline;
 }
 
 /***
@@ -2198,7 +2197,7 @@ Demo Utils
 	display: block;
 	font-size: 14px;
 	line-height: 20px;
-	background: #F8F8F8;
+	background: #CCFFCC;
 	position: relative;
 }
 .testimonials-v1 blockquote:before {
@@ -2211,14 +2210,13 @@ Demo Utils
   height: 0;
   border-left: 0 inset rgba(0, 0, 0, 0);
   border-right: 22px inset rgba(0, 0, 0, 0);
-  border-top: 22px solid #F8F8F8;
+  border-top: 22px solid #CCFFCC;
 }
 .testimonials-v1 blockquote:after { 
   width: 13px; 
   height: 13px;
   z-index: 23; 
-  content: " "; 
-  display: block !important; 
+  display: block !important;
   position: absolute;
   right: 0;
   bottom: 0;

@@ -1,0 +1,70 @@
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#tab-1" data-toggle="tab">Thực Tập Sinh</a></li>
+    <li><a href="#tab-2" data-toggle="tab">Kỹ Thuật Viên</a></li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane row fade in active" id="tab-1">
+        <div class="portlet-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Tên Công Việc</th>
+                        <th>Địa Điểm Làm Việc</th>
+                        <th>Ngày Tuyển</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach($recruitmentAry['tts'] as $tts):?>
+                    <tr>
+                        <td>
+                            <a href="<?php echo '/tuyen-dung/' . $tts->id . '-' . $tts->url?>"> <?= h($tts->name)?></a>
+                        </td>
+                        <td>
+                            <?= h($tts->basho)?>
+                        </td>
+                        <td>
+                            <?= h($tts->deadline)?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <div class="pull-right">
+                    <a href="/tuyen-dung/thuc-tap-sinh">Xem Thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane row fade" id="tab-2">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Tên Công Việc</th>
+                    <th>Địa Điểm Làm Việc</th>
+                    <th>Ngày Tuyển</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($recruitmentAry['ks'] as $ks):?>
+                    <tr>
+                        <td>
+                            <a href="<?php echo '/tuyen-dung/' . $ks->id . '-' . $ks->url?>"> <?= h($ks->name)?></a>
+                        </td>
+                        <td>
+                            <?= h($ks->basho)?>
+                        </td>
+                        <td>
+                            <?= h($ks->deadline)?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+            <div class="pull-right">
+                <a href="/tuyen-dung/ky-thuat-vien">Xem Thêm</a>
+            </div>
+        </div>
+    </div>
+</div>

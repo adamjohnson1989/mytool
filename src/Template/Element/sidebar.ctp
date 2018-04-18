@@ -1,7 +1,6 @@
-<div class="fanpage margin-bottom-10">
+<div class="support margin-bottom-10">
     <h3 class="title">Tư Vấn Miễn Phí</h3>
-    Ms. Trâm: 08 6870 6878
-
+    <p class="support-item">Ms. Trâm: 08 6870 6878</p>
 </div>
 
 <div class="fanpage margin-bottom-10 testimonials-v1">
@@ -91,7 +90,7 @@
 
 <div class="fanpage margin-bottom-10">
     <h3 class="title">Facebook Fanpage</h3>
-
+    <div class="fb-page" data-href="https://www.facebook.com/xuatkhaulaodonghoanghahcm/" data-tabs="timeline" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/xuatkhaulaodonghoanghahcm/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/xuatkhaulaodonghoanghahcm/">Xuất Khẩu Lao Động Hoàng Hà HCM</a></blockquote></div>
 </div>
 <!-- BEGIN BLOG TAGS -->
 <div class="blog-tags margin-bottom-20">
