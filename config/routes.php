@@ -54,7 +54,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/gioi-thieu/phuong-cham-kinh-doanh', ['controller' => 'Pages', 'action' => 'display', 'phuong-cham-kinh-doanh']);
     $routes->connect('/gioi-thieu/co-cau-to-chuc', ['controller' => 'Pages', 'action' => 'display', 'co-cau-to-chuc']);
     $routes->connect('/tin-tuc', ['controller' => 'News', 'action' => 'display']);
-    $routes->connect('/tuyen-dung/thuc-tap-sinh', ['controller' => 'Recruitments', 'action' => 'display']);
+    $routes->connect('/tuyen-dung/thuc-tap-sinh', ['controller' => 'Recruitments', 'action' => 'display','thuc-tap-sinh']);
+    $routes->connect('/tuyen-dung/ky-thuat-vien', ['controller' => 'Recruitments', 'action' => 'display','ky-thuat-vien']);
     $routes->connect('/tin-tuc', ['controller' => 'News', 'action' => 'display']);
     $routes->connect(
         '/tuyen-dung/:id-:slug', // E.g. /blog/3-CakePHP_Rocks

@@ -1,4 +1,4 @@
-<a class="site-logo" href="/"><img src="/img/logo/logo2.png" alt="Xuất Khẩu Lao Động Hoàng Hà"></a>
+<a class="site-logo" href="/"><img src="/img/logo/logo.png" alt="Xuất Khẩu Lao Động Hoàng Hà"></a>
 
 <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
@@ -8,7 +8,7 @@
         <li><a data-target="#" href="/">Trang Chủ</a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Giới Thiệu
+                Giới Thiệu <i class="fa fa-sort-desc" aria-hidden="true"></i>
             </a>
             <ul class="dropdown-menu">
                 <li><a href="/gioi-thieu/gioi-thieu-cong-ty">Giới Thiệu Công Ty</a></li>
@@ -18,7 +18,7 @@
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                Việc Làm
+                Việc Làm <i class="fa fa-sort-desc" aria-hidden="true"></i>
             </a>
             <ul class="dropdown-menu">
                 <li><a href="/tuyen-dung/thuc-tap-sinh">Thực Tập Sinh</a></li>

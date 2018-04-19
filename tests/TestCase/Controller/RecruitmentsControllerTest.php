@@ -16,7 +16,8 @@ class RecruitmentsControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.recruitments'
+        'app.recruitments',
+        'app.users'
     ];
 
     /**

@@ -223,3 +223,6 @@ if (Configure::read('debug')) {
 }
 
 Plugin::load('Migrations');
+
+Configure::write('TTS',0,true);
+Configure::write('KS',1,true);

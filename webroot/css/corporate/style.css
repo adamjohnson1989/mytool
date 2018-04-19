@@ -4,7 +4,7 @@ Template Name: Metronic - Responsive Website Template build with Twitter Bootstr
 
 /* General body settings */
 body { 
-	color: #303030;
+	color: #000000;
 	direction: ltr;
 	font: 400 14px 'Open Sans', Arial, sans-serif;
 	background: #fff;
@@ -1204,7 +1204,7 @@ steps block and steps block elements
 }
 .content-page a, 
 .sidebar2 a {
-	color: #767F88;
+	color: #000000;
 }
 .content-page a:hover, 
 .sidebar2 a:hover {
