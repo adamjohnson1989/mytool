@@ -79,6 +79,21 @@
                     </div>
                 </div>
             </div>
+            <?php
+                $this->Form->templates([
+            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+            ]);
+            ?>
+            <div class="form-group">
+                <?php echo $this->Form->label('short_desc','Short Description', ['class' => 'col-md-3 control-label']); ?>
+                <?php echo $this->Form->input('short_desc',[
+                'type' => 'textarea',
+                'label' => false,
+                'placeholder'=>'Short Description',
+                'class' => 'edittextarea form-control',
+                'id'  => 'short_desc'
+                ]) ?>
+            </div>
             <!-- Nội Dung Tin Tức-->
             <?php
                 $this->Form->templates([
@@ -129,7 +144,7 @@
 </div>
 <script type="text/javascript">
     tinymce.init({
-        selector: "textarea",
+        selector: "#description",
         theme: "modern",
         plugins: [
             'advlist autolink lists link image charmap print preview anchor textcolor',

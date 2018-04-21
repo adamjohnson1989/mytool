@@ -41,6 +41,7 @@ class News extends Entity
         'tag' => true,
         'categories_id' => true,
         'url' => true,
-        'status' => true
+        'status' => true,
+        'short_desc' => true
     ];
 }

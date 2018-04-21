@@ -11,7 +11,7 @@ use Cake\Event\Event;
  *
  * @method \App\Model\Entity\Recruitment[] paginate($object = null, array $settings = [])
  */
-class RecruitmentsController extends AppController
+class NewsController extends AppController
 {
     public function beforeRender(Event $event)
     {
@@ -25,16 +25,19 @@ class RecruitmentsController extends AppController
      */
     public function display($param)
     {
-        $condition = $param == 'thuc-tap-sinh' ? Configure::read('TTS') : Configure::read('KS');
+        $catUrl = $this->request->param('slug');
         $this->paginate = [
-            'contain' => ['Users'],
-            'limit'   => 10,
-            'order'   => ['id' => 'desc'],
-            'conditions' => ['type' => $condition]
+            'contain' => ['Categories'],
+            'limit'   => ITEM_PER_PAGE_FRONTEND
         ];
-        $recruitments = $this->paginate($this->Recruitments);
-        $this->set(compact('recruitments'));
-        $this->set('_serialize', ['recruitments']);
+        $query = $this->News->find('all',['contain' => ['Categories']])
+            ->select(['id', 'name','thumb','short_desc','url','created_at'])
+            ->where(['News.status' => 1,'Categories.url' => $param])
+            ->order(['News.id' => 'DESC']);
+        $news = $this->paginate($query);
+        $this->set(compact('news'));
+        $this->set('_serialize', ['news']);
+        $this->set('category_url',$param);
     }
 
     /**
@@ -46,12 +49,11 @@ class RecruitmentsController extends AppController
      */
     public function view($id = null)
     {
-        $recruitment = $this->Recruitments->get($id, [
-            'contain' => ['Users']
+        $new = $this->News->get($id, [
+            'contain' => ['Categories']
         ]);
-
-        $this->set('recruitment', $recruitment);
-        $this->set('_serialize', ['recruitment']);
+        $this->set('new', $new);
+        $this->set('_serialize', ['new']);
     }
 
 }

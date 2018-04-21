@@ -218,11 +218,19 @@ Type::build('datetime')
  * Only try to load DebugKit in development mode
  * Debug Kit should not be installed on a production system
  */
-if (Configure::read('debug')) {
-    Plugin::load('DebugKit', ['bootstrap' => true]);
-}
-
+//if (Configure::read('debug')) {
+//    Plugin::load('DebugKit', ['bootstrap' => true]);
+//}
+//add this
 Plugin::load('Migrations');
 
 Configure::write('TTS',0,true);
 Configure::write('KS',1,true);
+define('ITEM_PER_PAGE_ADMIN',15);
+define('ITEM_PER_PAGE_FRONTEND',15);
+define('URL','mytool.local');
+
+define('URL_TIN_TUC','tin-tuc-su-kien');
+define('URL_VAN_HOA','van-hoa-nhat-ban');
+define('URL_TIENG_NHAT','tieng-nhat');
+define('URL_KINH_NGHIEM','kinh-nghiem');

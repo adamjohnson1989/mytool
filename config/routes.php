@@ -56,7 +56,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/tin-tuc', ['controller' => 'News', 'action' => 'display']);
     $routes->connect('/tuyen-dung/thuc-tap-sinh', ['controller' => 'Recruitments', 'action' => 'display','thuc-tap-sinh']);
     $routes->connect('/tuyen-dung/ky-thuat-vien', ['controller' => 'Recruitments', 'action' => 'display','ky-thuat-vien']);
-    $routes->connect('/tin-tuc', ['controller' => 'News', 'action' => 'display']);
+
     $routes->connect(
         '/tuyen-dung/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
         ['controller' => 'Recruitments', 'action' => 'view']
@@ -66,6 +66,51 @@ Router::scope('/', function (RouteBuilder $routes) {
         ->setPatterns([
             'id' => '[0-9]+',
         ]);
+
+    /*Begin Route for new*/
+    $routes->connect('/tin-tuc/tin-tuc-su-kien', ['controller' => 'News', 'action' => 'display','tin-tuc-su-kien']);
+    $routes->connect('/tin-tuc/van-hoa-nhat-ban', ['controller' => 'News', 'action' => 'display','van-hoa-nhat-ban']);
+    $routes->connect('/tin-tuc/tieng-nhat', ['controller' => 'News', 'action' => 'display','tieng-nhat']);
+    $routes->connect('/tin-tuc/kinh-nghiem', ['controller' => 'News', 'action' => 'display','kinh-nghiem']);
+
+    $routes->connect(
+        '/tin-tuc/van-hoa-nhat-ban/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
+        ['controller' => 'News', 'action' => 'view']
+    )
+        ->setPass(['id', 'slug'])
+        // Define a pattern that `id` must match.
+        ->setPatterns([
+            'id' => '[0-9]+',
+        ]);
+    $routes->connect(
+        '/tin-tuc/van-hoa-nhat-ban/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
+        ['controller' => 'News', 'action' => 'view']
+    )
+        ->setPass(['id', 'slug'])
+        // Define a pattern that `id` must match.
+        ->setPatterns([
+            'id' => '[0-9]+',
+        ]);
+    $routes->connect(
+        '/tin-tuc/tieng-nhat/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
+        ['controller' => 'News', 'action' => 'view']
+    )
+        ->setPass(['id', 'slug'])
+        // Define a pattern that `id` must match.
+        ->setPatterns([
+            'id' => '[0-9]+',
+        ]);
+    $routes->connect(
+        '/tin-tuc/kinh-nghiem/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
+        ['controller' => 'News', 'action' => 'view']
+    )
+        ->setPass(['id', 'slug'])
+        // Define a pattern that `id` must match.
+        ->setPatterns([
+            'id' => '[0-9]+',
+        ]);
+    /*End Route for new*/
+
     $routes->connect(
         '/tuyen-dung/slug',
         ['controller' => 'Recruitments', 'action' => 'view']

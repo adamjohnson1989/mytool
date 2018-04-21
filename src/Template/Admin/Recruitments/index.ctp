@@ -6,12 +6,6 @@
 ?>
 
 <div class="row" id="association">
-    <!-- BEGIN PAGE HEADER-->
-    <h3 class="page-title">
-        Danh Sách Đơn Hàng Tuyển Dụng</small>
-
-    </h3>
-    <!-- END PAGE HEADER-->
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet box green">

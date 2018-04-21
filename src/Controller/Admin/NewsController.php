@@ -25,7 +25,9 @@ class NewsController extends AdminController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users','Categories']
+            'contain' => ['Users','Categories'],
+            'limit'   => ITEM_PER_PAGE_ADMIN,
+            'order'   => ['id' => 'desc'],
         ];
         $news = $this->paginate($this->News);
 

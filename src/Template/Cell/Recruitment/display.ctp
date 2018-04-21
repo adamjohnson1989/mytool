@@ -30,8 +30,8 @@
                     <?php endforeach; ?>
                     </tbody>
                 </table>
-                <div class="pull-right">
-                    <a href="/tuyen-dung/thuc-tap-sinh">Xem Thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                <div class="pull-right" style="padding-right: 15px">
+                    <a href="/tuyen-dung/thuc-tap-sinh" >Xem Thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -62,8 +62,8 @@
                 <?php endforeach; ?>
                 </tbody>
             </table>
-            <div class="pull-right">
-                <a href="/tuyen-dung/ky-thuat-vien">Xem Thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            <div class="pull-right" style="padding-right: 15px">
+                <a href="/tuyen-dung/ky-thuat-vien" style="padding-right: 15px">Xem Thêm <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>

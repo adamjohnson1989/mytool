@@ -26,7 +26,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search...">
 							<span class="input-group-btn">
-							<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+							<a href="javascript:;" class="btn submit"><i class="fa fa-search" aria-hidden="true"></i></a>
 							</span>
                 </div>
             </form>
@@ -35,7 +35,7 @@
         <?php $controller = $this->request->params['controller']; ?>
         <li class="start open <?= $controller == 'Dashboards'? 'active' : ''?>">
             <a href="javascript:;">
-                <i class="icon-home"></i>
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
                 <span class="title">Dashboard</span>
                 <span class="selected"></span>
                 <span class="arrow open"></span>
@@ -44,14 +44,14 @@
         <!-- begin manager tag for web-->
         <li class="<?= $controller == 'Recruitments'? 'active' : ''?>">
             <a href="<?php echo $this->Url->build(['controller' => 'Recruitments','action' => 'index']) ?>">
-                <i class="icon-rocket"></i>
+                <i class="fa fa-street-view" aria-hidden="true"></i>
                 <span class="title">Thông tin tuyển dụng</span>
                 <span class="arrow "></span>
             </a>
         </li>
         <li>
             <a href="javascript:void(0)">
-                <i class="icon-rocket"></i>
+                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
                 <span class="title">Tin Tức</span>
                 <span class="arrow "></span>
             </a>
@@ -69,7 +69,7 @@
         <!-- end manager tag for web-->
         <li>
             <a href="javascript:void(0)">
-                <i class="icon-rocket"></i>
+                <i class="fa fa-address-card-o" aria-hidden="true"></i>
                 <span class="title">Tổ chức tiếp nhận</span>
                 <span class="arrow "></span>
             </a>
@@ -86,7 +86,7 @@
         </li>
         <li class="<?= $controller == 'Members'? 'active' : ''?>">
             <a href="<?php echo $this->Url->build(['controller' => 'Members','action' => 'index']) ?>">
-                <i class="icon-rocket"></i>
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 <span class="title">Thông tin thực tập sinh</span>
                 <span class="arrow "></span>
             </a>

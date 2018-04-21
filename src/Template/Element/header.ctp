@@ -25,7 +25,7 @@
                 <li><a href="/tuyen-dung/ky-thuat-vien">Kỹ Sư - Kỹ Thuật Viên</a></li>
             </ul>
         </li>
-        <li><a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="/tin-tuc">Tin Tức</a>
+        <li><a class="dropdown-toggle" href="/tin-tuc/tin-tuc-su-kien">Tin Tức</a>
         </li>
         <li><a href="/lien-he">Liên Hệ</a></li>
         <!-- BEGIN TOP SEARCH -->
