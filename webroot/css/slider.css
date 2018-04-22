@@ -92,7 +92,7 @@
 .carousel-slider .item {
     width: 100%;
     height: 100%;
-    min-height: 580px;
+    min-height: 450px;
 }
 
 /* Carousel Item Background Images */
@@ -154,14 +154,14 @@
 }
 
 .carousel-slider .carousel-title-v5 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 200;
     line-height: 1.4;
     color: #fff;
 }
 
 .carousel-slider .carousel-title-v6 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 200;
     line-height: 1.4;
     color: #3f5862;

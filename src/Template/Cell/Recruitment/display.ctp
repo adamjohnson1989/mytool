@@ -5,13 +5,13 @@
 <div class="tab-content">
     <div class="tab-pane row fade in active" id="tab-1">
         <div class="portlet-body">
-            <div class="table-responsive">
+            <div>
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Tên Công Việc</th>
-                        <th>Địa Điểm Làm Việc</th>
-                        <th>Ngày Tuyển</th>
+                        <th scope="col">Tên Công Việc</th>
+                        <th scope="col">Địa Điểm Làm Việc</th>
+                        <th scope="col">Ngày Tuyển</th>
                     </tr>
                     </thead>
                     <tbody>

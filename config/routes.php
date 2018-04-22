@@ -72,7 +72,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/tin-tuc/van-hoa-nhat-ban', ['controller' => 'News', 'action' => 'display','van-hoa-nhat-ban']);
     $routes->connect('/tin-tuc/tieng-nhat', ['controller' => 'News', 'action' => 'display','tieng-nhat']);
     $routes->connect('/tin-tuc/kinh-nghiem', ['controller' => 'News', 'action' => 'display','kinh-nghiem']);
-
+    $routes->connect('/lien-he', ['controller' => 'Contacts', 'action' => 'display']);
     $routes->connect(
         '/tin-tuc/van-hoa-nhat-ban/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
         ['controller' => 'News', 'action' => 'view']

@@ -14,13 +14,15 @@ Author: Son Nguyen
     <title><?= $this->fetch('title') ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="" name="description"/>
+    <meta name="description" content="Xuất Khẩu Lao Động, Xuất Khẩu Lao Động Nhật Bản, Uy Tín " />
+    <meta name="keywords" content="Xuất Khẩu Lao Động, Nhật Bản, XKLD, Uy Tín, Không Mô Giới, Kinh Nghiệm Sống Ở Nhật Bản,
+    Tin Tức, Sự Kiện, XKLD Nhật Bản, Văn Hóa Nhật Bản, Tiếng Nhật, Chi Phí Minh Bạch
+    " />
     <meta content="" name="author"/>
 
     <!-- BEGIN GLOBAL STYLES -->
     <?=
-        $this->Html->css(['animate.css','bootstrap/bootstrap.min.css',
-                            'fancybox/fancybox.css','carousel/carousel.css','components.css','slider.css',
+        $this->Html->css(['animate.css','bootstrap/bootstrap.min.css','carousel/carousel.css','components.css','slider.css',
                             'corporate/style.css','corporate/style-responsive.css','corporate/themes/red.css','corporate/custom.css'
                         ]);
     ?>
@@ -110,7 +112,7 @@ Author: Son Nguyen
 <![endif]-->
 <?=
     $this->Html->script(['jquery.min.js','jquery-migrate.min.js','jquery-ui/jquery-ui.min.js','bootstrap/bootstrap.min.js',
-                         'fancybox/jquery.fancybox.pack.js','carousel/owl.carousel.min.js','corporate/layout.js','pages/bs-carousel.js'
+                         'carousel/owl.carousel.min.js','corporate/layout.js','pages/bs-carousel.js'
                         ]);
 ?>
 

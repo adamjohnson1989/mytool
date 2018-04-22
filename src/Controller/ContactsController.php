@@ -11,7 +11,7 @@ use Cake\Event\Event;
  *
  * @method \App\Model\Entity\Recruitment[] paginate($object = null, array $settings = [])
  */
-class RecruitmentsController extends AppController
+class ContactsController  extends AppController
 {
     public function beforeRender(Event $event)
     {
@@ -23,19 +23,9 @@ class RecruitmentsController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function display($param)
+    public function display()
     {
-        $condition = $param == 'thuc-tap-sinh' ? Configure::read('TTS') : Configure::read('KS');
-        $this->paginate = [
-            'contain' => ['Users'],
-            'limit'   => 10,
-            'order'   => ['id' => 'desc'],
-            'conditions' => ['type' => $condition]
-        ];
-        $recruitments = $this->paginate($this->Recruitments);
-        $this->set(compact('recruitments'));
-        $this->set('_serialize', ['recruitments']);
-        $this->set('type',$param);
+
     }
 
     /**
@@ -47,12 +37,7 @@ class RecruitmentsController extends AppController
      */
     public function view($id = null)
     {
-        $recruitment = $this->Recruitments->get($id, [
-            'contain' => ['Users']
-        ]);
 
-        $this->set('recruitment', $recruitment);
-        $this->set('_serialize', ['recruitment']);
     }
 
 }

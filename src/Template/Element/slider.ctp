@@ -11,12 +11,15 @@
         <div class="item carousel-item-eight active">
             <div class="container">
                 <div class="carousel-position-six text-uppercase text-center">
-                    <h2 class="margin-bottom-20 animate-delay carousel-title-v5" data-animation="animated fadeInDown">
-                        Expore the power <br/>
-                        <span class="carousel-title-normal">of Metronic</span>
+                    <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
+                        Tư Vấn Chi Tiết
+                        <br>Miễn Phí
                     </h2>
-                    <p class="carousel-subtitle-v5 border-top-bottom margin-bottom-30" data-animation="animated fadeInDown">This is what you were looking for</p>
-                    <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Purchase Now!</a>
+                    <p class="carousel-subtitle-v1 border-top-bottom margin-bottom-30" data-animation="animated fadeInDown">Không Qua Mô Giới</p>
+
+                    <p class="carousel-subtitle-v6 text-uppercase" data-animation="animated fadeInDown">
+                        Điện Thoại Tư Vấn: 08 6870 6878
+                    </p>
                 </div>
             </div>
         </div>
@@ -26,16 +29,9 @@
             <div class="container">
                 <div class="carousel-position-six">
                     <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
-                        Need a website design?
+                        Chi Phí Minh Bạch
+                        <br>Rõ Ràng
                     </h2>
-                    <p class="carousel-subtitle-v6 text-uppercase" data-animation="animated fadeInDown">
-                        This is what you were looking for
-                    </p>
-                    <p class="carousel-subtitle-v7 margin-bottom-30" data-animation="animated fadeInDown">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                        Sed est nunc, sagittis at consectetur id.
-                    </p>
-                    <a class="carousel-btn-green" href="#" data-animation="animated fadeInUp">Purchase Now!</a>
                 </div>
             </div>
         </div>
@@ -45,14 +41,11 @@
             <div class="container">
                 <div class="carousel-position-six">
                     <h2 class="animate-delay carousel-title-v6 text-uppercase" data-animation="animated fadeInDown">
-                        Powerful &amp; Clean
+                        Đội Ngũ Nhân Viên
+                        <br> Tận Tình, Tận Tâm
                     </h2>
                     <p class="carousel-subtitle-v6 text-uppercase" data-animation="animated fadeInDown">
-                        Responsive Website &amp; Admin Theme
-                    </p>
-                    <p class="carousel-subtitle-v7 margin-bottom-30" data-animation="animated fadeInDown">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                        Sed est nunc, sagittis at consectetur id.
+                        Điện Thoại Tư Vấn: 08 6870 6878
                     </p>
                 </div>
             </div>

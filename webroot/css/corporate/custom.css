@@ -40,3 +40,24 @@ h3.title{
     font-weight: 500;
     font-size: 22px;
 }
+.recruitment-detail p{
+    margin-bottom: 10px
+}
+.content-page .recruitment-detail h4.header-content {
+    font-weight: 500;
+}
+
+.content-page .recruitment-detail .bl-info{
+    padding-left: 20px;
+}
+.content-page .recruitment-detail hr{
+    margin: 0px 0;
+    border: 0;
+    border-top: 1px solid #3A3A3A;
+    border-bottom: 0;
+}
+
+.map{
+    padding:5px 15px;
+    text-align: center;
+}

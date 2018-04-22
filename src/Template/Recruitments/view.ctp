@@ -12,8 +12,14 @@
         </div>
         <ul class="blog-info">
           <li><i class="fa fa-user"></i> By admin</li>
-          <li><i class="fa fa-calendar"></i> 25/07/2013</li>
-          <li><i class="fa fa-tags"></i> Metronic, Keenthemes, UI Design</li>
+          <li><i class="fa fa-calendar"></i><?= $recruitment->created_at?></li>
+          <li><i class="fa fa-tags"></i>
+            <?php if($recruitment->type == 0):?>
+              <a href="/tuyen-dung/thuc-tap-sinh">Thực Tập Sinh</a>
+            <?php else: ?>
+              <a href="/tuyen-dung/ky-thuat-vien">Kỹ Sư, Kỹ Thuật Viên</a>
+            <?php endif; ?>
+          </li>
         </ul>
       </div>
     <div class="fb-comments" data-href="<?php echo URL . '/tuyen-dung/' . $recruitment->id . '-' . $recruitment->url ?>" data-width="100%" data-numposts="10"></div>

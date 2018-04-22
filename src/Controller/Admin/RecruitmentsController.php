@@ -65,7 +65,7 @@ class RecruitmentsController extends AdminController
             foreach ($dataArr as $k => $data){
                 $dataSave[$k] = htmlspecialchars($data);
             }
-            $dataSave['created_at'] = date('m/d/Y', time());
+            $dataSave['created_at'] = date('d/m/Y', time());
             $dataSave['users_id'] = $this->Auth->user('id');
             $recruitment = $this->Recruitments->patchEntity($recruitment, $dataSave);
             if ($this->Recruitments->save($recruitment)) {
@@ -97,7 +97,7 @@ class RecruitmentsController extends AdminController
             foreach ($dataArr as $k => $data){
                 $dataSave[$k] = htmlspecialchars($data);
             }
-            $dataSave['update_at'] = date('m/d/Y', time());
+            $dataSave['update_at'] = date('d/m/Y', time());
             $dataSave['users_id'] = $this->Auth->user('id');
             $recruitment = $this->Recruitments->patchEntity($recruitment, $dataSave);
             if ($this->Recruitments->save($recruitment)) {
