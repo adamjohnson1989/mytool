@@ -74,6 +74,15 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/tin-tuc/kinh-nghiem', ['controller' => 'News', 'action' => 'display','kinh-nghiem']);
     $routes->connect('/lien-he', ['controller' => 'Contacts', 'action' => 'display']);
     $routes->connect(
+        '/tin-tuc/tin-tuc-su-kien/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
+        ['controller' => 'News', 'action' => 'view']
+    )
+        ->setPass(['id', 'slug'])
+        // Define a pattern that `id` must match.
+        ->setPatterns([
+            'id' => '[0-9]+',
+        ]);
+    $routes->connect(
         '/tin-tuc/van-hoa-nhat-ban/:id-:slug', // E.g. /blog/3-CakePHP_Rocks
         ['controller' => 'News', 'action' => 'view']
     )

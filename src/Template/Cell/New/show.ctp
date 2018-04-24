@@ -21,6 +21,9 @@
     <?php if(count($news)):?>
         <?php foreach($news as $newItem):?>
             <p class="margin-bottom-10">
+                <a href="<?php echo '/tin-tuc/' . $category_url . '/' . $newItem['id'] . '-' . $newItem['url']?>">
+                    <img class="thumbnail-img" style="width:70px; height:50px" src="<?= $newItem['thumb'] ?>" scale="0">
+                </a>
                 <a href="<?php echo '/tin-tuc/' . $category_url . '/' . $newItem['id'] . '-' . $newItem['url']?>"><?= $newItem['name']?></a>
             </p>
         <?php endforeach; ?>

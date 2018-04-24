@@ -6,7 +6,6 @@
     <?= h($recruitment->name) ?>
   </h2>
   <div class="pg-new-detail recruitment-detail">
-      <div class="row">
         <div class="col-md-12 col-sm-12">
           <?= htmlspecialchars_decode($recruitment->description)?>
         </div>
@@ -21,7 +20,6 @@
             <?php endif; ?>
           </li>
         </ul>
-      </div>
     <div class="fb-comments" data-href="<?php echo URL . '/tuyen-dung/' . $recruitment->id . '-' . $recruitment->url ?>" data-width="100%" data-numposts="10"></div>
   </div>
 </div>

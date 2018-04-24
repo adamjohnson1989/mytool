@@ -33,7 +33,7 @@ h3.title{
     font-weight: 500;
     font-size: 25px;
     border-bottom: 2px solid red;
-    padding-bottom: 10px;
+    padding:5px 15px;
 }
 
 .content-page .item-title{
@@ -60,4 +60,12 @@ h3.title{
 .map{
     padding:5px 15px;
     text-align: center;
+}
+
+.articles_items_image {
+    max-width: 100% !important;
+}
+.tab-pane .new-item a img {
+    float: left;
+    margin-right: 10px;
 }

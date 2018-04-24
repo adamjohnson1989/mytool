@@ -13,8 +13,8 @@ class UploadHelper extends Helper
     public function __construct($fileData,$resize_with=Null,$resize_height=Null,$folderUpload=Null)
     {
         $this->fileArr = $fileData;
-        $this->resizeWidth = $resize_with ? $resize_with : 226;
-        $this->resizeHeight= $resize_height ? $resize_height : 200;
+        $this->resizeWidth = $resize_with ? $resize_with : 720;
+        $this->resizeHeight= $resize_height ? $resize_height : 487;
         $this->folderUp = $folderUpload != null ? $folderUpload : 'default';
     }
     /*Resize image */

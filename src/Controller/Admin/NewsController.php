@@ -175,19 +175,9 @@ class NewsController extends AdminController
                 header("HTTP/1.1 400 Invalid file name,Bad request");
                 return;
             }
-            // Validating Image file type by extensions
-            if(!in_array(strtolower(pathinfo($temp['name'], PATHINFO_EXTENSION)), array("gif", "jpg", "png"))){
-                header("HTTP/1.1 400 Invalid extension,Bad request");
-                return;
-            }
-            $fileExt = pathinfo($temp['name'], PATHINFO_EXTENSION);
-            $fileName = 'uploads' . DS . 'tinymce' . DS . time() . "." . $fileExt;
-            $uploadPath = WWW_ROOT . "uploads" . DS . 'tinymce' . DS;
-            if (!file_exists(WWW_ROOT . "uploads" . DS . 'tinymce' . DS)) {
-                mkdir(WWW_ROOT . "uploads" . DS . 'tinymce' . DS, 0777, true);
-            }
-            move_uploaded_file($temp['tmp_name'], WWW_ROOT . $fileName);
-            echo json_encode(array('file_path' => DS . $fileName));
+            //
+            $uploadResult = $this->upload($temp,'720','487','tinymce');
+            echo json_encode(array('file_path' => $uploadResult['imgPath']));
         }
         die;
     }

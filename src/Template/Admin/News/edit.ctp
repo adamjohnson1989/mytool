@@ -149,7 +149,7 @@
 </div>
 <script type="text/javascript">
     tinymce.init({
-        selector: "textarea",
+        selector: "#description",
         theme: "modern",
         plugins: [
             'advlist autolink lists link image charmap print preview anchor textcolor',

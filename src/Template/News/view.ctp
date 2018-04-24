@@ -6,7 +6,6 @@
     <?= h($new->name) ?>
   </h2>
   <div class="pg-new-detail recruitment-detail">
-      <div class="row">
         <div class="col-md-12 col-sm-12">
           <?= htmlspecialchars_decode($new->description)?>
         </div>
@@ -15,7 +14,6 @@
           <li><i class="fa fa-calendar"></i> <?= h($new->created_at) ?></li>
           <li><i class="fa fa-tags"></i><a href="<?php echo '/tin-tuc/' . $new->category->url ?>"> <?= $new->category->name?></a></li>
         </ul>
-      </div>
     <div class="fb-comments" data-href="<?php echo URL . '/tin-tuc/' .$new->category->url . '/' . $new->id . '-' . $new->url ?>" data-width="100%" data-numposts="10"></div>
   </div>
 </div>
