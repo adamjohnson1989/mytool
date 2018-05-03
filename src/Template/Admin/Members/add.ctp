@@ -26,6 +26,10 @@
                                 <a href="#tab_15_3" data-toggle="tab">
                                     Kinh Nghiệm Làm Việc </a>
                             </li>
+                            <li>
+                                <a href="#tab_15_4" data-toggle="tab">
+                                    Thành Phần Gia Đình </a>
+                            </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_15_1">
@@ -267,10 +271,34 @@
                                     <?= $this->Form->end() ?>
                                 </div>
                             <div class="tab-pane" id="tab_15_2">
-2
+                                <div id="member-info-2"></div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div style="text-align: center">
+                                            <button class="btn btn-circle blue"  onclick="saveMemberInfo2(); return false">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane" id="tab_15_3">
-
+                                <div id="member-info-3"></div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div style="text-align: center">
+                                            <button class="btn btn-circle blue"  onclick="saveMemberInfo3(); return false">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab_15_4">
+                                <div id="member-info-4"></div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div style="text-align: center">
+                                            <button class="btn btn-circle blue"  onclick="saveMemberInfo3(); return false">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -303,17 +331,64 @@
             success: function(response){
                 jQuery('#loading').hide();
                 var res = jQuery.parseJSON(response);
-                console.log(res.status);
                 if(res.status == 1){
                     var x = '<div style="max-width:600px;"><h3>Thông Tin Cơ Bản Của Ứng Viên Đã Được Lưu.</h3>';
-                    x += '<p>Thêm Thông Tin Quá Trình Học Tập Của Ứng Viên?</p><p><button class="btn btn-circle green" data-fancybox-close onclick="updateInfo()">Có</button>';
+                    x += '<p>Thêm Thông Tin Quá Trình Học Tập Của Ứng Viên?</p><p><button class="btn btn-circle green" data-fancybox-close onclick="updateInfo(2)">Có</button>';
                     x += '<button data-fancybox-close class="btn btn-circle dark">Không</button></p></div>';
                     var instance = $.fancybox.open(x);
                 }
             }
         });
     }
-    function updateInfo() {
-        jQuery('a[href="#tab_15_2"]').click();
+    function updateInfo(i) {
+        if(i == 2){
+            jQuery('a[href="#tab_15_2"]').click();
+        }else if(i == 3){
+            jQuery('a[href="#tab_15_3"]').click();
+        }else if(i == 4){
+            jQuery('a[href="#tab_15_4"]').click();
+        }
     }
+    
+    var memberInfo2 = document.getElementById('member-info-2');
+    var memInfo2 = new Handsontable(memberInfo2, {
+        data: [
+            ['', '','']
+        ],
+        colHeaders: ['Từ', 'Đến', 'Tên Trường'],
+        rowHeaders: true,
+        dropdownMenu: true,
+        minSpareRows: 1,
+        contextMenu: true,
+        autoColumnSize: true,
+        colWidths: [150,150,600],
+        stretchH: 'none'
+    });
+
+    function saveMemberInfo2() {
+        jQuery('#loading').show();
+        var memInfo2Data = memInfo2.getData();
+        memInfo2Data.splice(-1,1);
+        var form_data = JSON.stringify(memInfo2Data);
+        console.log(form_data);
+        jQuery.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: '/admin/benkyos/add',
+            data: form_data,
+            success: function(response){
+                jQuery('#loading').hide();
+                var res = jQuery.parseJSON(response);
+                if(res.status == 1){
+                    var x = '<div style="max-width:600px;"><h3>Thông Tin Quá Trình Học Tập Của Ứng Viên Đã Được Lưu.</h3>';
+                    x += '<p>Thêm Thông Tin Quá Trình Làm Việc Của Ứng Viên?</p><p><button class="btn btn-circle green" data-fancybox-close onclick="updateInfo(3)">Có</button>';
+                    x += '<button data-fancybox-close class="btn btn-circle dark">Không</button></p></div>';
+                    var instance = $.fancybox.open(x);
+                }
+            }
+        });
+    }
+
+
+
 </script>

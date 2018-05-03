@@ -74,7 +74,8 @@ class MembersController extends AdminController
                 $dataAry['image'] = isset($imgUploadedAry['imgPath']) ? $imgUploadedAry['imgPath'] : '';
             /*End Upload file*/
             $member = $this->Members->patchEntity($member, $dataAry);
-            if ($this->Members->save($member)) {
+            if ($obj = $this->Members->save($member)) {
+                $this->request->session()->write('Member.id', $obj->id);
                 $reVal['status'] = 1;
                 $reVal['msg'] = 'Thông tin cơ bản của ứng viên đã được tạo';
 

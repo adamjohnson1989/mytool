@@ -33,6 +33,20 @@ Author: Son Nguyen
 
     <!-- END GLOBAL STYLES -->
     <?= $this->fetch('css') ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <?=
+    $this->Html->script(['jquery-migrate.min.js','bootstrap/bootstrap.min.js',
+    'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
+    'jquery.blockui.min.js','jquery.cokie.min.js','uniform/jquery.uniform.min.js','bootstrap-switch/bootstrap-switch.min.js',
+    'jquery-validation/jquery.validate.min.js','jquery-validation/additional-methods.min.js',
+    'bootstrap-wizard/jquery.bootstrap.wizard.min.js','handsontable/handsontable.min.js','select2/select2.min',
+    'metronic.js','layout.js','quick-sidebar.js','demo.js','pages/form-wizard.js',
+    'bootstrap-fileinput/bootstrap-fileinput.js','custom.js'
+    ]);
+    ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <?= $this->fetch('script') ?>
     <?= $this->Html->meta('icon') ?>
 </head>
 <!-- BEGIN BODY -->
@@ -94,25 +108,14 @@ Author: Son Nguyen
             $this->Html->script(['respond.min.js','excanvas.min.js']);
     ?>
 <![endif]-->
-<?=
-    $this->Html->script(['jquery.min.js','jquery-migrate.min.js','bootstrap/bootstrap.min.js',
-        'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
-        'jquery.blockui.min.js','jquery.cokie.min.js','uniform/jquery.uniform.min.js','bootstrap-switch/bootstrap-switch.min.js',
-        'jquery-validation/jquery.validate.min.js','jquery-validation/additional-methods.min.js',
-        'bootstrap-wizard/jquery.bootstrap.wizard.min.js','handsontable/handsontable.min.js','select2/select2.min',
-        'metronic.js','layout.js','quick-sidebar.js','demo.js','pages/form-wizard.js',
-        'bootstrap-fileinput/bootstrap-fileinput.js'
-    ]);
-?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
-<?= $this->fetch('script') ?>
+
 <script>
     jQuery(document).ready(function() {
         Metronic.init(); // init metronic core components
         Layout.init(); // init current layout
         QuickSidebar.init(); // init quick sidebar
-        Demo.init(); // init demo features
         FormWizard.init();
+        Custom.init();
     });
 </script>
 <!-- END JAVASCRIPTS -->

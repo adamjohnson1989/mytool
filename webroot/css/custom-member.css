@@ -11,3 +11,6 @@
     border-radius: 50% !important;
     padding: 0px;
 }
+#member-info-2,#member-info-3{
+    min-height: 60px;
+}
