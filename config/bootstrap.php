@@ -229,6 +229,9 @@ Configure::write('KS',1,true);
 define('ITEM_PER_PAGE_ADMIN',15);
 define('ITEM_PER_PAGE_FRONTEND',15);
 define('URL','mytool.local');
+define('AUTH_ALL',0);
+define('AUTH_MODE',1);
+define('AUTH_EDITOR',2);
 
 define('URL_TIN_TUC','tin-tuc-su-kien');
 define('URL_VAN_HOA','van-hoa-nhat-ban');

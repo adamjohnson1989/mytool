@@ -43,6 +43,11 @@ class Member extends Entity
         'taiju' => true,
         'iq' => true,
         'kekkon' => true,
-        'company' => true
+        'company' => true,
+        'ketsueki' => true,
+        'migime'  => true,
+        'hidarime' => true,
+        'te' => true,
+        'gender' => true
     ];
 }

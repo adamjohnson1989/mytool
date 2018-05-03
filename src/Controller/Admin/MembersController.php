@@ -3,8 +3,8 @@ namespace App\Controller\Admin;
 
 use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
-require_once (ROOT . DS . 'vendor' . DS . 'mpdf' . DS .  'mpdf.php');
-use mPDF;
+//require_once (ROOT . DS . 'vendor' . DS . 'mpdf' . DS .  'mpdf.php');
+//use mPDF;
 
 /**
  * Members Controller
@@ -61,14 +61,29 @@ class MembersController extends AdminController
     public function add()
     {
         $member = $this->Members->newEntity();
-        if ($this->request->is('post')) {
-            $member = $this->Members->patchEntity($member, $this->request->getData());
-            if ($this->Members->save($member)) {
-                $this->Flash->success(__('The member has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+        if ($this->request->is('ajax')) {
+            $reVal = ['status' => 0];
+            $dataAry = $this->request->getData();
+            if(isset($dataAry['action1'])){
+                unset($dataAry['action1']);
             }
-            $this->Flash->error(__('The member could not be saved. Please, try again.'));
+            /*Begin Upload file*/
+                $imgInfo = $dataAry['image'];
+                $imgUploadedAry = $this->upload($imgInfo,640,480,'member');
+                unset($dataAry['image']);
+                $dataAry['image'] = isset($imgUploadedAry['imgPath']) ? $imgUploadedAry['imgPath'] : '';
+            /*End Upload file*/
+            $member = $this->Members->patchEntity($member, $dataAry);
+            if ($this->Members->save($member)) {
+                $reVal['status'] = 1;
+                $reVal['msg'] = 'Thông tin cơ bản của ứng viên đã được tạo';
+
+            }else{
+                $reVal['status'] = 0;
+                $reVal['msg'] = 'Thông tin cơ bản của ứng viên chưa đúng. Hãy kiểm tra lại';
+            }
+            echo json_encode($reVal);
+            die;
         }
         $companys = $this->Members->Companys->find('list', ['limit' => 200]);
         $this->set(compact('member', 'companys'));

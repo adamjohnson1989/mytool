@@ -5,7 +5,7 @@
   <h2 class="pg-new-title">
     <?= h($new->name) ?>
   </h2>
-  <div class="pg-new-detail recruitment-detail">
+  <div class="pg-new-detail new-detail">
         <div class="col-md-12 col-sm-12">
           <?= htmlspecialchars_decode($new->description)?>
         </div>

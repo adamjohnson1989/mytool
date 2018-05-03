@@ -58,14 +58,27 @@ h3.title{
 }
 
 .map{
-    padding:5px 15px;
     text-align: center;
 }
 
-.articles_items_image {
+.new-detail p img,.articles_items_image {
     max-width: 100% !important;
 }
 .tab-pane .new-item a img {
     float: left;
     margin-right: 10px;
+}
+.list-group-item{
+    border: 0px;
+    min-height: 60px;
+    background: none;
+    padding: 5px;
+    margin: 0px 0px 1px 0px !important;
+    display: inline-block;
+}
+.tab-content .new-item{
+    padding: 5px !important;
+}
+.tab-content .new-main{
+    padding-top: 5px;
 }

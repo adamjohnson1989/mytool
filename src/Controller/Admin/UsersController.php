@@ -3,6 +3,7 @@ namespace App\Controller\Admin;
 
 use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
+use Cake\Auth;
 
 /**
  * Users Controller
@@ -11,11 +12,17 @@ use Cake\Event\Event;
  */
 class UsersController extends AdminController
 {
+    public function isAuthorized($user)
+    {
+        if ($user['role'] === AUTH_ALL) {
+            return true;
+        }
+        return false;
+    }
 
     public function beforeFilter(Event $event)
     {
-        parent::beforeFilter($event);
-        $this->Auth->allow('add');
+        $this->viewBuilder()->layout('admin');
     }
 
     /**

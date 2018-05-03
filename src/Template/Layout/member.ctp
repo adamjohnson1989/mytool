@@ -17,16 +17,20 @@ Author: Son Nguyen
     <meta content="" name="description"/>
     <meta content="" name="author"/>
 
-    <!-- BEGIN GLOBAL STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+    <!-- BEGIN CORE PLUGINS -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <?=
-        $this->Html->css(['font-awesome/font-awesome.min.css','simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
+        $this->Html->css(['simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
             'uniform/uniform.default.css','bootstrap-switch/bootstrap-switch.min.css',
             'select2/select2.css','components.css',
             'plugins.css','layout.css','themes/darkblue.css','custom.css','bootstrap-switch/bootstrap-switch.min.css',
             'bootstrap-fileinput/bootstrap-fileinput.css','handsontable/handsontable.css','custom-member.css'
         ]);
     ?>
+
     <!-- END GLOBAL STYLES -->
     <?= $this->fetch('css') ?>
     <?= $this->Html->meta('icon') ?>
@@ -38,7 +42,7 @@ Author: Son Nguyen
 <!-- BEGIN HEADER INNER -->
     <?php
         $this->start('header');
-        echo $this->element('header');
+        echo $this->element('Admin/header');
         $this->end();
     ?>
     <?php if($this->fetch('header')):?>
@@ -55,7 +59,7 @@ Author: Son Nguyen
     <div class="page-sidebar-wrapper">
         <?php
             $this->start('sidebar');
-            echo $this->element('Sidebar/menu');
+            echo $this->element('Admin/Sidebar/menu');
             $this->end();
         ?>
         <?php if($this->fetch('sidebar')):?>
@@ -100,6 +104,7 @@ Author: Son Nguyen
         'bootstrap-fileinput/bootstrap-fileinput.js'
     ]);
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 <?= $this->fetch('script') ?>
 <script>
     jQuery(document).ready(function() {

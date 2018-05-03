@@ -6,22 +6,7 @@
 ?>
 
 <div class="row" id="member">
-    <!-- BEGIN PAGE HEADER-->
-    <h3 class="page-title">
-        Quản lý thực tập sinh
-    </h3>
-    <div class="page-bar">
-        <ul class="page-breadcrumb">
-            <li>
-                <i class="fa fa-home"></i>
-                <a href="index.html">Home</a>
-                <i class="fa fa-angle-right"></i>
-            </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-        </ul>
-    </div>
+
     <!-- END PAGE HEADER-->
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->

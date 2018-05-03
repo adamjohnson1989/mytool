@@ -41,6 +41,7 @@
                 <span class="arrow open"></span>
             </a>
         </li>
+        <?php if($Auth->user('role') == AUTH_ALL || $Auth->user('role') == AUTH_EDITOR):?>
         <!-- begin manager tag for web-->
         <li class="<?= $controller == 'Recruitments'? 'active' : ''?>">
             <a href="<?php echo $this->Url->build(['controller' => 'Recruitments','action' => 'index']) ?>">
@@ -66,7 +67,9 @@
                 </li>
             </ul>
         </li>
+        <?php endif;?>
         <!-- end manager tag for web-->
+        <?php if($Auth->user('role') == AUTH_ALL || $Auth->user('role') == AUTH_MODE):?>
         <li>
             <a href="javascript:void(0)">
                 <i class="fa fa-address-card-o" aria-hidden="true"></i>
@@ -91,7 +94,7 @@
                 <span class="arrow "></span>
             </a>
         </li>
-
+        <?php endif;?>
     </ul>
     <!-- END SIDEBAR MENU -->
 </div>

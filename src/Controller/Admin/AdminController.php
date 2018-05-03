@@ -18,6 +18,8 @@ use Cake\Controller\Controller;
 use Cake\Event\Event;
 // Use Upload Helper Class
 use App\View\Helper\UploadHelper;
+use Cake\Auth;
+
 /**
  * Application Controller
  *
@@ -45,6 +47,7 @@ class AdminController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',[
+            'authorize' => ['Controller'],
            'authenticate' => [
                'Form' => [
                    'fields' => [
@@ -81,11 +84,17 @@ class AdminController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+        $this->set('Auth', $this->Auth);
     }
 
     public function upload($_fileInfo,$resize_with=Null,$resize_height=Null,$folderUpload=Null){
         $obj = new UploadHelper($_fileInfo,$resize_with,$resize_height,$folderUpload);
         return $obj->upload();
+    }
+
+    public function isAuthorized($user)
+    {
+        return true;
     }
 
 }
