@@ -349,7 +349,7 @@
             jQuery('a[href="#tab_15_4"]').click();
         }
     }
-    
+
     var memberInfo2 = document.getElementById('member-info-2');
     var memInfo2 = new Handsontable(memberInfo2, {
         data: [
@@ -364,7 +364,20 @@
         colWidths: [150,150,600],
         stretchH: 'none'
     });
-
+    var memberInfo3 = document.getElementById('member-info-3');
+    var memInfo3 = new Handsontable(memberInfo3, {
+        data: [
+            ['', '','','']
+        ],
+        colHeaders: ['Từ', 'Đến', 'Tên Công Ty', 'Chức vụ'],
+        rowHeaders: true,
+        dropdownMenu: true,
+        minSpareRows: 1,
+        contextMenu: true,
+        autoColumnSize: true,
+        colWidths: [150,150,500,200],
+        stretchH: 'none'
+    });
     function saveMemberInfo2() {
         jQuery('#loading').show();
         var memInfo2Data = memInfo2.getData();
@@ -382,6 +395,29 @@
                 if(res.status == 1){
                     var x = '<div style="max-width:600px;"><h3>Thông Tin Quá Trình Học Tập Của Ứng Viên Đã Được Lưu.</h3>';
                     x += '<p>Thêm Thông Tin Quá Trình Làm Việc Của Ứng Viên?</p><p><button class="btn btn-circle green" data-fancybox-close onclick="updateInfo(3)">Có</button>';
+                    x += '<button data-fancybox-close class="btn btn-circle dark">Không</button></p></div>';
+                    var instance = $.fancybox.open(x);
+                }
+            }
+        });
+    }
+
+    function saveMemberInfo3() {
+        jQuery('#loading').show();
+        var memInfo3Data = memInfo3.getData();
+        memInfo3Data.splice(-1,1);
+        var form_data = JSON.stringify(memInfo3Data);
+        jQuery.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: '/admin/keikens/add',
+            data: form_data,
+            success: function(response){
+                jQuery('#loading').hide();
+                var res = jQuery.parseJSON(response);
+                if(res.status == 1){
+                    var x = '<div style="max-width:600px;"><h3>Thông Tin Quá Trình Làm Việc Của Ứng Viên Đã Được Lưu.</h3>';
+                    x += '<p>Thêm Thông Tin Gia Đình Của Ứng Viên?</p><p><button class="btn btn-circle green" data-fancybox-close onclick="updateInfo(3)">Có</button>';
                     x += '<button data-fancybox-close class="btn btn-circle dark">Không</button></p></div>';
                     var instance = $.fancybox.open(x);
                 }

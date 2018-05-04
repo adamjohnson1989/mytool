@@ -280,26 +280,6 @@ var Demo = function() {
                 setThemeStyle($.cookie('layout-style-option'));
                 $('.theme-panel .layout-style-option').val($.cookie('layout-style-option'));
             }
-            alert('a');
-            var memberInfo2 = document.getElementById('member-info-2');
-            new Handsontable(memberInfo2, {
-                data: [],
-                dataSchema: {
-                    name: null,
-                    age: null
-                },
-                minSpareRows: 1,
-                colHeaders: [
-                    'ID',
-                    'Country',
-                    'Code',
-                    'Currency',
-                    'Level',
-                    'Units',
-                    'Date',
-                    'Change'
-                ]
-            });
         }
     };
 

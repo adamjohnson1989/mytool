@@ -2,7 +2,12 @@
     <h3 class="title">Tư Vấn Miễn Phí</h3>
     <p class="support-item">Ms. Trâm: 08 6870 6878</p>
 </div>
-
+<div class="support margin-bottom-10">
+    <h3 class="title">Tư Mới Nhất</h3>
+    <div id="newest">
+        <?php echo  $this->cell('Newest') ?>
+    </div>
+</div>
 <div class="fanpage margin-bottom-10 testimonials-v1">
     <h3 class="title">Ý Kiến Học Viên</h3>
     <div id="myCarousel" class="carousel slide">

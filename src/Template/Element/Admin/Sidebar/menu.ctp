@@ -79,11 +79,11 @@
             <ul class="sub-menu">
                 <li class="<?= $controller == 'Associations'? 'active' : ''?>">
                     <a href="<?php echo $this->Url->build(['controller' => 'Associations','action' => 'index']) ?>">
-                        Nghiệp Đoàn</a>
+                        <i class="fa fa-users" aria-hidden="true"></i>  Nghiệp Đoàn</a>
                 </li>
                 <li class="<?= $controller == 'Associations'? 'active' : ''?>">
                     <a href="<?php echo $this->Url->build(['controller' => 'Companys','action' => 'index']) ?>">
-                        Công Ty Tiếp Nhận</a>
+                        <i class="fa fa-handshake-o" aria-hidden="true"></i> Công Ty Tiếp Nhận</a>
                 </li>
             </ul>
         </li>
