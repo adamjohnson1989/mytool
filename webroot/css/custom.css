@@ -268,3 +268,22 @@
 .isDisabled {
     cursor: not-allowed;
 }
+
+#list-member td img.border_radius {
+    border-radius: 50% !important;
+    -webkit-border-radius: 50%  !important;;
+    -moz-border-radius: 50%  !important;;
+}
+
+.profile-desc-title{
+    text-transform: uppercase;
+}
+
+.bl-member .table>tbody>tr>td,
+.bl-member .table>tbody>tr>th,
+.bl-member .table>tfoot>tr>td,
+.bl-member .table>tfoot>tr>th,
+.bl-member .table>thead>tr>td,
+.bl-member .table>thead>tr>th{
+    padding: 6px;
+}

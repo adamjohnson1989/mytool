@@ -24,10 +24,11 @@ Author: Son Nguyen
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
     <?=
         $this->Html->css(['simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
-            'uniform/uniform.default.css','bootstrap-switch/bootstrap-switch.min.css',
+            'uniform/uniform.default.css','bootstrap-switch/bootstrap-switch.min.css','simple-line-icons/simple-line-icons.min.css',
             'select2/select2.css','components.css',
-            'plugins.css','layout.css','themes/darkblue.css','custom.css','bootstrap-switch/bootstrap-switch.min.css',
-            'bootstrap-fileinput/bootstrap-fileinput.css','handsontable/handsontable.css','custom-member.css'
+            'plugins.css','layout.min.css','themes/darkblue.css','custom.css','bootstrap-switch/bootstrap-switch.min.css',
+            'bootstrap-fileinput/bootstrap-fileinput.css','handsontable/handsontable.css','custom-member.css',
+            'profile.min.css'
         ]);
     ?>
 
@@ -94,9 +95,6 @@ Author: Son Nguyen
 
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
-    <div class="page-footer-inner">
-        2014 &copy; Metronic by keenthemes.
-    </div>
     <div class="scroll-to-top">
         <i class="icon-arrow-up"></i>
     </div>

@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="row" id="member">
+<div class="row" id="list-member">
 
     <!-- END PAGE HEADER-->
     <div class="col-md-12">
@@ -37,13 +37,13 @@
                 <table class="table table-striped table-hover" id="sample_1">
                     <thead>
                     <tr>
-                        <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('Ảnh') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('Tên') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('Ngày sinh') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('Quê Quán') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('Công Ty') ?></th>
-                        <th scope="col"><?= $this->Paginator->sort('status') ?></th>
+                        <th scope="col"><?= __('ID') ?></th>
+                        <th scope="col"><?= __('Mã Học Viên') ?></th>
+                        <th scope="col"><?= __('Họ Tên') ?></th>
+                        <th scope="col"><?= __('Hình Ảnh') ?></th>
+                        <th scope="col"><?= __('Ngày sinh') ?></th>
+                        <th scope="col"><?= __('Quê Quán') ?></th>
+                        <th scope="col"><?= __('Trạng Thái') ?></th>
                         <th scope="col" class="actions"><?= __('Actions') ?></th>
                     </tr>
                     </thead>
@@ -51,31 +51,31 @@
                         <?php foreach ($members as $member): ?>
                         <tr>
                             <td><?= $this->Number->format($member->id) ?></td>
-                            <td><?= h($member->image) ?></td>
+                            <td><?= $this->Number->format($member->my_number) ?></td>
                             <td><?= h($member->name) ?></td>
+                            <td><img src="<?= h($member->image) ?>" alt="" class="border_radius" style="max-width: 75px; max-height: 75px"/></td>
                             <td><?= h($member->birthday) ?></td>
                             <td><?= h($member->kokyo) ?></td>
-                            <td><?= $member->has('company') ? $this->Html->link($member->company->name, ['controller' => 'Companys', 'action' => 'view', $member->company->id]) : '' ?></td>
                             <td><?= $this->Number->format($member->status) ?></td>
                             <td class="actions">
                                 <?= $this->Html->link(
                                 $this->Html->tag('i','',['class' => 'fa fa-file-o']),
-                                ['action' => 'view', $association->id],
-                                ['class' => 'btn btn-icon-only btn-circle blue', 'escape' => false]
+                                ['action' => 'view', $member->id],
+                                ['class' => 'btn btn-icon-only btn-circle blue', 'escape' => false,'title' => 'Xem Chi Tiết']
                                 )
                                 ?>
                                 <?= $this->Html->link(
                                 $this->Html->tag('i','',['class' => 'fa fa-edit']),
-                                ['action' => 'edit', $association->id],
-                                ['class' => 'btn btn-icon-only btn-circle purple', 'escape' => false]
+                                ['action' => 'edit', $member->id],
+                                ['class' => 'btn btn-icon-only btn-circle purple', 'escape' => false,'title' => 'Chỉnh Sửa Thông Tin']
                                 )
                                 ?>
                                 <?= $this->Form->postLink(
                                 $this->Html->tag('i','',['class' => 'fa fa-times']),
-                                ['action' => 'delete', $association->id],
+                                ['action' => 'delete', $member->id],
                                 [
-                                'confirm' => __('Are you sure you want to delete'),
-                                'class' => 'btn btn-icon-only btn-circle red', 'escape' => false
+                                'confirm' => __('Sau Khi Xóa Sẽ Không Khôi Phục Được Dữ Liệu. Bạn Có Muốn Xóa Không?'),
+                                'class' => 'btn btn-icon-only btn-circle red', 'escape' => false,'title' => 'Xóa Dữ Liệu'
                                 ]
                                 )
                                 ?>

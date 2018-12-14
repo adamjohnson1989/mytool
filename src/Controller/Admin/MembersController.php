@@ -48,7 +48,31 @@ class MembersController extends AdminController
         $member = $this->Members->get($id, [
             'contain' => ['Companys']
         ]);
-
+        switch ($member->kekkon) {
+            case 1:
+                $member->kekkon = KEKKON_1;
+                break;
+            case 2:
+                $member->kekkon = KEKKON_2;
+                break;
+            default:
+                $member->kekkon = KEKKON_0;
+                break;
+        }
+        switch ($member->ketsueki) {
+            case 1:
+                $member->ketsueki = KETSUEKI_1;
+                break;
+            case 2:
+                $member->ketsueki = KETSUEKI_2;
+                break;
+            case 3:
+                $member->ketsueki = KETSUEKI_3;
+                break;
+            default:
+                $member->ketsueki = KETSUEKI_0;
+                break;
+        }
         $this->set('member', $member);
         $this->set('_serialize', ['member']);
     }
