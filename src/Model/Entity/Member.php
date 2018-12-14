@@ -48,6 +48,7 @@ class Member extends Entity
         'migime'  => true,
         'hidarime' => true,
         'te' => true,
-        'gender' => true
+        'gender' => true,
+        'my_number' => true
     ];
 }

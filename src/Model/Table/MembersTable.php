@@ -88,6 +88,9 @@ class MembersTable extends Table
         $validator
             ->integer('kekkon')
             ->allowEmpty('kekkon');
+        $validator
+            ->scalar('my_number')
+            ->allowEmpty('my_number');
 
         return $validator;
     }

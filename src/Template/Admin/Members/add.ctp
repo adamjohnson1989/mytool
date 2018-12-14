@@ -11,6 +11,10 @@
                     <i class="fa fa-gift"></i><?php echo __('Thông Tin Ứng Viên')?>
                 </div>
             </div>
+
+            <script>
+                $("#commentForm").validate();
+            </script>
             <div class="portlet-body">
                     <div class="tabbable-line">
                         <ul class="nav nav-tabs ">
@@ -18,16 +22,16 @@
                                 <a href="#tab_15_1" data-toggle="tab">
                                     Thông Tin Cơ Bản </a>
                             </li>
-                            <li>
+                            <li class="isDisabled">
                                 <a href="#tab_15_2" data-toggle="tab">
                                     Quá Trình Học Tập </a>
                             </li>
-                            <li>
-                                <a href="#tab_15_3" data-toggle="tab">
+                            <li class="isDisabled">
+                                <a href="#tab_15_3" data-toggle="tab" >
                                     Kinh Nghiệm Làm Việc </a>
                             </li>
-                            <li>
-                                <a href="#tab_15_4" data-toggle="tab">
+                            <li class="isDisabled">
+                                <a href="#tab_15_4" data-toggle="tab" >
                                     Thành Phần Gia Đình </a>
                             </li>
                         </ul>
@@ -47,7 +51,7 @@
                                                         Select image </span>
                                                         <span class="fileinput-exists">
                                                         Change </span>
-                                                        <input type="file" name="file" id="file">
+                                                        <input type="file" name="image" id="fileUpload">
                                                         </span>
                                                             <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
                                                                 Remove </a>
@@ -68,7 +72,7 @@
                                                     <?php echo $this->Form->input('name',[
                                                     'label' => false,
                                                     'placeholder'=>'Nguyễn Văn A',
-                                                    'class' => 'form-control input-circle'
+                                                    'class' => 'form-control input-circle',
                                                     ]) ?>
 
                                                 </div>
@@ -88,6 +92,49 @@
                                                             ['0' => 'Nữ','1' => 'Nam'],
                                                             ['default' => '0','class' => 'form-control input-circle']
                                                         ) ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <?php
+                                                             $this->Form->templates([
+                                                    'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                    ]);
+                                                    ?>
+                                                    <?php echo $this->Form->label('my_number','Mã Số Học Viên', ['class' => 'control-label col-md-3']); ?>
+                                                    <?php echo $this->Form->input('my_number',[
+                                                    'label' => false,
+                                                    'placeholder'=>'20180001',
+                                                    'class' => 'form-control input-circle',
+                                                    ]) ?>
+
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <?php
+                                                                 $this->Form->templates([
+                                                    'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                    ]);
+                                                    ?>
+                                                    <?php echo $this->Form->label('kekkon','Tình Trạng Hôn Nhân', ['class' => 'control-label col-md-3']); ?>
+                                                    <div class="col-md-9">
+                                                        <div class="radio-list">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="kekkon" value="0" checked/>
+                                                                Chưa Kết Hôn </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="kekkon" value="1" />
+                                                                Đã Kết Hôn </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="kekkon" value="2"/>
+                                                                Đã Ly Hôn </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -263,7 +310,7 @@
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div style="text-align: center">
-                                                    <button class="btn btn-circle blue"  onclick="saveMemberInfo(); return false">Submit</button>
+                                                    <button class="btn btn-circle blue" onclick="saveMemberInfo(); return false">Submit</button>
                                                     <button type="button" class="btn btn-circle default">Cancel</button>
                                                 </div>
                                             </div>
@@ -275,7 +322,7 @@
                                 <div class="form-actions">
                                     <div class="row">
                                         <div style="text-align: center">
-                                            <button class="btn btn-circle blue"  onclick="saveMemberInfo2(); return false">Submit</button>
+                                            <button class="btn btn-circle blue"   onclick="saveMemberInfo2(); return false">Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -309,18 +356,67 @@
 </div>
 <div id="loading" style="display: none">Loading&#8230;</div>
 <script>
+    //validateのoption作成
+    var memberValid = {
+        //入力欄別にルールを作成
+        rules:{
+            name:{
+                required:true
+            },
+            birthday:{
+                required:true
+            },
+            kokyo : {
+                required:true
+            },
+            shincho:{
+                required:true,
+                number: true
+            },
+            taiju:{
+                required:true,
+                number: true
+            },
+            hidarime:{
+                required:true,
+                number: true
+            },
+            migime:{
+                required:true,
+                number: true
+            },
+            iq:{
+                required:true,
+                number: true
+            },
+            my_number:{
+                required:true,
+                number: true
+            },
+            image:{
+                required:true
+            }
+        }
+    };
     function saveMemberInfo(){
+        var form = jQuery("#memberInfo");
+        form.validate(memberValid);
+        //失敗で戻る
+        if (!form.valid()) {
+            return false;
+        };
+        //Ajaxでform入力内容送信
         jQuery('#loading').show();
-        var form = jQuery('#memberInfo');
-        var form_data = new FormData(this);
-        var file_data = $('#file').prop('files')[0];
+
+        var form_data = new FormData();
         var fData = form.serializeArray();
         jQuery.each(fData, function(i, field){
             $("#results").append(field.name + ":" + field.value + " ");
             form_data.append(field.name, field.value);
         });
+        var file_data = jQuery('#fileUpload').prop('files')[0];
         form_data.append('image', file_data);
-        form_data.append('action1', 'ajax_handler_import');
+//        form_data.append('action1', 'ajax_handler_import');
         jQuery.ajax({
             type: 'POST',
             url: jQuery(form).attr('action'),
@@ -339,8 +435,12 @@
                 }
             }
         });
-    }
+        return false;
+    };
     function updateInfo(i) {
+        if(jQuery( ".nav-tabs li" ).hasClass( "isDisabled")){
+            jQuery( ".nav-tabs li" ).removeClass('isDisabled')
+        }
         if(i == 2){
             jQuery('a[href="#tab_15_2"]').click();
         }else if(i == 3){
@@ -424,7 +524,4 @@
             }
         });
     }
-
-
-
 </script>

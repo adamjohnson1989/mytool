@@ -257,3 +257,14 @@
         transform: rotate(360deg);
     }
 }
+
+.error{
+    color: #FF0000;
+}
+
+.isDisabled > a {
+    pointer-events: none;
+}
+.isDisabled {
+    cursor: not-allowed;
+}

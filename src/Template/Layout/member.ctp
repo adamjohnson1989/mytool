@@ -41,7 +41,7 @@ Author: Son Nguyen
     'jquery-validation/jquery.validate.min.js','jquery-validation/additional-methods.min.js',
     'bootstrap-wizard/jquery.bootstrap.wizard.min.js','handsontable/handsontable.min.js','select2/select2.min',
     'metronic.js','layout.js','quick-sidebar.js','demo.js','pages/form-wizard.js',
-    'bootstrap-fileinput/bootstrap-fileinput.js','custom.js'
+    'bootstrap-fileinput/bootstrap-fileinput.js','custom.js','jquery-validation/additional-methods.min.js'
     ]);
     ?>
 
@@ -115,7 +115,7 @@ Author: Son Nguyen
         Layout.init(); // init current layout
         QuickSidebar.init(); // init quick sidebar
         FormWizard.init();
-        Custom.init();
+//        Custom.init();
     });
 </script>
 <!-- END JAVASCRIPTS -->

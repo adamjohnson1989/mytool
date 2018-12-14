@@ -61,24 +61,26 @@ class MembersController extends AdminController
     public function add()
     {
         $member = $this->Members->newEntity();
-        if ($this->request->is('ajax')) {
+        if ($this->request->is('post')) {
             $reVal = ['status' => 0];
             $dataAry = $this->request->getData();
             if(isset($dataAry['action1'])){
                 unset($dataAry['action1']);
             }
             /*Begin Upload file*/
+            /*Check if exist image then upload*/
+            if($dataAry['image']['error'] == 0){
                 $imgInfo = $dataAry['image'];
                 $imgUploadedAry = $this->upload($imgInfo,640,480,'member');
                 unset($dataAry['image']);
                 $dataAry['image'] = isset($imgUploadedAry['imgPath']) ? $imgUploadedAry['imgPath'] : '';
+            }
             /*End Upload file*/
             $member = $this->Members->patchEntity($member, $dataAry);
             if ($obj = $this->Members->save($member)) {
                 $this->request->session()->write('Member.id', $obj->id);
                 $reVal['status'] = 1;
                 $reVal['msg'] = 'Thông tin cơ bản của ứng viên đã được tạo';
-
             }else{
                 $reVal['status'] = 0;
                 $reVal['msg'] = 'Thông tin cơ bản của ứng viên chưa đúng. Hãy kiểm tra lại';
