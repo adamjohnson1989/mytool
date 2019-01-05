@@ -262,12 +262,12 @@
     color: #FF0000;
 }
 
-.isDisabled > a {
-    pointer-events: none;
-}
-.isDisabled {
-    cursor: not-allowed;
-}
+/*.isDisabled > a {*/
+    /*pointer-events: none;*/
+/*}*/
+/*.isDisabled {*/
+    /*cursor: not-allowed;*/
+/*}*/
 
 #list-member td img.border_radius {
     border-radius: 50% !important;
@@ -286,4 +286,85 @@
 .bl-member .table>thead>tr>td,
 .bl-member .table>thead>tr>th{
     padding: 6px;
+}
+
+.select2-result-repository__avatar {
+    float: left;
+    width: 60px;
+    margin-right: 5px;
+}
+
+.select2-result-repository__avatar img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.select2-result-repository__meta{
+    padding-left: 70px;
+}
+
+.select2-result-repository__name{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#saiyous .member-info .member-image img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+}
+#saiyous .member-info .member-image{
+    float: left;
+}
+#saiyous .member-info .member-desc{
+    padding-left: 15px;
+    float: left;
+}
+#saiyous .select2-search input{
+    padding: 10px 0px !important;
+}
+
+#saiyous .select2-container--default .select2-selection--multiple .select2-selection__choice{
+    border: none;
+    background: none;
+    border-bottom: 1px solid #aaa !important;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0 5px;
+    float: none;
+}
+
+#saiyous .select2-selection__choice{
+    position: relative;
+}
+
+#saiyous .select2-selection__choice__remove{
+    position: absolute !important;
+    top: 25px;
+    right: 10px;
+}
+#saiyous .member-desc .member-name{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#saiyous .member-desc .member-info .mynumber{
+    padding-left: 20px;
+}
+
+#saiyous .select2-selection__choice{
+    padding-bottom: 5px !important;
+}
+
+#saiyous .select2-search .select2-search__field,#saiyous .select2-search{
+    width: 100% !important;
+}
+
+#saiyous .select2-search .select2-search__field{
+    border: 1px solid #c0c0c0;
+    padding-left: 5px !important;
 }

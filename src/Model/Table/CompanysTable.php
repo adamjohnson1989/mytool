@@ -41,7 +41,7 @@ class CompanysTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->belongsTo('Associations', [
-            'foreignKey' => 'associations_id'
+            'foreignKey' => 'association_id'
         ]);
     }
 

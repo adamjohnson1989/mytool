@@ -21,6 +21,7 @@ Author: Son Nguyen
     <?=
         $this->Html->css(['simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
             'uniform/uniform.default.css','bootstrap-switch/bootstrap-switch.min.css','bootstrap-daterangepicker/daterangepicker-bs3.css',
+            'bootstrap-datepicker/bootstrap-datepicker3.min.css','select2/select2.min.css',
             'fullcalendar/fullcalendar.min.css','jqvmap/jqvmap/jqvmap.css','pages/tasks.css','components.css',
             'plugins.css','layout.css','themes/darkblue.css','custom.css','bootstrap-switch/bootstrap-switch.min.css',
             'bootstrap-fileinput/bootstrap-fileinput.css'
@@ -41,6 +42,7 @@ Author: Son Nguyen
     <![endif]-->
     <?=
     $this->Html->script(['jquery.min.js','jquery-migrate.min.js','jquery-ui/jquery-ui.min.js','bootstrap/bootstrap.min.js',
+    'bootstrap-datepicker/bootstrap-datepicker.min.js','select2/select2.full.min.js',
     'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
     'jquery.blockui.min.js','jquery.cokie.min.js','uniform/jquery.uniform.min.js','bootstrap-switch/bootstrap-switch.min.js',
     'jqvmap/jqvmap/jquery.vmap.js','jqvmap/jqvmap/maps/jquery.vmap.russia.js','jqvmap/jqvmap/maps/jquery.vmap.world.js',
@@ -51,7 +53,7 @@ Author: Son Nguyen
     'fullcalendar/fullcalendar.min.js','jquery-easypiechart/jquery.easypiechart.min.js',
     'jquery.sparkline.min.js','metronic.js','layout.js','quick-sidebar.js','demo.js','pages/index.js','pages/tasks.js',
     'bootstrap-switch/bootstrap-switch.min.js','pages/form-wizard.js','bootstrap-wizard/jquery.bootstrap.wizard.min.js',
-    'select2/select2.min','tinymce/tinymce.min.js','bootstrap-fileinput/bootstrap-fileinput.js'
+    'tinymce/tinymce.min.js','bootstrap-fileinput/bootstrap-fileinput.js'
     ]);
     ?>
     <?= $this->fetch('script') ?>

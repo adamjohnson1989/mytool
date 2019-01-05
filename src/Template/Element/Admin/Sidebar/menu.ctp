@@ -73,20 +73,37 @@
         <li>
             <a href="javascript:void(0)">
                 <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                <span class="title">Tổ chức tiếp nhận</span>
+                <span class="title">Nghiệp Vụ</span>
                 <span class="arrow "></span>
             </a>
             <ul class="sub-menu">
-                <li class="<?= $controller == 'Associations'? 'active' : ''?>">
-                    <a href="<?php echo $this->Url->build(['controller' => 'Associations','action' => 'index']) ?>">
-                        <i class="fa fa-users" aria-hidden="true"></i>  Nghiệp Đoàn</a>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                        <span class="title">Tổ chức tiếp nhận</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="<?= $controller == 'Associations'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Associations','action' => 'index']) ?>">
+                                <i class="fa fa-users" aria-hidden="true"></i>  Nghiệp Đoàn</a>
+                        </li>
+                        <li class="<?= $controller == 'Associations'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Companys','action' => 'index']) ?>">
+                                <i class="fa fa-handshake-o" aria-hidden="true"></i> Công Ty Tiếp Nhận</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="<?= $controller == 'Associations'? 'active' : ''?>">
-                    <a href="<?php echo $this->Url->build(['controller' => 'Companys','action' => 'index']) ?>">
-                        <i class="fa fa-handshake-o" aria-hidden="true"></i> Công Ty Tiếp Nhận</a>
+                <li class="<?= $controller == 'Members'? 'active' : ''?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'Saiyous','action' => 'index']) ?>">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        <span class="title">Thiết Lập Đơn Hàng</span>
+                        <span class="arrow "></span>
+                    </a>
                 </li>
             </ul>
         </li>
+
         <li class="<?= $controller == 'Members'? 'active' : ''?>">
             <a href="<?php echo $this->Url->build(['controller' => 'Members','action' => 'index']) ?>">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>

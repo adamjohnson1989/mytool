@@ -55,4 +55,5 @@ class RecruitmentsController extends AppController
         $this->set('_serialize', ['recruitment']);
     }
 
+
 }
