@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 use App\Controller\Admin\AdminController;
 use Cake\Event\Event;
 use Cake\Network\Session\DatabaseSession;
+use Cake\ORM\Query;
 
 /**
  * Recruitments Controller
@@ -59,12 +60,25 @@ class RecruitmentsController extends AdminController
     public function add()
     {
         $recruitment = $this->Recruitments->newEntity();
+        $catObj = $this->loadModel('Associations');
+        $catQuery = $catObj->find()->select([
+            'Associations.id',
+            'Associations.name',
+        ]);
+        $catQuery->contain('Companys', function (Query $q) {
+            return $q
+                ->select(['id', 'name','association_id'])
+                ->where(['Companys.status' => 1]);
+        })->where(['Associations.status' => 1]);
+        $catArr = $catQuery->toArray();
         if ($this->request->is('post')) {
             $dataArr = $this->request->getData();
             $dataSave = [];
             foreach ($dataArr as $k => $data){
                 $dataSave[$k] = htmlspecialchars($data);
             }
+            $dataSave['url'] = $this->utf8ToUrl($dataSave['name']) . time();
+
             $dataSave['created_at'] = date('d/m/Y', time());
             $dataSave['users_id'] = $this->Auth->user('id');
             $recruitment = $this->Recruitments->patchEntity($recruitment, $dataSave);
@@ -77,6 +91,7 @@ class RecruitmentsController extends AdminController
         $users = $this->Recruitments->Users->find('list', ['limit' => 200]);
         $this->set(compact('recruitment', 'users'));
         $this->set('_serialize', ['recruitment']);
+        $this->set('catData',$catArr);
     }
 
     /**

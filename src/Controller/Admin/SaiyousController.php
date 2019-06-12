@@ -52,29 +52,34 @@ class SaiyousController extends AdminController
      */
     public function add()
     {
-        $saiyous = $this->Saiyous->newEntity();
-        $catObj = $this->loadModel('Associations');
+
+        $catObj = $this->loadModel('Recruitments');
         $catQuery = $catObj->find()->select([
-            'Associations.id',
-            'Associations.name',
-        ]);
-        $catQuery->contain('Companys', function (Query $q) {
-            return $q
-                ->select(['id', 'name','association_id'])
-                ->where(['Companys.status' => 1]);
-        })->where(['Associations.status' => 1]);
+            'Recruitments.id',
+            'Recruitments.name',
+        ])->where(['status' => 0]);
 
         $catArr = $catQuery->toArray();
-
         if ($this->request->is('post')) {
-            $saiyous = $this->Saiyous->patchEntity($saiyous, $this->request->getData());
-            if ($this->Saiyous->save($saiyous)) {
-                $this->Flash->success(__('The saiyous has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+            $dataArr = $this->request->getData();
+            if(count($dataArr['members'])){
+                $status = true;
+                foreach($dataArr['members'] as $memId){
+                    $saiyous = $this->Saiyous->newEntity();
+                    $saiyous = $this->Saiyous->patchEntity($saiyous, ['recruitments_id' => $dataArr['recruitments_id'], 'members_id' => $memId]);
+                    if (!$this->Saiyous->save($saiyous)) {
+                        $status = false;
+                    }
+                }
+                if ($status) {
+                    $this->Flash->success(sprintf("<div class='alert alert-success'>%s</div>",  h("Đơn Hàng Mới Đã Được Tạo!")), ['escape' => false]);
+                    return $this->redirect(['action' => 'index']);
+                }else{
+                    $this->Flash->error(sprintf("<div class='alert alert-danger'>%s</div>",  h('Lỗi Tạo Đơn Hàng, Kiểm Tra Lại Thông Tin')), ['escape' => false]);
+                }
             }
-            $this->Flash->error(__('The saiyous could not be saved. Please, try again.'));
         }
+        $saiyous = $this->Saiyous->newEntity();
         $this->set(compact('saiyous'));
 
         $this->set('catData',$catArr);

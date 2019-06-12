@@ -81,7 +81,15 @@ class RecruitmentsTable extends Table
         $validator
             ->scalar('update_at')
             ->allowEmpty('update_at');
-
+        $validator
+            ->integer('companys_id')
+            ->notEmpty('companys_id');
+        $validator
+            ->integer('associations_id')
+            ->notEmpty('associations_id');
+        $validator
+            ->scalar('sku')
+            ->notEmpty('sku');
         return $validator;
     }
 

@@ -15,52 +15,15 @@
         <!-- BEGIN FORM-->
         <?= $this->Form->create($saiyous,['class' => 'form-horizontal','id' => 'saiyous']) ?>
         <div class="form-body">
-            <?php
-                    $this->Form->templates([
-            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
-            ]);
-            ?>
             <div class="form-group">
-                <?php echo $this->Form->label('name','Tên Đơn Hàng', ['class' => 'col-md-3 control-label']); ?>
-                <?php echo $this->Form->input('name',[
-                'label' => false,
-                'placeholder'=>'Tên Đơn Hàng',
-                'class' => 'form-control input-circle'
-                ]) ?>
-            </div>
-            <?php
-                $this->Form->templates([
-            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
-            ]);
-            ?>
-            <div class="form-group">
-                <?php echo $this->Form->label('associations_id','Nghiệp Đoàn', ['class' => 'col-md-3 control-label']); ?>
-                <div class="col-md-6">
-                    <?php
-                    echo $this->Form->select(
-                    'associations_id',
-                    ['0' => '-- Chọn Nghiệp Đoàn --'],
-                    ['default' => '0','class' => 'form-control input-circle', 'id' => 'associations_id']
-                    );
-                    ?>
-                </div>
-            </div>
-
-            <?php
-                $this->Form->templates([
-            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
-            ]);
-            ?>
-            <div class="form-group">
-                <?php echo $this->Form->label('companys_id','Xí Nghiệp', ['class' => 'col-md-3 control-label']); ?>
-                <div class="col-md-6">
-                    <?php
-                    echo $this->Form->select(
-                    'companys_id',
-                    array('0' => '-- Chọn Xí Nghiệp --'),
-                    ['default' => '0','class' => 'form-control input-circle', 'id' => 'companys_id']
-                    );
-                    ?>
+                <label class="control-label col-md-3">Chọn Đơn Hàng</label>
+                <div class="col-md-6 input-circle">
+                    <select name="recruitments_id" class="recruitments form-control input-circle">
+                        <option value="0"><?= h("-- Chọn Đơn Hàng  --") ?></option>
+                        <?php foreach($catData as $r): ?>
+                        <option value="<?= $r->id ?>"><?= $r->name ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
             </div>
 
@@ -117,6 +80,7 @@
 </div>
 <script type="text/javascript">
     $('.date-picker').datepicker();
+    $('.recruitments').select2();
     $(".js-example-data-ajax").select2({
         ajax: {
             url: "/admin/saiyous/search_member",

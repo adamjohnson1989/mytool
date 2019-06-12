@@ -30,13 +30,8 @@ class Saiyous extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'companys_id' => true,
-        'associations_id' => true,
-        'interview_date' => true,
-        'member' => true,
+        'recruitments_id' => true,
+        'members_id' => true,
         'status' => true,
-        'company' => true,
-        'association' => true
     ];
 }

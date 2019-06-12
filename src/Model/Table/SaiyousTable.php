@@ -37,12 +37,8 @@ class SaiyousTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Companys', [
-            'foreignKey' => 'companys_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Associations', [
-            'foreignKey' => 'associations_id',
+        $this->belongsTo('Recruitments', [
+            'foreignKey' => 'recruitments_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -60,18 +56,11 @@ class SaiyousTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('name')
-            ->maxLength('name', 255)
-            ->requirePresence('name', 'create')
-            ->notEmpty('name');
+            ->integer('recruitments_id')
+            ->notEmpty('recruitments_id');
 
         $validator
-            ->scalar('interview_date')
-            ->maxLength('interview_date', 255)
-            ->allowEmpty('interview_date');
-
-        $validator
-            ->scalar('member')
+            ->integer('members_id')
             ->allowEmpty('member');
 
         $validator
@@ -90,8 +79,7 @@ class SaiyousTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['companys_id'], 'Companys'));
-        $rules->add($rules->existsIn(['associations_id'], 'Associations'));
+        $rules->add($rules->existsIn(['recruitments_id'], 'Recruitments'));
 
         return $rules;
     }

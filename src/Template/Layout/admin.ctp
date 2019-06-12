@@ -43,7 +43,7 @@ Author: Son Nguyen
     <?=
     $this->Html->script(['jquery.min.js','jquery-migrate.min.js','jquery-ui/jquery-ui.min.js','bootstrap/bootstrap.min.js',
     'bootstrap-datepicker/bootstrap-datepicker.min.js','select2/select2.full.min.js',
-    'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
+    'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-validation/jquery.validate.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
     'jquery.blockui.min.js','jquery.cokie.min.js','uniform/jquery.uniform.min.js','bootstrap-switch/bootstrap-switch.min.js',
     'jqvmap/jqvmap/jquery.vmap.js','jqvmap/jqvmap/maps/jquery.vmap.russia.js','jqvmap/jqvmap/maps/jquery.vmap.world.js',
     'jqvmap/jqvmap/maps/jquery.vmap.europe.js','jqvmap/jqvmap/maps/jquery.vmap.germany.js',

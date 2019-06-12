@@ -7,22 +7,38 @@
     </div>
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
-        <?= $this->Form->create($company,['class' => 'form-horizontal']) ?>
+        <?= $this->Form->create($company,['class' => 'form-horizontal', 'id' => 'company']) ?>
         <div class="form-body">
             <?php
             $this->Form->templates([
                 'inputContainer' => '<div class="col-md-6">{{content}}<span class="help-block">Ex:
-														アジア国際交流事業協同組合 </span></div>',
+														株式会社ＳＮＴ </span></div>',
             ]);
             ?>
             <div class="form-group">
-                <?php echo $this->Form->label('name','Tên Công Ty Tiếp Nhận', ['class' => 'col-md-3 control-label']); ?>
-                <?php echo $this->Form->input('name',[
+                <?php echo $this->Form->label('name_jp','Tên Công Ty Tiếp Nhận (Tiếng Nhật)', ['class' => 'col-md-3 control-label']); ?>
+                <?php echo $this->Form->input('name_jp',[
                     'label' => false,
                     'placeholder'=>'Tên Công Ty Tiếp Nhận',
                     'class' => 'form-control input-circle'
                 ]) ?>
             </div>
+
+            <?php
+            $this->Form->templates([
+            'inputContainer' => '<div class="col-md-6">{{content}}<span class="help-block">Ex:
+														KABUSHIKIGAISHA SNT </span></div>',
+            ]);
+            ?>
+            <div class="form-group">
+                <?php echo $this->Form->label('name','Tên Công Ty Tiếp Nhận (Tiếng Anh)', ['class' => 'col-md-3 control-label']); ?>
+                <?php echo $this->Form->input('name',[
+                'label' => false,
+                'placeholder'=>'Tên Công Ty Tiếp Nhận',
+                'class' => 'form-control input-circle'
+                ]) ?>
+            </div>
+
             <?php
             $this->Form->templates([
                 'inputContainer' => '<div class="col-md-6">{{content}}<span class="help-block">Ex:
@@ -91,3 +107,41 @@
         <!-- END FORM-->
     </div>
 </div>
+<script>
+    function clearData(){
+        jQuery('#company').find("input, select, textarea")
+                .not(":button, :submit, :reset, :hidden")
+                .val("")
+                .prop("checked", false)
+                .prop("selected", false)
+    }
+
+    var companyValid = {
+        //入力欄別にルールを作成
+        rules:{
+            name:{
+                required:true
+
+            },
+            name_jp:{
+                required:true
+            },
+            associations_id : {
+                required:true
+            }
+        },
+        messages:{
+            name:{
+                required: 'Nhập Thông Tin Nghiệp Đoàn Bằng Tiếng Anh'
+            },
+            name_jp:{
+                required: 'Nhập Thông Tin Nghiệp Đoàn Bằng Tiếng Nhật'
+            },
+            kakari:{
+                associations_id: 'Chọn Nghiệp Đoàn'
+            }
+        }
+
+    };
+    jQuery('#company').validate(companyValid);
+</script>

@@ -42,6 +42,9 @@ class Recruitment extends Entity
         'user' => true,
         'deadline' => true,
         'type'  => true,
-        'url'   => true
+        'url'   => true,
+        'companys_id' => true,
+        'associations_id' => true,
+        'sku' => true
     ];
 }
