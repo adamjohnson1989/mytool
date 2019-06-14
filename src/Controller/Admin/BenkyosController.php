@@ -53,15 +53,14 @@ class BenkyosController extends AdminController
      */
     public function add()
     {
-
         if ($this->request->is('ajax')) {
+            $returnVal['status'] = 0;
             $dataAry = $this->request->getData();
-            $returnVal = [];
-            foreach ($dataAry as $dataItem){
+            foreach ($dataAry['gakureki'] as $dataItem){
                 $benkyo = $this->Benkyos->newEntity();
-                $benkyoData['to_time'] = $dataItem[0];
-                $benkyoData['from_time'] = $dataItem[1];
-                $benkyoData['school_name'] = $dataItem[2];
+                $benkyoData['to_time'] = $dataItem['to'];
+                $benkyoData['from_time'] = $dataItem['from'];
+                $benkyoData['school_name'] = $dataItem['name'];
                 $benkyoData['members_id'] = $this->request->session()->read('Member.id');
                 $benkyo = $this->Benkyos->patchEntity($benkyo, $benkyoData);
                 if ($this->Benkyos->save($benkyo)) {

@@ -25,9 +25,9 @@ Author: Son Nguyen
     <?=
         $this->Html->css(['simple-line-icons/simple-line-icons.min.css','bootstrap/bootstrap.min.css',
             'uniform/uniform.default.css','bootstrap-switch/bootstrap-switch.min.css','simple-line-icons/simple-line-icons.min.css',
-            'select2/select2.css','components.css',
+            'select2/select2.css','components.css','bootstrap-datepicker/bootstrap-datepicker3.min.css',
             'plugins.css','layout.min.css','themes/darkblue.css','custom.css','bootstrap-switch/bootstrap-switch.min.css',
-            'bootstrap-fileinput/bootstrap-fileinput.css','handsontable/handsontable.full.css','custom-member.css',
+            'bootstrap-fileinput/bootstrap-fileinput.css','custom-member.css',
             'profile.min.css'
         ]);
     ?>
@@ -40,9 +40,10 @@ Author: Son Nguyen
     'bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js','jquery-slimscroll/jquery.slimscroll.min.js',
     'jquery.blockui.min.js','jquery.cokie.min.js','uniform/jquery.uniform.min.js','bootstrap-switch/bootstrap-switch.min.js',
     'jquery-validation/jquery.validate.min.js','jquery-validation/additional-methods.min.js',
-    'bootstrap-wizard/jquery.bootstrap.wizard.min.js','handsontable/handsontable.full.js','select2/select2.min',
+    'bootstrap-wizard/jquery.bootstrap.wizard.min.js','select2/select2.min',
     'metronic.js','layout.js','quick-sidebar.js','demo.js','pages/form-wizard.js',
-    'bootstrap-fileinput/bootstrap-fileinput.js','custom.js','jquery-validation/additional-methods.min.js'
+    'bootstrap-fileinput/bootstrap-fileinput.js','custom.js','jquery-validation/additional-methods.min.js',
+    'bootstrap-datepicker/bootstrap-datepicker.min.js'
     ]);
     ?>
 

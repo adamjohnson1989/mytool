@@ -19,24 +19,26 @@
                     <div class="tabbable-line">
                         <ul class="nav nav-tabs ">
                             <li class="active">
-                                <a href="#tab_15_1" data-toggle="tab">
+                                <a href="#basic-info" data-toggle="tab">
                                     Thông Tin Cơ Bản </a>
                             </li>
-                            <li class="isDisabled">
-                                <a href="#tab_15_2" data-toggle="tab">
+                            <li class="">
+                                <a href="#gakureki" data-toggle="tab">
                                     Quá Trình Học Tập </a>
                             </li>
-                            <li class="isDisabled">
-                                <a href="#tab_15_3" data-toggle="tab" >
+                            <li class="">
+                                <a href="#keiken" data-toggle="tab">
                                     Kinh Nghiệm Làm Việc </a>
                             </li>
-                            <li class="isDisabled">
-                                <a href="#tab_15_4" data-toggle="tab" >
+                            <li class="">
+                                <a href="#kazoku" data-toggle="tab">
                                     Thành Phần Gia Đình </a>
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="tab_15_1">
+
+                            <!-- Begin Basic Member Info -->
+                            <div class="tab-pane active" id="basic-info">
                                     <h3 class="form-section">Thông Tin Cá Nhân</h3>
                                     <?= $this->Form->create($member,['class' => 'form-horizontal','id' => 'memberInfo','enctype' => 'multipart/form-data']) ?>
                                         <div class="row">
@@ -317,17 +319,51 @@
                                         </div>
                                     <?= $this->Form->end() ?>
                                 </div>
-                            <div class="tab-pane" id="tab_15_2">
-                                <div id="member-info-2"></div>
-                                <div class="form-actions">
+
+                            <!-- End Basic Member Info  -->
+
+                            <!-- Begin Gakureki -->
+                            <div class="tab-pane" id="gakureki">
+                                <div class="table-toolbar">
                                     <div class="row">
-                                        <div style="text-align: center">
-                                            <button class="btn btn-circle blue"   onclick="saveMemberInfo2(); return false">Submit</button>
+                                        <div class="col-md-6">
+                                            <div class="btn-group">
+                                                <a  onclick="addGakuReki();return false" class="btn green" role="button">Thêm Mới <i class="fa fa-plus"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="bl-title">
+                                            <div class="col-md-2 text-center">Từ Năm</div>
+                                            <div class="col-md-2 text-center">Đến Năm</div>
+                                            <div class="col-md-3 text-center">Loại Hình</div>
+                                            <div class="col-md-4 text-center">Tên Trường</div>
+                                            <div class="col-md-1 text-center"></div>
+                                        </div>
+                                    </div>
+                                    <form method="post" accept-charset="utf-8" class="form-horizontal" id="member-gakureki" action="#">
+                                        <div id="gakureki-content">
+                                            <?php
+                                                echo "<pre>";
+                                                print_r($member);
+                                            ?>
+                                        </div>
+                                        <div class="row ">
+                                            <div style="text-align: center">
+                                                <button class="btn btn-circle blue"   onclick="saveMemberInfo2(); return false">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
                             </div>
-                            <div class="tab-pane" id="tab_15_3">
+
+                            <!-- End Gakureki -->
+
+                            <!-- Begin Keiken Info -->
+                            <div class="tab-pane" id="keiken">
                                 <div id="member-info-3"></div>
                                 <div class="form-actions">
                                     <div class="row">
@@ -337,7 +373,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab_15_4">
+
+                            <!-- End Keiken Info -->
+
+                            <!-- Begin Kazoku Info -->
+                            <div class="tab-pane" id="kazoku">
                                 <div id="member-info-4"></div>
                                 <div class="form-actions">
                                     <div class="row">
@@ -347,6 +387,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- End Kazoku Info -->
                         </div>
                     </div>
 
@@ -354,6 +395,7 @@
         </div>
     </div>
 </div>
+
 <div id="loading" style="display: none">Loading&#8230;</div>
 <script>
     //validateのoption作成
@@ -449,84 +491,13 @@
             jQuery('a[href="#tab_15_4"]').click();
         }
     }
-    var memberInfo2 = document.getElementById('member-info-2');
-    var memInfo2 = new Handsontable(memberInfo2, {
-        data: [
-            ['', '','']
-        ],
-        colHeaders: ['Từ', 'Đến', 'Tên Trường'],
-        rowHeaders: true,
-        minSpareRows: 1,
-        contextMenu: true,
-        autoColumnSize: true,
-        colWidths: [150,150,600],
-        stretchH: 'none',
-        columns: [{
-            type: 'numeric',
-            allowInvalid: true
-        }, {
-            data: '2'
-        }, {
-            data: '3',
-            allowInvalid: true
-        }]
-    });
-    var memberInfo3 = document.getElementById('member-info-3');
-    var memInfo3 = new Handsontable(memberInfo3, {
-        data: [
-            ['', '','','']
-        ],
-        colHeaders: ['Từ', 'Đến', 'Tên Công Ty', 'Chức vụ'],
-        rowHeaders: true,
-        dropdownMenu: true,
-        minSpareRows: 1,
-        contextMenu: true,
-        autoColumnSize: true,
-        colWidths: [150,150,500,200],
-        stretchH: 'none'
-    });
-
-    function saveMemberInfo2() {
-        memInfo2.validateCells(function(isPass){
-            if(isPass){
-                alert("Saving data");
-            }else {
-                alert('asd');
-            }
-            jQuery("#member-info-2").handsontable('render');
-        });
-//        jQuery('#loading').show();
-//        var memInfo2Data = memInfo2.getData();
-//        memInfo2Data.splice(-1,1);
-//        var form_data = JSON.stringify(memInfo2Data);
-//        console.log(form_data);
-//        jQuery.ajax({
-//            type: 'POST',
-//            contentType: 'application/json',
-//            url: '/admin/benkyos/add',
-//            data: form_data,
-//            success: function(response){
-//                jQuery('#loading').hide();
-//                var res = jQuery.parseJSON(response);
-//                if(res.status == 1){
-//                    var x = '<div style="max-width:600px;"><h3>Thông Tin Quá Trình Học Tập Của Ứng Viên Đã Được Lưu.</h3>';
-//                    x += '<p>Thêm Thông Tin Quá Trình Làm Việc Của Ứng Viên?</p><p><button class="btn btn-circle green" data-fancybox-close onclick="updateInfo(3)">Có</button>';
-//                    x += '<button data-fancybox-close class="btn btn-circle dark">Không</button></p></div>';
-//                    var instance = $.fancybox.open(x);
-//                }
-//            }
-//        });
-    }
 
     function saveMemberInfo3() {
         jQuery('#loading').show();
-        var memInfo3Data = memInfo3.getData();
-        memInfo3Data.splice(-1,1);
-        var form_data = JSON.stringify(memInfo3Data);
         jQuery.ajax({
             type: 'POST',
             contentType: 'application/json',
-            url: '/admin/keikens/add',
+            url: '/admin/benkyos/add',
             data: form_data,
             success: function(response){
                 jQuery('#loading').hide();
@@ -537,6 +508,37 @@
                     x += '<button data-fancybox-close class="btn btn-circle dark">Không</button></p></div>';
                     var instance = $.fancybox.open(x);
                 }
+            }
+        });
+    }
+
+    function saveMemberInfo2() {
+        jQuery('#loading').show();
+        jQuery.ajax({
+            type: 'POST',
+            url: '/admin/benkyos/add',
+            data: jQuery('#member-gakureki').serialize(),
+            success: function(response){
+                jQuery('#loading').hide();
+                var res = jQuery.parseJSON(response);
+                if(res.status == 1){
+                    var x = '<div style="max-width:600px;"><h3>Thông Tin Quá Trình Làm Việc Của Ứng Viên Đã Được Lưu.</h3>';
+                    x += '<p>Thêm Thông Tin Gia Đình Của Ứng Viên?</p><p><button class="btn btn-circle green" data-fancybox-close onclick="updateInfo(3)">Có</button>';
+                    x += '<button data-fancybox-close class="btn btn-circle dark">Không</button></p></div>';
+                    var instance = $.fancybox.open(x);
+                }
+            }
+        });
+    }
+
+    function addGakuReki(){
+        jQuery.ajax({
+            type: 'POST',
+            dataType: 'html',
+            url:'/admin/members/gakureki',
+            data: jQuery('#member-gakureki').serialize(),
+            success:function(response){
+                jQuery("#gakureki-content").html(response);
             }
         });
     }
