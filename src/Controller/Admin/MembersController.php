@@ -9,8 +9,6 @@ use PhpOffice\PhpWord\Style\TablePosition;
 use PhpOffice\PhpWord\Style\Image;
 use PhpOffice\PhpWord\Style\Table;
 use \PhpOffice\PhpWord\Shared\Html;
-//require_once (ROOT . DS . 'vendor' . DS . 'mpdf' . DS .  'mpdf.php');
-//use mPDF;
 
 /**
  * Members Controller
@@ -178,5 +176,83 @@ class MembersController extends AdminController
         $gakurekiAry = $this->request->getData('gakureki');
         $this->set(compact('gakurekiAry'));
         $this->set('_serialize', ['gakurekiAry']);
+    }
+
+    public function printCv(){
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
+        //set font
+        $phpWord->setDefaultFontName('Times New Roman');
+        $phpWord->setDefaultFontSize(12);
+        $section = $phpWord->addSection();
+        //set margin page
+        $sectionStyle = $section->getStyle();
+        $sectionStyle->setMarginLeft(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1));
+        $sectionStyle->setMarginRight(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1));
+
+        //set default style
+        $tableStyle = array(
+            'borderColor' => 'FFFFFF',
+            'borderSize'  => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.5),
+            'cellMargin'  => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.1) //
+        );
+        $myTextStyle = array(
+            'align' => 'center',
+            'lineHeight' => 1.0
+        );
+
+        $table = $section->addTable($tableStyle);
+        $row = $table->addRow(); //5000 height of block
+        $cellRowSpan = array('vMerge' => 'restart', 'valign' => 'center');
+        $cellColSpan = array('gridSpan' => 3, 'valign' => 'center');
+        //member of basic infomation
+        $first_cell = $row->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(16));
+        $innerTable = $first_cell->addTable();
+
+        //add row ふりがな
+        $innerRow = $innerTable->addRow(400);
+        $innerRow->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(3),['borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('ふりがな:',null,['align' => 'left','lineHeight' => 1.0 ]);
+        $innerRow->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(13),$cellColSpan)->addText('ぐえん・べと・そん',null,$myTextStyle);
+
+        //add row
+        $innerTable->addRow(400);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(3),['borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('氏名:',null,['align' => 'left','lineHeight' => 1.0 ]);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(13),$cellColSpan)->addText('Nguyen Viet Son',null,$myTextStyle);
+
+        //add row seinengabi
+        $innerTable->addRow(400);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(3),['borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('生年月日:',null,['align' => 'left','lineHeight' => 1.0 ]);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(6),['borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('1989年5月10日:',null,$myTextStyle);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(7),['gridSpan' => 2,'valign' => 'center','borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('三十歳',null,$myTextStyle);
+
+        //add juusho
+        $innerTable->addRow(400);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(13),['gridSpan' => 3,'borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('連絡先:',null,['align' => 'left','lineHeight' => 1.0 ]);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(3),['borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('配偶者の有無',null,$myTextStyle);
+        $innerTable->addRow(400);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(13),['gridSpan' => 3,'borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('GIA LAI – DAKPU – TAN AN',null,$myTextStyle);
+        $innerTable->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(3),['borderRightColor' => '000000','borderSize' => \PhpOffice\PhpWord\Shared\Converter::cmToTwip(0.03)])->addText('無',null,$myTextStyle);
+        //add image
+        $second_cell = $row->addCell(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(3));
+        $second_cell->addImage('img/profile_user.jpg',['width' => \PhpOffice\PhpWord\Shared\Converter::cmToPoint(3),'height' => \PhpOffice\PhpWord\Shared\Converter::cmToPoint(4)]);
+
+        //save file word
+        $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+        $objWriter->save('helloWorld1.docx');
+        die('ss');
+    }
+
+    public function dload(){
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
+        $section = $phpWord->createSection();
+        $section->addText('Hello World!');
+        $file = 'HelloWorld1.docx';
+        header("Content-Description: File Transfer");
+        header('Content-Disposition: attachment; filename="' . $file . '"');
+        header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+        header('Content-Transfer-Encoding: binary');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Expires: 0');
+        $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+        $xmlWriter->save("php://output");
     }
 }
