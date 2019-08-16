@@ -309,6 +309,70 @@
                                             </div>
                                             <!--/span-->
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Mù Màu</label>
+                                                        <div class="col-md-9">
+                                                            <div class="radio-list">
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="te" value="0"/>
+                                                                    Có </label>
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="te" value="1" checked/>
+                                                                    Không </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Hút Thuốc</label>
+                                                    <div class="col-md-9">
+                                                        <div class="radio-list">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="te" value="0"/>
+                                                                Có </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="te" value="1" checked/>
+                                                                Không </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Uống Rượu</label>
+                                                    <div class="col-md-9">
+                                                        <div class="radio-list">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="te" value="0"/>
+                                                                Có </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="te" value="1" checked/>
+                                                                Không </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Có Hình Xăm</label>
+                                                    <div class="col-md-9">
+                                                        <div class="radio-list">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="te" value="0"/>
+                                                                Có </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="te" value="1" checked/>
+                                                                Không </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div style="text-align: center">
@@ -345,10 +409,7 @@
                                     </div>
                                     <form method="post" accept-charset="utf-8" class="form-horizontal" id="member-gakureki" action="#">
                                         <div id="gakureki-content">
-                                            <?php
-                                                echo "<pre>";
-                                                print_r($member);
-                                            ?>
+
                                         </div>
                                         <div class="row ">
                                             <div style="text-align: center">

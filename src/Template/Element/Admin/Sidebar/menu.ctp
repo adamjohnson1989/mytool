@@ -111,6 +111,42 @@
                 <span class="arrow "></span>
             </a>
         </li>
+
+        <li class="<?= $controller == 'Settings'? 'active' : ''?>">
+            <a href="<?php echo $this->Url->build(['controller' => 'Members','action' => 'index']) ?>">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <span class="title">Thiết Lập</span>
+                <span class="arrow "></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="<?= $controller == 'Categories'? 'active' : ''?>">
+                    <a href="<?php echo $this->Url->build(['controller' => 'Categories','action' => 'index']) ?>">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>Từ Vựng</a>
+                    <ul class="sub-menu">
+                        <li class="<?= $controller == 'Settings'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Shokugyous','action' => 'index']) ?>">
+                                <i class="fa fa-university" aria-hidden="true"></i> Nghề Nghiệp</a>
+                        </li>
+                        <li class="<?= $controller == 'Associations'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Seikakus','action' => 'index']) ?>">
+                                <i class="fa fa-motorcycle" aria-hidden="true"></i>Tính Cách</a>
+                        </li>
+                        <li class="<?= $controller == 'Associations'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Shuumis','action' => 'index']) ?>">
+                                <i class="fa fa-futbol-o" aria-hidden="true"></i>Sở Thích</a>
+                        </li>
+                        <li class="<?= $controller == 'Associations'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Rainichimokutekis','action' => 'index']) ?>">
+                                <i class="fa fa-plane" aria-hidden="true"></i>Lý Do Đến Nhật</a>
+                        </li>
+                        <li class="<?= $controller == 'Associations'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Kikokukibous','action' => 'index']) ?>">
+                                <i class="fa fa-diamond" aria-hidden="true"></i>Dự Định Sau Khi Về Nước</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
         <?php endif;?>
     </ul>
     <!-- END SIDEBAR MENU -->
