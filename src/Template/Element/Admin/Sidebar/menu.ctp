@@ -145,6 +145,20 @@
                         </li>
                     </ul>
                 </li>
+                <li class="<?= $controller == ''? 'active' : ''?>">
+                    <a href="<?php echo $this->Url->build(['controller' => '','action' => 'index']) ?>">
+                        <i class="fa fa-address-book" aria-hidden="true"></i>User</a>
+                    <ul class="sub-menu">
+                        <li class="<?= $controller == 'Settings'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Departments','action' => 'index']) ?>">
+                                <i class="fa fa-users" aria-hidden="true"></i> Bộ Phận</a>
+                        </li>
+                        <li class="<?= $controller == 'Associations'? 'active' : ''?>">
+                            <a href="<?php echo $this->Url->build(['controller' => 'Shains','action' => 'index']) ?>">
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>Nhân Viên</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </li>
         <?php endif;?>
