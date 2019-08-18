@@ -39,6 +39,25 @@ class MembersTable extends Table
         $this->belongsTo('Companys', [
             'foreignKey' => 'companys_id'
         ]);
+        $this->belongsTo('Shuumis', [
+            'foreignKey' => 'shuumis_id'
+        ]);
+
+        $this->belongsTo('Seikakus', [
+            'foreignKey' => 'seikakus_id'
+        ]);
+
+        $this->belongsTo('Rainichimokutekis', [
+            'foreignKey' => 'rainichimokutekis_id'
+        ]);
+
+        $this->belongsTo('Kikokukibous', [
+            'foreignKey' => 'kikokukibous_id'
+        ]);
+
+        $this->belongsTo('Shains', [
+            'foreignKey' => 'shains_id'
+        ]);
     }
 
     /**

@@ -124,6 +124,11 @@ class MembersController extends AdminController
         $companys = $this->Members->Companys->find('list', ['limit' => 200]);
         $this->set(compact('member', 'companys'));
         $this->set('_serialize', ['member']);
+        $this->set('kokyoAry', $this->getKokyoAry());
+        $this->set('shuumiAry', $this->getShuumisAry());
+        $this->set('seikakuAry', $this->getSeikakusAry());
+        $this->set('rainichimokutekiAry', $this->getRainichimokutekisAry());
+        $this->set('kikokukibouAry', $this->getKikokukibousAry());
     }
 
     /**
@@ -254,5 +259,81 @@ class MembersController extends AdminController
         header('Expires: 0');
         $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
         $xmlWriter->save("php://output");
+    }
+
+    protected function getKokyoAry(){
+        return array('0' => '--- Chọn Nguyên Quán --','1' => 'An Giang',
+                     '2' => 'Bà Rịa – Vũng Tàu',
+                     '3' => 'Bắc Giang', '4' => 'Bắc Kạn', '5' => 'Bạc Liêu', '6' => 'Bắc Ninh', '7'=> 'Bến Tre',
+                     '8' => 'Bình Định', '9' => 'Bình Dương', '10' => 'Bình Phước' , '11' => 'Bình Thuận','12'=> 'Cà Mau',
+                     '13'=> 'Cần Thơ', '14' => 'Cao Bằng', '15' => 'Đà Nẵng', '16' => 'Đắk Lắk', '17' => 'Đắk Nông', '18' => 'Điện Biên',
+                     '19'=> 'Đồng Nai', '20' => 'Đồng Tháp', '21' => 'Gia Lai', '22' => 'Hà Giang', '23' => 'Hà Nam', '24' => 'Hà Nội',
+                     '25'=> 'Hà Tĩnh', '26' => 'Hải Dương', '27' => 'Hải Phòng','28' => 'Hậu Giang', '29' => 'Hòa Bình', '30' => 'Hưng Yên',
+                     '31'=> 'Khánh Hòa', '32' => 'Kiên Giang', '33' => 'Kon Tum', '34' => 'Lai Châu', '35' => 'Lâm Đồng', '36' => 'Lạng Sơn',
+                     '37'=> 'Lào Cai', '38' => 'Long An', '39' => 'Nam Định', '40' => 'Nghệ An', '41' => 'Ninh Bình', '42' => 'Ninh Thuận',
+                     '43'=> 'Phú Thọ', '44'=> 'Phú Yên','45'=> 'Quảng Bình','46' => 'Quảng Nam', '47' => 'Quảng Ngãi', '48' => 'Quảng Ninh',
+                     '49'=> 'Quảng Trị','50' => 'Sóc Trăng', '51' => 'Sơn La', '52' => 'Tây Ninh', '53' => 'Thái Bình', '54' => 'Thái Nguyên',
+                     '55'=> 'Thanh Hóa','56' => 'Thừa Thiên Huế', '57' => 'Tiền Giang', '58' => 'TP Hồ Chí Minh', '59'=>'Trà Vinh',
+                     '60'=> 'Tuyên Quang','61'=>'Vĩnh Long','62'=> 'Vĩnh Phúc', '63' => 'Yên Bái'
+                    );
+    }
+
+    public function getShuumisAry(){
+        $catObj = $this->loadModel('Shuumis');
+        $catQuery = $catObj->find('all', [
+            'conditions' => ['status' => 1]]);
+        $catArr = $catQuery->toArray();
+        $catData = array('0'=> '-- Chọn Sở Thích --');
+        if(count($catArr)){
+            foreach ($catArr as $cat){
+                $catData[$cat->id] = $cat->name;
+            }
+        }
+        return $catData;
+    }
+
+    public function getSeikakusAry()
+    {
+        $catObj = $this->loadModel('Seikakus');
+        $catQuery = $catObj->find('all', [
+            'conditions' => ['status' => 1]]);
+        $catArr = $catQuery->toArray();
+        $catData = array('0' => '-- Chọn Tính Cách --');
+        if (count($catArr)) {
+            foreach ($catArr as $cat) {
+                $catData[$cat->id] = $cat->name;
+            }
+        }
+        return $catData;
+    }
+
+    public function getRainichimokutekisAry()
+    {
+        $catObj = $this->loadModel('Rainichimokutekis');
+        $catQuery = $catObj->find('all', [
+            'conditions' => ['status' => 1]]);
+        $catArr = $catQuery->toArray();
+        $catData = array('0' => '-- Chọn Lý Do Muốn Làm Việc Tại Nhật Bản --');
+        if (count($catArr)) {
+            foreach ($catArr as $cat) {
+                $catData[$cat->id] = $cat->name;
+            }
+        }
+        return $catData;
+    }
+
+    public function getKikokukibousAry()
+    {
+        $catObj = $this->loadModel('Kikokukibous');
+        $catQuery = $catObj->find('all', [
+            'conditions' => ['status' => 1]]);
+        $catArr = $catQuery->toArray();
+        $catData = array('0' => '-- Chọn Dự Định Sau Khi Về Nước --');
+        if (count($catArr)) {
+            foreach ($catArr as $cat) {
+                $catData[$cat->id] = $cat->name;
+            }
+        }
+        return $catData;
     }
 }

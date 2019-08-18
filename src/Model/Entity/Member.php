@@ -49,6 +49,17 @@ class Member extends Entity
         'hidarime' => true,
         'te' => true,
         'gender' => true,
-        'my_number' => true
+        'my_number' => true,
+        'mshv' => true,
+        'my_number_from' => true,
+        'my_number_basho' => true,
+        'jusho' => true,
+        'kazoku_nenshu' => true,
+        'shuumis_id' => true,
+        'seikakus_id' => true,
+        'rainichimokutekis_id' => true,
+        'kikokukibous_id' => true,
+        'sannengoshunyu' => true,
+        'shains_id' => true
     ];
 }

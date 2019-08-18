@@ -38,167 +38,244 @@
                         <div class="tab-content">
 
                             <!-- Begin Basic Member Info -->
-                            <div class="tab-pane active" id="basic-info">
-                                    <h3 class="form-section">Thông Tin Cá Nhân</h3>
-                                    <?= $this->Form->create($member,['class' => 'form-horizontal','id' => 'memberInfo','enctype' => 'multipart/form-data']) ?>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group " style="text-align: center">
-                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                        <div class="fileinput-preview  thumbnail" data-trigger="fileinput" style="width: 200px; height: 200px;">
-                                                        </div>
-                                                        <div>
-                                                        <span class="btn default btn-file">
-                                                        <span class="fileinput-new">
-                                                        Select image </span>
-                                                        <span class="fileinput-exists">
-                                                        Change </span>
-                                                        <input type="file" name="image" id="fileUpload">
-                                                        </span>
-                                                            <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
-                                                                Remove </a>
+                                    <div class="tab-pane active" id="basic-info">
+                                            <h3 class="form-section">Thông Tin Cá Nhân</h3>
+                                            <?= $this->Form->create($member,['class' => 'form-horizontal','id' => 'memberInfo','enctype' => 'multipart/form-data']) ?>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group " style="text-align: center">
+                                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                <div class="fileinput-preview  thumbnail" data-trigger="fileinput" style="width: 200px; height: 200px;">
+                                                                </div>
+                                                                <div>
+                                                                <span class="btn default btn-file">
+                                                                <span class="fileinput-new">
+                                                                Select image </span>
+                                                                <span class="fileinput-exists">
+                                                                Change </span>
+                                                                <input type="file" name="image" id="fileUpload">
+                                                                </span>
+                                                                    <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
+                                                                        Remove </a>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <?php
-                                                     $this->Form->templates([
-                                                    'inputContainer' => '<div class="col-md-9">{{content}}</div>',
-                                                    ]);
-                                                    ?>
-                                                    <?php echo $this->Form->label('name','Họ Tên', ['class' => 'control-label col-md-3']); ?>
-                                                    <?php echo $this->Form->input('name',[
-                                                    'label' => false,
-                                                    'placeholder'=>'Nguyễn Văn A',
-                                                    'class' => 'form-control input-circle',
-                                                    ]) ?>
-
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <?php
-                                                         $this->Form->templates([
-                                                        'inputContainer' => '<div class="col-md-9">{{content}}</div>',
-                                                        ]);
-                                                    ?>
-                                                    <?php echo $this->Form->label('gender','Giới Tính', ['class' => 'control-label col-md-3']); ?>
-                                                    <div class="col-md-9">
-                                                        <?php echo $this->Form->select(
-                                                            'gender',
-                                                            ['0' => 'Nữ','1' => 'Nam'],
-                                                            ['default' => '0','class' => 'form-control input-circle']
-                                                        ) ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <?php
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
                                                              $this->Form->templates([
-                                                    'inputContainer' => '<div class="col-md-9">{{content}}</div>',
-                                                    ]);
-                                                    ?>
-                                                    <?php echo $this->Form->label('my_number','Mã Số Học Viên', ['class' => 'control-label col-md-3']); ?>
-                                                    <?php echo $this->Form->input('my_number',[
-                                                    'label' => false,
-                                                    'placeholder'=>'20180001',
-                                                    'class' => 'form-control input-circle',
-                                                    ]) ?>
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('name','Họ Tên', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('name',[
+                                                            'label' => false,
+                                                            'placeholder'=>'Nguyễn Văn A',
+                                                            'class' => 'form-control input-circle',
+                                                            ]) ?>
 
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <?php
-                                                                 $this->Form->templates([
-                                                    'inputContainer' => '<div class="col-md-9">{{content}}</div>',
-                                                    ]);
-                                                    ?>
-                                                    <?php echo $this->Form->label('kekkon','Tình Trạng Hôn Nhân', ['class' => 'control-label col-md-3']); ?>
-                                                    <div class="col-md-9">
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="kekkon" value="0" checked/>
-                                                                Chưa Kết Hôn </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="kekkon" value="1" />
-                                                                Đã Kết Hôn </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="kekkon" value="2"/>
-                                                                Đã Ly Hôn </label>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                        </div>
-                                        <!--/row-->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <?php
-                                                     $this->Form->templates([
-                                                    'inputContainer' => '<div class="col-md-9">{{content}}</div>',
-                                                    ]);
-                                                    ?>
-                                                    <?php echo $this->Form->label('birthday','Ngày Sinh', ['class' => 'control-label col-md-3']); ?>
-                                                    <?php echo $this->Form->input('birthday',[
-                                                    'label' => false,
-                                                    'placeholder'=>'1/1/1998',
-                                                    'class' => 'form-control input-circle'
-                                                    ]) ?>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <?php
-                                                         $this->Form->templates([
-                                                        'inputContainer' => '<div class="col-md-9">{{content}}</div>',
-                                                        ]);
-                                                        ?>
-                                                        <?php echo $this->Form->label('kokyo','Quê Quán', ['class' => 'control-label col-md-3']); ?>
-                                                        <?php echo $this->Form->input('kokyo',[
-                                                        'label' => false,
-                                                        'placeholder'=>'Quận 1, Tp. HCM',
-                                                        'class' => 'form-control input-circle'
-                                                        ])
-                                                    ?>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                        </div>
-                                        <!--/row-->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group ">
-                                                    <div class="col-md-6 padding-top-10 ">
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
                                                             <?php
                                                                  $this->Form->templates([
-                                                                'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+                                                                'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                                ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('gender','Giới Tính', ['class' => 'control-label col-md-3']); ?>
+                                                            <div class="col-md-9">
+                                                                <?php echo $this->Form->select(
+                                                                    'gender',
+                                                                    ['0' => 'Nữ','1' => 'Nam'],
+                                                                    ['default' => '0','class' => 'form-control input-circle']
+                                                                ) ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                     $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('mshv','Mã Số Học Viên', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('mshv',[
+                                                            'label' => false,
+                                                            'placeholder'=>'20180001',
+                                                            'class' => 'form-control input-circle',
+                                                            ]) ?>
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                         $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('kekkon','Tình Trạng Hôn Nhân', ['class' => 'control-label col-md-3']); ?>
+                                                            <div class="col-md-9">
+                                                                <div class="radio-list">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="kekkon" value="0" checked/>
+                                                                        Chưa Kết Hôn </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="kekkon" value="1" />
+                                                                        Đã Kết Hôn </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="kekkon" value="2"/>
+                                                                        Đã Ly Hôn </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                             $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('my_number','Số CMND', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('my_number',[
+                                                            'label' => false,
+                                                            'placeholder'=>'20180001',
+                                                            'class' => 'form-control input-circle',
+                                                            ]) ?>
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                                 $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('my_number_from','Ngày Cấp', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('my_number_from',[
+                                                            'label' => false,
+                                                            'placeholder'=>'1/1/2011',
+                                                            'class' => 'form-control input-circle  m-datepicker',
+                                                            ]) ?>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <!--/row-->
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                             $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('birthday','Ngày Sinh', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('birthday',[
+                                                            'label' => false,
+                                                            'placeholder'=>'1/1/1998',
+                                                            'class' => 'form-control input-circle m-datepicker'
+                                                            ]) ?>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                 $this->Form->templates([
+                                                                'inputContainer' => '<div class="col-md-9">{{content}}</div>',
                                                                 ]);
                                                                 ?>
-                                                                <?php echo $this->Form->label('shincho','Chiều Cao', ['class' => 'control-label col-md-6']); ?>
-                                                                <?php echo $this->Form->input('shincho',[
-                                                                'label' => false,
-                                                                'placeholder'=>'170',
-                                                                'class' => 'form-control input-circle'
-                                                                ])
-                                                            ?>
+                                                                <?php echo $this->Form->label('kokyo','Nguyên Quán', ['class' => 'control-label col-md-3']); ?>
+                                                                <div class="col-md-9">
+                                                                    <?php
+                                                                        echo $this->Form->select(
+                                                                    'kokyo',
+                                                                    $kokyoAry,
+                                                                    ['default' => '0','class' => 'form-control input-circle']
+                                                                    );
+                                                                    ?>
+                                                                </div>
+
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-6 padding-top-10 ">
-                                                        <?php
-                                                                 $this->Form->templates([
+                                                    <!--/span-->
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                     $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('jusho','Hộ Khẩu Thường Trú Theo CMND', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('jusho',[
+                                                            'label' => false,
+                                                            'placeholder'=>'Quận 5, TP.HCM',
+                                                            'class' => 'form-control input-circle'
+                                                            ]) ?>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                                <label class="control-label col-md-3">Bộ Đội Xuất Ngũ</label>
+                                                                <div class="col-md-9">
+                                                                    <div class="radio-list">
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="te" value="0"/>
+                                                                            Có </label>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="te" value="1" checked/>
+                                                                            Không </label>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <!--/row-->
+
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <div class="col-md-6 padding-top-10 ">
+                                                                    <?php
+                                                                         $this->Form->templates([
+                                                                        'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+                                                                        ]);
+                                                                        ?>
+                                                                        <?php echo $this->Form->label('shincho','Chiều Cao', ['class' => 'control-label col-md-6']); ?>
+                                                                        <?php echo $this->Form->input('shincho',[
+                                                                        'label' => false,
+                                                                        'placeholder'=>'170',
+                                                                        'class' => 'form-control input-circle'
+                                                                        ])
+                                                                    ?>
+                                                            </div>
+                                                            <div class="col-md-6 padding-top-10 ">
+                                                                <?php
+                                                                         $this->Form->templates([
                                                                 'inputContainer' => '<div class="col-md-6">{{content}}</div>',
                                                                 ]);
                                                                 ?>
@@ -208,181 +285,306 @@
                                                                 'placeholder'=>'60',
                                                                 'class' => 'form-control input-circle'
                                                                 ])
-                                                        ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Tay Thuận</label>
-                                                    <div class="col-md-9">
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="0"/>
-                                                                Tay Trái </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="1" checked/>
-                                                                Tay Phải </label>
+                                                                ?>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6 padding-top-10">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <?php
-                                                             $this->Form->templates([
-                                                            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
-                                                            ]);
-                                                        ?>
-                                                        <?php
-                                                            echo $this->Form->label('hidarime','Mắt Trái', ['class' => 'control-label col-md-6']); ?>
-                                                            <?php echo $this->Form->input('hidarime',[
-                                                            'label' => false,
-                                                            'placeholder'=>'2.0',
-                                                            'class' => 'form-control input-circle'
-                                                            ])
-                                                        ?>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <?php
-                                                             $this->Form->templates([
-                                                            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
-                                                            ]);
-                                                        ?>
-                                                        <?php
-                                                           echo $this->Form->label('migime','Mắt Phải', ['class' => 'control-label col-md-6']);
-                                                        ?>
-                                                        <?php echo $this->Form->input('migime',[
-                                                        'label' => false,
-                                                        'placeholder'=>'2.0',
-                                                        'class' => 'form-control input-circle'
-                                                        ])
-                                                        ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6 padding-top-10">
-                                                <div class="form-group">
+                                                    <!--/span-->
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <?php
-                                                            $this->Form->templates([
-                                                            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
-                                                            ]);
-                                                            ?>
-                                                            <?php echo $this->Form->label('ketsueki','Nhóm Máu', ['class' => 'control-label col-md-6']); ?>
+                                                            <label class="control-label col-md-3">Tay Thuận</label>
+                                                            <div class="col-md-9">
+                                                                <div class="radio-list">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="0"/>
+                                                                        Tay Trái </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="1" checked/>
+                                                                        Tay Phải </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 padding-top-10">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <?php
+                                                                     $this->Form->templates([
+                                                                    'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+                                                                    ]);
+                                                                ?>
+                                                                <?php
+                                                                    echo $this->Form->label('hidarime','Mắt Trái', ['class' => 'control-label col-md-6']); ?>
+                                                                    <?php echo $this->Form->input('hidarime',[
+                                                                    'label' => false,
+                                                                    'placeholder'=>'2.0',
+                                                                    'class' => 'form-control input-circle'
+                                                                    ])
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <?php
+                                                                     $this->Form->templates([
+                                                                    'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+                                                                    ]);
+                                                                ?>
+                                                                <?php
+                                                                   echo $this->Form->label('migime','Mắt Phải', ['class' => 'control-label col-md-6']);
+                                                                ?>
+                                                                <?php echo $this->Form->input('migime',[
+                                                                'label' => false,
+                                                                'placeholder'=>'2.0',
+                                                                'class' => 'form-control input-circle'
+                                                                ])
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6 padding-top-10">
+                                                        <div class="form-group">
                                                             <div class="col-md-6">
-                                                                <?php echo $this->Form->select(
-                                                                'ketsueki',
-                                                                ['0' => 'A','1' => 'B','2' => 'AB','3' => 'O' ],
-                                                                ['default' => '0','class' => 'form-control input-circle']
-                                                                ) ?>
+                                                                <div class="form-group">
+                                                                    <?php
+                                                                    $this->Form->templates([
+                                                                    'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+                                                                    ]);
+                                                                    ?>
+                                                                    <?php echo $this->Form->label('ketsueki','Nhóm Máu', ['class' => 'control-label col-md-6']); ?>
+                                                                    <div class="col-md-6">
+                                                                        <?php echo $this->Form->select(
+                                                                        'ketsueki',
+                                                                        ['0' => 'A','1' => 'B','2' => 'AB','3' => 'O' ],
+                                                                        ['default' => '0','class' => 'form-control input-circle']
+                                                                        ) ?>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <?php
+                                                                     $this->Form->templates([
+                                                                    'inputContainer' => '<div class="col-md-6">{{content}}</div>',
+                                                                    ]);
+                                                                    ?>
+                                                                    <?php
+                                                                    echo $this->Form->label('iq','IQ', ['class' => 'control-label col-md-6']); ?>
+                                                                    <?php echo $this->Form->input('iq',[
+                                                                    'label' => false,
+                                                                    'placeholder'=>'110',
+                                                                    'class' => 'form-control input-circle'
+                                                                    ])
+                                                                    ?>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3">Mù Màu</label>
+                                                                <div class="col-md-9">
+                                                                    <div class="radio-list">
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="te" value="0"/>
+                                                                            Có </label>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="te" value="1" checked/>
+                                                                            Không </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">Hút Thuốc</label>
+                                                            <div class="col-md-9">
+                                                                <div class="radio-list">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="0"/>
+                                                                        Có </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="1" checked/>
+                                                                        Không </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-md-3">Uống Rượu</label>
+                                                            <div class="col-md-9">
+                                                                <div class="radio-list">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="0"/>
+                                                                        Có </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="1" checked/>
+                                                                        Không </label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <?php
-                                                             $this->Form->templates([
-                                                            'inputContainer' => '<div class="col-md-6">{{content}}</div>',
-                                                            ]);
-                                                            ?>
-                                                            <?php
-                                                            echo $this->Form->label('iq','IQ', ['class' => 'control-label col-md-6']); ?>
-                                                            <?php echo $this->Form->input('iq',[
-                                                            'label' => false,
-                                                            'placeholder'=>'110',
-                                                            'class' => 'form-control input-circle'
-                                                            ])
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--/span-->
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label col-md-3">Mù Màu</label>
-                                                        <div class="col-md-9">
-                                                            <div class="radio-list">
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="te" value="0"/>
-                                                                    Có </label>
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="te" value="1" checked/>
-                                                                    Không </label>
+                                                            <label class="control-label col-md-3">Có Hình Xăm</label>
+                                                            <div class="col-md-9">
+                                                                <div class="radio-list">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="0"/>
+                                                                        Có </label>
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="te" value="1" checked/>
+                                                                        Không </label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Hút Thuốc</label>
-                                                    <div class="col-md-9">
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="0"/>
-                                                                Có </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="1" checked/>
-                                                                Không </label>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                             $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('shuumis_id','Sở Thích', ['class' => 'control-label col-md-3']); ?>
+                                                            <div class="col-md-9">
+                                                                <?php
+                                                                                     echo $this->Form->select(
+                                                                'shuumis_id',
+                                                                $shuumiAry,
+                                                                ['default' => '0','class' => 'form-control input-circle']
+                                                                );
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                     $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('kokyo','Tự Nhận Xét Tính Cách Bản Thân', ['class' => 'control-label col-md-3']); ?>
+                                                            <div class="col-md-9">
+                                                                <?php
+                                                                        echo $this->Form->select(
+                                                                'seikakus_id',
+                                                                $seikakuAry,
+                                                                ['default' => '0','class' => 'form-control input-circle']
+                                                                );
+                                                                ?>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                                     $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('shuumis_id','Lý Do Muốn Làm Việc Tại Nhật Bản', ['class' => 'control-label col-md-3']); ?>
+                                                            <div class="col-md-9">
+                                                                <?php
+                                                                             echo $this->Form->select(
+                                                                'rainichimokutekis_id',
+                                                                $rainichimokutekiAry,
+                                                                ['default' => '0','class' => 'form-control input-circle']
+                                                                );
+                                                                ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                             $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}}</div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('kokyo','Dự Định Sau Khi Về Nước', ['class' => 'control-label col-md-3']); ?>
+                                                            <div class="col-md-9">
+                                                                <?php
+                                                                                echo $this->Form->select(
+                                                                'kikokukibous_id',
+                                                                $kikokukibouAry,
+                                                                ['default' => '0','class' => 'form-control input-circle']
+                                                                );
+                                                                ?>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                $this->Form->templates([
+                                                                'inputContainer' => '<div class="col-md-9">{{content}} <span>Đơn Vị: man</span></div>',
+                                                                ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('sannengoshunyu','Sau 03 năm muốn mang bao nhiêu tiền về Việt Nam', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('sannengoshunyu',[
+                                                            'label' => false,
+                                                            'placeholder'=>'500',
+                                                            'class' => 'form-control input-circle'
+                                                            ]) ?>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <?php
+                                                                $this->Form->templates([
+                                                            'inputContainer' => '<div class="col-md-9">{{content}} <span>Đơn Vị: man</span></div>',
+                                                            ]);
+                                                            ?>
+                                                            <?php echo $this->Form->label('kazoku_nenshu','Tổng Thu Nhập Cả Gia Đình', ['class' => 'control-label col-md-3']); ?>
+                                                            <?php echo $this->Form->input('kazoku_nenshu',[
+                                                            'label' => false,
+                                                            'placeholder'=>'500',
+                                                            'class' => 'form-control input-circle'
+                                                            ]) ?>
+                                                        </div>
+                                                    </div>
+                                                    <!--/span-->
+                                                </div>
+
+
+                                                <div class="form-actions">
+                                                    <div class="row">
+                                                        <div style="text-align: center">
+                                                            <button class="btn btn-circle blue" onclick="saveMemberInfo(); return false">Submit</button>
+                                                            <button type="button" class="btn btn-circle default" >Cancel</button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            <?= $this->Form->end() ?>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Uống Rượu</label>
-                                                    <div class="col-md-9">
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="0"/>
-                                                                Có </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="1" checked/>
-                                                                Không </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-3">Có Hình Xăm</label>
-                                                    <div class="col-md-9">
-                                                        <div class="radio-list">
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="0"/>
-                                                                Có </label>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="te" value="1" checked/>
-                                                                Không </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-actions">
-                                            <div class="row">
-                                                <div style="text-align: center">
-                                                    <button class="btn btn-circle blue" onclick="saveMemberInfo(); return false">Submit</button>
-                                                    <button type="button" class="btn btn-circle default">Cancel</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <?= $this->Form->end() ?>
-                                </div>
 
                             <!-- End Basic Member Info  -->
 
@@ -603,4 +805,8 @@
             }
         });
     }
+
+    jQuery(".m-datepicker").datepicker({
+        format: 'dd/mm/yyyy'
+    });
 </script>
