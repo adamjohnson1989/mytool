@@ -127,15 +127,10 @@
                                                             <?php echo $this->Form->label('kekkon','Tình Trạng Hôn Nhân', ['class' => 'control-label col-md-3']); ?>
                                                             <div class="col-md-9">
                                                                 <div class="radio-list">
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="kekkon" value="0" checked/>
-                                                                        Chưa Kết Hôn </label>
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="kekkon" value="1" />
-                                                                        Đã Kết Hôn </label>
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="kekkon" value="2"/>
-                                                                        Đã Ly Hôn </label>
+                                                                    <?php
+                                                                             echo $this->Form->radio('kekkon',['Chưa Kết Hôn','Đã Kết Hôn','Đã Ly Hôn'],['value' => 0]);
+                                                                    ?>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -241,12 +236,10 @@
                                                                 <label class="control-label col-md-3">Bộ Đội Xuất Ngũ</label>
                                                                 <div class="col-md-9">
                                                                     <div class="radio-list">
-                                                                        <label class="radio-inline">
-                                                                            <input type="radio" name="te" value="0"/>
-                                                                            Có </label>
-                                                                        <label class="radio-inline">
-                                                                            <input type="radio" name="te" value="1" checked/>
-                                                                            Không </label>
+                                                                        <?php
+                                                                                 echo $this->Form->radio('gunjin',['Có','Không'],['value' => 0]);
+                                                                        ?>
+
                                                                     </div>
                                                                 </div>
                                                         </div>
@@ -295,12 +288,10 @@
                                                             <label class="control-label col-md-3">Tay Thuận</label>
                                                             <div class="col-md-9">
                                                                 <div class="radio-list">
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="0"/>
-                                                                        Tay Trái </label>
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="1" checked/>
-                                                                        Tay Phải </label>
+                                                                    <?php
+                                                                             echo $this->Form->radio('kikite',['Trái','Phải'],['value' => 1]);
+                                                                    ?>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -392,12 +383,10 @@
                                                                 <label class="control-label col-md-3">Mù Màu</label>
                                                                 <div class="col-md-9">
                                                                     <div class="radio-list">
-                                                                        <label class="radio-inline">
-                                                                            <input type="radio" name="te" value="0"/>
-                                                                            Có </label>
-                                                                        <label class="radio-inline">
-                                                                            <input type="radio" name="te" value="1" checked/>
-                                                                            Không </label>
+                                                                        <?php
+                                                                             echo $this->Form->radio('shikimou',['Có','Không'],['value' => 1]);
+                                                                        ?>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -407,12 +396,10 @@
                                                             <label class="control-label col-md-3">Hút Thuốc</label>
                                                             <div class="col-md-9">
                                                                 <div class="radio-list">
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="0"/>
-                                                                        Có </label>
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="1" checked/>
-                                                                        Không </label>
+                                                                    <?php
+                                                                             echo $this->Form->radio('ketsuen',['Có','Không'],['value' => 1]);
+                                                                    ?>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -424,12 +411,10 @@
                                                             <label class="control-label col-md-3">Uống Rượu</label>
                                                             <div class="col-md-9">
                                                                 <div class="radio-list">
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="0"/>
-                                                                        Có </label>
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="1" checked/>
-                                                                        Không </label>
+                                                                    <?php
+                                                                             echo $this->Form->radio('inshuu',['Có','Không'],['value' => 1]);
+                                                                    ?>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -439,12 +424,10 @@
                                                             <label class="control-label col-md-3">Có Hình Xăm</label>
                                                             <div class="col-md-9">
                                                                 <div class="radio-list">
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="0"/>
-                                                                        Có </label>
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="te" value="1" checked/>
-                                                                        Không </label>
+                                                                    <?php
+                                                                             echo $this->Form->radio('irezumi',['Có','Không'],['value' => 1]);
+                                                                    ?>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -699,6 +682,20 @@
                 number: true
             },
             image:{
+                required:true
+            },
+            my_number_from:{
+                required:true
+            },
+            sannengoshunyu:{
+                required:true,
+                number:true
+            },
+            kazoku_nenshu:{
+                required:true,
+                number:true
+            },
+            jusho:{
                 required:true
             }
         }

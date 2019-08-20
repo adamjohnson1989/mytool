@@ -11,7 +11,7 @@
  Target Server Version : 100136
  File Encoding         : 65001
 
- Date: 17/08/2019 19:19:06
+ Date: 20/08/2019 22:19:25
 */
 
 SET NAMES utf8mb4;
@@ -152,7 +152,12 @@ CREATE TABLE `kikokukibous`  (
   `name_jp` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `status` int(4) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of kikokukibous
+-- ----------------------------
+INSERT INTO `kikokukibous` VALUES (1, 'mo quan', 'omise', 1);
 
 -- ----------------------------
 -- Table structure for members
@@ -161,7 +166,10 @@ DROP TABLE IF EXISTS `members`;
 CREATE TABLE `members`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `mshv` int(11) NULL DEFAULT NULL,
   `my_number` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `my_number_from` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `my_number_basho` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `birthday` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `kokyo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -175,85 +183,99 @@ CREATE TABLE `members`  (
   `hidarime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `migime` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `ketsueki` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `te` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `kikite` int(2) NULL DEFAULT NULL,
+  `jusho` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `kazoku_nenshu` int(4) NULL DEFAULT NULL,
+  `shuumis_id` int(11) NULL DEFAULT NULL,
+  `seikakus_id` int(11) NULL DEFAULT NULL,
+  `rainichimokutekis_id` int(11) NULL DEFAULT NULL,
+  `kikokukibous_id` int(11) NULL DEFAULT NULL,
+  `sannengoshunyu` int(11) NULL DEFAULT NULL,
+  `shains_id` int(11) NULL DEFAULT NULL,
+  `shikimou` int(4) NULL DEFAULT NULL,
+  `inshuu` int(4) NULL DEFAULT NULL,
+  `ketsuen` int(4) NULL DEFAULT NULL,
+  `irezumi` int(4) NULL DEFAULT NULL,
+  `gunjin` int(4) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of members
 -- ----------------------------
-INSERT INTO `members` VALUES (6, NULL, NULL, NULL, NULL, '\\uploads\\member\\1524994290.jpeg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `members` VALUES (7, NULL, NULL, NULL, NULL, '\\uploads\\member\\1524994646.jpeg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `members` VALUES (8, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `members` VALUES (9, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `members` VALUES (10, 'Nguyen Viet Son', NULL, '29/05/1989', 'Quan 1, TP HCM', '\\uploads\\member\\1525315535.jpeg', NULL, 0, '180', '60', '110', NULL, 1, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (11, 'Nguyen Van B', NULL, '1', '', '\\uploads\\member\\1525317795.jpg', NULL, NULL, '170', '11', '11', NULL, 0, '2', '1', '0', '1');
-INSERT INTO `members` VALUES (12, 'Nguyen Van B', NULL, '1', '', '\\uploads\\member\\1525317875.jpg', NULL, 0, '170', '11', '11', NULL, 0, '2', '1', '0', '1');
-INSERT INTO `members` VALUES (13, 'Nguyen Van B', NULL, '1', '', '\\uploads\\member\\1525317903.jpg', NULL, NULL, '170', '11', '11', NULL, 0, '2', '1', '0', '1');
-INSERT INTO `members` VALUES (14, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (15, '', NULL, '', '', '', NULL, 0, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (16, 'Nguyen Van A', NULL, '121', 'Ha Noi', '', NULL, NULL, '172', '56', '', NULL, 0, '1', '1.5', '0', '1');
-INSERT INTO `members` VALUES (17, 'Kỹ sư điện', NULL, '', 'sf', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (18, 'Kỹ sư điện', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (19, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (20, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (21, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (22, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (23, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (24, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (25, 'Kỹ sư điện2', NULL, '121', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (26, 'Kỹ sư điện3242', NULL, '121', '', '', NULL, NULL, '', '', '', NULL, 1, '', '', '1', '0');
-INSERT INTO `members` VALUES (27, 'ádasd', NULL, '121', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (28, 'Tran Van B', NULL, '1/2/1997', 'Binh Duong', '\\uploads\\member\\1525337468.jpg', NULL, 0, '170', '60', '110', NULL, 1, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (29, 'Tran Van B', NULL, '1/1/1990', 'Long An', '\\uploads\\member\\1525337595.jpg', NULL, NULL, '170', '60', '110', NULL, 1, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (30, 'Tran Van B', NULL, '1/12/1997', 'Long an', '\\uploads\\member\\1525337751.jpg', NULL, NULL, '180', '60', '110', NULL, 0, '1', '', '0', '1');
-INSERT INTO `members` VALUES (31, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (32, '', NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (33, 'Nguyen Viet Son', '2108542', '29/05/1989', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '120', 1, 1, '2', '1', '0', '1');
-INSERT INTO `members` VALUES (34, 'Nguyen Viet Son', '2108542', '29/05/1989', 'Quan 3, HCM', NULL, NULL, NULL, '170', '60', '120', 1, 1, '2', '1', '0', '1');
-INSERT INTO `members` VALUES (35, 'Nguyen Viet Son', '2014562', '19/01/1989', 'Quan 3, HCM', NULL, NULL, NULL, '160', '60', '110', 1, 1, '2', '2', '0', '1');
-INSERT INTO `members` VALUES (36, 'Nguyen Viet Son', '2014562', '19/01/1989', 'Quan 3, HCM', NULL, NULL, NULL, '160', '60', '110', 1, 1, '2', '2', '0', '1');
-INSERT INTO `members` VALUES (37, 'Nguyen Viet Son', '', '', '', NULL, NULL, NULL, '', '', '', 1, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (38, 'Nguyen Viet Son', '', '', '', '\\uploads\\member\\1544762635.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (39, 'asdsa', '', '', '', '\\uploads\\member\\1544762693.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (40, '', '', '', '', '\\uploads\\member\\1544762787.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (41, 'Nguyen Viet Son1', '', '', '', '\\uploads\\member\\1544762847.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (42, 'Nguyen Viet Son', '23454565', '19/10/1989', 'Quan 3, HCM', '', NULL, NULL, '140', '52', '110', 0, 1, '2', '2', '0', '1');
-INSERT INTO `members` VALUES (43, 'Nguyen Viet Son', '23454565', '19/10/1989', 'Quan 3, HCM', '', NULL, NULL, '140', '52', '110', 0, 1, '2', '2', '0', '1');
-INSERT INTO `members` VALUES (44, 'Nguyen Viet Son2222222222222', '234234', '14/2/1677', 'Quan 3, HCM', '', NULL, NULL, '32', '33', '110', 1, 1, '2', '2', '0', '1');
-INSERT INTO `members` VALUES (45, 'Nguyen Viet Son2222222222222', '234234', '14/2/1677', 'Quan 3, HCM', '', NULL, NULL, '32', '33', '110', 1, 1, '2', '2', '0', '1');
-INSERT INTO `members` VALUES (46, 'Nguyen Viet Son1111', '2132343', '11111', 'Quan 3, HCM', '', NULL, NULL, '111', '111', '111', 1, 0, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (47, 'sadasd', '1211111111111', '121312', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '11', 1, 0, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (48, 'sadasd', '1211111111111', '121312', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '11', 1, 0, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (49, 'nvs', '1211111111111', '121312', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '11', 1, 0, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (50, '', '', '', '', '\\uploads\\member\\1544764147.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (51, 'Nguyen Viet Son', '', '', '', '\\uploads\\member\\1544765351.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (52, 'Nguyen Viet Son', '', '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (53, 'Nguyen Viet Son1111', '', '', '', '\\uploads\\member\\1544766414.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (54, 'Nguyen Viet Son1111', '', '', '', '\\uploads\\member\\1544766415.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (55, 'Nguyen Viet Son', '', '', '', '\\uploads\\member\\1544766447.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (56, 'Nguyen Viet Son', '', '', '', '\\uploads\\member\\1544766447.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (57, 'Nguyen Viet Son Hang', '', '', '', '\\uploads\\member\\1544766537.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (58, 'Nguyen Hang', '2132432', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544767054.jpg', NULL, NULL, '170', '60', '111', 0, 1, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (59, '', '', '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (60, '', '', '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (61, '', '', '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (62, '', '', '', '', '\\uploads\\member\\1544767704.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (63, '', '', '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (64, '', '', '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', '1');
-INSERT INTO `members` VALUES (65, 'NGUYEN HANG', '3242325', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544769570.jpg', NULL, NULL, '160', '60', '100', 1, 0, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (66, 'Nguyen Viet Son', '24234235', '1/12/1988', 'Quan 3, HCM', '', NULL, NULL, '180', '60', '11', 0, 0, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (67, 'Nguyen Viet Son', '24234235', '1/12/1988', 'Quan 3, HCM', '', NULL, NULL, '180', '60', '11', 0, 0, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (68, 'Nguyen Viet Son', '3242342', '1/12/1988', 'Quan 3, HCM', '', NULL, NULL, '180', '60', '100', 0, 0, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (69, 'Nguyen Viet Son', '3242342', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770140.jpg', NULL, NULL, '180', '60', '100', 0, 0, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (70, 'Nguyen Viet Son', '3242342', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770190.jpg', NULL, NULL, '180', '60', '100', 0, 0, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (71, 'Nguyen Viet Son', '1234555', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770307.jpg', NULL, NULL, '180', '60', '110', 1, 0, '1', '2', '0', '1');
-INSERT INTO `members` VALUES (72, 'Nguyen Viet Son', '12312312', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770653.jpg', NULL, NULL, '180', '60', '110', 1, 0, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (73, 'Nguyen Viet Son', '12312312', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770674.jpg', NULL, NULL, '180', '60', '110', 1, 0, '1', '1', '0', '1');
-INSERT INTO `members` VALUES (74, 'Nguyen Viet Son', '234324', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770942.jpg', NULL, NULL, '160', '60', '111', 1, 0, '2', '1', '0', '1');
-INSERT INTO `members` VALUES (75, 'Nguyen Son', '201854265', '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544964236.jpg', NULL, NULL, '160', '60', '100', 1, 1, '2', '1', '0', '1');
-INSERT INTO `members` VALUES (76, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `members` VALUES (77, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\\uploads\\member\\1524994290.jpeg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '\\uploads\\member\\1524994646.jpeg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (10, 'Nguyen Viet Son', NULL, NULL, NULL, NULL, '29/05/1989', 'Quan 1, TP HCM', '\\uploads\\member\\1525315535.jpeg', NULL, 0, '180', '60', '110', NULL, 1, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (11, 'Nguyen Van B', NULL, NULL, NULL, NULL, '1', '', '\\uploads\\member\\1525317795.jpg', NULL, NULL, '170', '11', '11', NULL, 0, '2', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (12, 'Nguyen Van B', NULL, NULL, NULL, NULL, '1', '', '\\uploads\\member\\1525317875.jpg', NULL, 0, '170', '11', '11', NULL, 0, '2', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (13, 'Nguyen Van B', NULL, NULL, NULL, NULL, '1', '', '\\uploads\\member\\1525317903.jpg', NULL, NULL, '170', '11', '11', NULL, 0, '2', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (14, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (15, '', NULL, NULL, NULL, NULL, '', '', '', NULL, 0, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (16, 'Nguyen Van A', NULL, NULL, NULL, NULL, '121', 'Ha Noi', '', NULL, NULL, '172', '56', '', NULL, 0, '1', '1.5', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (17, 'Kỹ sư điện', NULL, NULL, NULL, NULL, '', 'sf', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (18, 'Kỹ sư điện', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (19, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (20, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (21, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (22, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (23, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (24, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (25, 'Kỹ sư điện2', NULL, NULL, NULL, NULL, '121', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (26, 'Kỹ sư điện3242', NULL, NULL, NULL, NULL, '121', '', '', NULL, NULL, '', '', '', NULL, 1, '', '', '1', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (27, 'ádasd', NULL, NULL, NULL, NULL, '121', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (28, 'Tran Van B', NULL, NULL, NULL, NULL, '1/2/1997', 'Binh Duong', '\\uploads\\member\\1525337468.jpg', NULL, 0, '170', '60', '110', NULL, 1, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (29, 'Tran Van B', NULL, NULL, NULL, NULL, '1/1/1990', 'Long An', '\\uploads\\member\\1525337595.jpg', NULL, NULL, '170', '60', '110', NULL, 1, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (30, 'Tran Van B', NULL, NULL, NULL, NULL, '1/12/1997', 'Long an', '\\uploads\\member\\1525337751.jpg', NULL, NULL, '180', '60', '110', NULL, 0, '1', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (31, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (32, '', NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, '', '', '', NULL, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (33, 'Nguyen Viet Son', NULL, '2108542', NULL, NULL, '29/05/1989', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '120', 1, 1, '2', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (34, 'Nguyen Viet Son', NULL, '2108542', NULL, NULL, '29/05/1989', 'Quan 3, HCM', NULL, NULL, NULL, '170', '60', '120', 1, 1, '2', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (35, 'Nguyen Viet Son', NULL, '2014562', NULL, NULL, '19/01/1989', 'Quan 3, HCM', NULL, NULL, NULL, '160', '60', '110', 1, 1, '2', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (36, 'Nguyen Viet Son', NULL, '2014562', NULL, NULL, '19/01/1989', 'Quan 3, HCM', NULL, NULL, NULL, '160', '60', '110', 1, 1, '2', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (37, 'Nguyen Viet Son', NULL, '', NULL, NULL, '', '', NULL, NULL, NULL, '', '', '', 1, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (38, 'Nguyen Viet Son', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544762635.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (39, 'asdsa', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544762693.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (40, '', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544762787.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (41, 'Nguyen Viet Son1', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544762847.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (42, 'Nguyen Viet Son', NULL, '23454565', NULL, NULL, '19/10/1989', 'Quan 3, HCM', '', NULL, NULL, '140', '52', '110', 0, 1, '2', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (43, 'Nguyen Viet Son', NULL, '23454565', NULL, NULL, '19/10/1989', 'Quan 3, HCM', '', NULL, NULL, '140', '52', '110', 0, 1, '2', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (44, 'Nguyen Viet Son2222222222222', NULL, '234234', NULL, NULL, '14/2/1677', 'Quan 3, HCM', '', NULL, NULL, '32', '33', '110', 1, 1, '2', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (45, 'Nguyen Viet Son2222222222222', NULL, '234234', NULL, NULL, '14/2/1677', 'Quan 3, HCM', '', NULL, NULL, '32', '33', '110', 1, 1, '2', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (46, 'Nguyen Viet Son1111', NULL, '2132343', NULL, NULL, '11111', 'Quan 3, HCM', '', NULL, NULL, '111', '111', '111', 1, 0, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (47, 'sadasd', NULL, '1211111111111', NULL, NULL, '121312', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '11', 1, 0, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (48, 'sadasd', NULL, '1211111111111', NULL, NULL, '121312', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '11', 1, 0, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (49, 'nvs', NULL, '1211111111111', NULL, NULL, '121312', 'Quan 3, HCM', '', NULL, NULL, '170', '60', '11', 1, 0, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (50, '', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544764147.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (51, 'Nguyen Viet Son', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544765351.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (52, 'Nguyen Viet Son', NULL, '', NULL, NULL, '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (53, 'Nguyen Viet Son1111', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544766414.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (54, 'Nguyen Viet Son1111', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544766415.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (55, 'Nguyen Viet Son', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544766447.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (56, 'Nguyen Viet Son', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544766447.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (57, 'Nguyen Viet Son Hang', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544766537.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (58, 'Nguyen Hang', NULL, '2132432', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544767054.jpg', NULL, NULL, '170', '60', '111', 0, 1, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (59, '', NULL, '', NULL, NULL, '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (60, '', NULL, '', NULL, NULL, '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (61, '', NULL, '', NULL, NULL, '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (62, '', NULL, '', NULL, NULL, '', '', '\\uploads\\member\\1544767704.jpg', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (63, '', NULL, '', NULL, NULL, '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (64, '', NULL, '', NULL, NULL, '', '', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (65, 'NGUYEN HANG', NULL, '3242325', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544769570.jpg', NULL, NULL, '160', '60', '100', 1, 0, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (66, 'Nguyen Viet Son', NULL, '24234235', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '', NULL, NULL, '180', '60', '11', 0, 0, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (67, 'Nguyen Viet Son', NULL, '24234235', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '', NULL, NULL, '180', '60', '11', 0, 0, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (68, 'Nguyen Viet Son', NULL, '3242342', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '', NULL, NULL, '180', '60', '100', 0, 0, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (69, 'Nguyen Viet Son', NULL, '3242342', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770140.jpg', NULL, NULL, '180', '60', '100', 0, 0, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (70, 'Nguyen Viet Son', NULL, '3242342', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770190.jpg', NULL, NULL, '180', '60', '100', 0, 0, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (71, 'Nguyen Viet Son', NULL, '1234555', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770307.jpg', NULL, NULL, '180', '60', '110', 1, 0, '1', '2', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (72, 'Nguyen Viet Son', NULL, '12312312', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770653.jpg', NULL, NULL, '180', '60', '110', 1, 0, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (73, 'Nguyen Viet Son', NULL, '12312312', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770674.jpg', NULL, NULL, '180', '60', '110', 1, 0, '1', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (74, 'Nguyen Viet Son', NULL, '234324', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544770942.jpg', NULL, NULL, '160', '60', '111', 1, 0, '2', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (75, 'Nguyen Son', NULL, '201854265', NULL, NULL, '1/12/1988', 'Quan 3, HCM', '\\uploads\\member\\1544964236.jpg', NULL, NULL, '160', '60', '100', 1, 1, '2', '1', '0', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (76, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `members` VALUES (78, '', NULL, '', '', NULL, '', '0', '', NULL, NULL, '', '', '', 0, 0, '', '', '0', 1, '', NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for news
@@ -313,7 +335,7 @@ CREATE TABLE `rainichimokutekis`  (
 -- ----------------------------
 -- Records of rainichimokutekis
 -- ----------------------------
-INSERT INTO `rainichimokutekis` VALUES (2, 'Muốn Du Lịch', '幼い', '0');
+INSERT INTO `rainichimokutekis` VALUES (2, 'Muốn Du Lịch', '幼い', '1');
 
 -- ----------------------------
 -- Table structure for recruitments

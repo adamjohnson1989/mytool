@@ -47,7 +47,7 @@ class Member extends Entity
         'ketsueki' => true,
         'migime'  => true,
         'hidarime' => true,
-        'te' => true,
+        'kikite' => true,
         'gender' => true,
         'my_number' => true,
         'mshv' => true,
@@ -60,6 +60,11 @@ class Member extends Entity
         'rainichimokutekis_id' => true,
         'kikokukibous_id' => true,
         'sannengoshunyu' => true,
-        'shains_id' => true
+        'shains_id' => true,
+        'shikimou' => true,
+        'inshuu' => true,
+        'ketsuen' => true,
+        'irezumi' => true,
+        'gunjin' => true
     ];
 }
